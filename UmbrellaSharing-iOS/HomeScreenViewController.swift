@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeScreenViewController: UIViewController {
 
-    
+    // TODO: Think do we really need all of those params here? Just occupy a lot of space
     @IBOutlet weak var rentPriceHeaderLabel: UILabel!
     @IBOutlet weak var firstOptionRentLabel: UILabel!
     @IBOutlet weak var secondOptionRentLabel: UILabel!
@@ -30,6 +30,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initInterface()
+    }
+    
+    @IBAction func checkLocations(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     private func initInterface() {
@@ -64,10 +71,6 @@ class ViewController: UIViewController {
         checkLocationsButton.setTitle("Check Locations on the Map", for: .normal)
         // TODO: Set an image for this button
         rentButton.setTitle("Rent an Umbrella", for: UIControl.State.normal)
-    
-        
     }
-
-
 }
 
