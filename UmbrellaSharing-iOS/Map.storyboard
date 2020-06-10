@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="g4c-P7-P0D">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="rVy-LD-VSZ" customClass="MapViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zBe-St-yXe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-2I-yUJ">
+                                <rect key="frame" x="83" y="504" width="208" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce">
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="208" id="ZjK-bo-o7S"/>
+                                            <constraint firstAttribute="height" constant="40" id="fW5-NO-JfS"/>
+                                        </constraints>
+                                        <state key="normal" title="Rent Button">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvy-Rs-Qgo">
+                                        <rect key="frame" x="0.0" y="60" width="208" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="208" id="ggd-E1-8LY"/>
+                                            <constraint firstAttribute="height" constant="40" id="r64-8g-l21"/>
+                                        </constraints>
+                                        <state key="normal" title="Back Button">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToHome:" destination="rVy-LD-VSZ" eventType="touchUpInside" id="G7N-BM-AKZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9g5-bc-9T0" firstAttribute="bottom" secondItem="Gik-2I-yUJ" secondAttribute="bottom" constant="63" id="GOh-Ww-kE3"/>
+                            <constraint firstItem="Gik-2I-yUJ" firstAttribute="leading" secondItem="9g5-bc-9T0" secondAttribute="leading" constant="83" id="MYR-Iz-b1L"/>
+                            <constraint firstItem="9g5-bc-9T0" firstAttribute="trailing" secondItem="Gik-2I-yUJ" secondAttribute="trailing" constant="84" id="nbJ-zx-ZXo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9g5-bc-9T0"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Uvy-Rs-Qgo" id="GAS-Ph-Z2l"/>
+                        <outlet property="rentButton" destination="ilu-dg-Dce" id="fao-b2-U9T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSH-cS-R6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="123"/>
+        </scene>
+    </scenes>
+</document>
