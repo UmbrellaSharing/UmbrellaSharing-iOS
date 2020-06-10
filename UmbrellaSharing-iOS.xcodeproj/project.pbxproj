@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		7D63463224779DD100049C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463124779DD100049C30 /* AppDelegate.swift */; };
 		7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463324779DD100049C30 /* SceneDelegate.swift */; };
-		7D63463624779DD100049C30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463524779DD100049C30 /* ViewController.swift */; };
+		7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463524779DD100049C30 /* HomeScreenViewController.swift */; };
 		7D63463924779DD100049C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463724779DD100049C30 /* Main.storyboard */; };
 		7D63463B24779DD300049C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463A24779DD300049C30 /* Assets.xcassets */; };
 		7D63463E24779DD300049C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463C24779DD300049C30 /* LaunchScreen.storyboard */; };
 		7D63464924779DD300049C30 /* UmbrellaSharing_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63464824779DD300049C30 /* UmbrellaSharing_iOSTests.swift */; };
+		7D7C6C6A3918F61F7D89689D /* libPods-UmbrellaSharing-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EDEB62641B8B4FD7D8A63B /* libPods-UmbrellaSharing-iOS.a */; };
+		7D99E2122490DF9A00334232 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2112490DF9900334232 /* Podfile */; };
+		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
+		7D99E2162490EA4C00334232 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2152490EA4C00334232 /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16EDEB62641B8B4FD7D8A63B /* libPods-UmbrellaSharing-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UmbrellaSharing-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		647AE89D4145F5B3AD6AAE41 /* Pods-UmbrellaSharing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7D63462E24779DD100049C30 /* UmbrellaSharing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UmbrellaSharing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63463124779DD100049C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D63463324779DD100049C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7D63463524779DD100049C30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D63463524779DD100049C30 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		7D63463824779DD100049C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D63463A24779DD300049C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D63463D24779DD300049C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +44,10 @@
 		7D63464424779DD300049C30 /* UmbrellaSharing-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UmbrellaSharing-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63464824779DD300049C30 /* UmbrellaSharing_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaSharing_iOSTests.swift; sourceTree = "<group>"; };
 		7D63464A24779DD400049C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D99E2112490DF9900334232 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7D99E2132490EA0000334232 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7D99E2152490EA4C00334232 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7C6C6A3918F61F7D89689D /* libPods-UmbrellaSharing-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +72,12 @@
 		7D63462524779DD100049C30 = {
 			isa = PBXGroup;
 			children = (
+				7D99E2112490DF9900334232 /* Podfile */,
 				7D63463024779DD100049C30 /* UmbrellaSharing-iOS */,
 				7D63464724779DD300049C30 /* UmbrellaSharing-iOSTests */,
 				7D63462F24779DD100049C30 /* Products */,
+				D3607B0EB6197A2FFF762274 /* Pods */,
+				99D81D5A74AD0F89CE4B7B5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +95,13 @@
 			children = (
 				7D63463124779DD100049C30 /* AppDelegate.swift */,
 				7D63463324779DD100049C30 /* SceneDelegate.swift */,
-				7D63463524779DD100049C30 /* ViewController.swift */,
-				7D63463724779DD100049C30 /* Main.storyboard */,
+				7D63463524779DD100049C30 /* HomeScreenViewController.swift */,
 				7D63463A24779DD300049C30 /* Assets.xcassets */,
 				7D63463C24779DD300049C30 /* LaunchScreen.storyboard */,
 				7D63463F24779DD300049C30 /* Info.plist */,
+				7D99E2132490EA0000334232 /* MapViewController.swift */,
+				7D63463724779DD100049C30 /* Main.storyboard */,
+				7D99E2152490EA4C00334232 /* Map.storyboard */,
 			);
 			path = "UmbrellaSharing-iOS";
 			sourceTree = "<group>";
@@ -99,6 +115,23 @@
 			path = "UmbrellaSharing-iOSTests";
 			sourceTree = "<group>";
 		};
+		99D81D5A74AD0F89CE4B7B5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16EDEB62641B8B4FD7D8A63B /* libPods-UmbrellaSharing-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3607B0EB6197A2FFF762274 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */,
+				647AE89D4145F5B3AD6AAE41 /* Pods-UmbrellaSharing-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D63464D24779DD400049C30 /* Build configuration list for PBXNativeTarget "UmbrellaSharing-iOS" */;
 			buildPhases = (
+				5A5AE45D74097BC6AF02F6FE /* [CP] Check Pods Manifest.lock */,
 				7D63462A24779DD100049C30 /* Sources */,
 				7D63462B24779DD100049C30 /* Frameworks */,
 				7D63462C24779DD100049C30 /* Resources */,
+				AE5AC13A356AAA093516A7D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +217,8 @@
 			files = (
 				7D63463E24779DD300049C30 /* LaunchScreen.storyboard in Resources */,
 				7D63463B24779DD300049C30 /* Assets.xcassets in Resources */,
+				7D99E2162490EA4C00334232 /* Map.storyboard in Resources */,
+				7D99E2122490DF9A00334232 /* Podfile in Resources */,
 				7D63463924779DD100049C30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,14 +232,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A5AE45D74097BC6AF02F6FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UmbrellaSharing-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE5AC13A356AAA093516A7D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D63462A24779DD100049C30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D63463624779DD100049C30 /* ViewController.swift in Sources */,
+				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
+				7D99E2142490EA0000334232 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +447,7 @@
 		};
 		7D63464E24779DD400049C30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +466,7 @@
 		};
 		7D63464F24779DD400049C30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 647AE89D4145F5B3AD6AAE41 /* Pods-UmbrellaSharing-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
