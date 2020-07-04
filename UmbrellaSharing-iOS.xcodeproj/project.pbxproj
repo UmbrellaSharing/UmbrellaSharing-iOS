@@ -18,6 +18,7 @@
 		7D99E2122490DF9A00334232 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2112490DF9900334232 /* Podfile */; };
 		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
 		7D99E2162490EA4C00334232 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2152490EA4C00334232 /* Map.storyboard */; };
+		7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7D99E2112490DF9900334232 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D99E2132490EA0000334232 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D99E2152490EA4C00334232 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaButton.swift; sourceTree = "<group>"; };
 		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,15 +95,13 @@
 		7D63463024779DD100049C30 /* UmbrellaSharing-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7D9A3BEA24B059E700D0F851 /* ViewControllers */,
+				7D9A3BE924B059B500D0F851 /* Layouts */,
+				7D9A3BE624B0537900D0F851 /* UIElements */,
 				7D63463124779DD100049C30 /* AppDelegate.swift */,
 				7D63463324779DD100049C30 /* SceneDelegate.swift */,
-				7D63463524779DD100049C30 /* HomeScreenViewController.swift */,
 				7D63463A24779DD300049C30 /* Assets.xcassets */,
-				7D63463C24779DD300049C30 /* LaunchScreen.storyboard */,
 				7D63463F24779DD300049C30 /* Info.plist */,
-				7D99E2132490EA0000334232 /* MapViewController.swift */,
-				7D63463724779DD100049C30 /* Main.storyboard */,
-				7D99E2152490EA4C00334232 /* Map.storyboard */,
 			);
 			path = "UmbrellaSharing-iOS";
 			sourceTree = "<group>";
@@ -113,6 +113,33 @@
 				7D63464A24779DD400049C30 /* Info.plist */,
 			);
 			path = "UmbrellaSharing-iOSTests";
+			sourceTree = "<group>";
+		};
+		7D9A3BE624B0537900D0F851 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		7D9A3BE924B059B500D0F851 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				7D63463724779DD100049C30 /* Main.storyboard */,
+				7D99E2152490EA4C00334232 /* Map.storyboard */,
+				7D63463C24779DD300049C30 /* LaunchScreen.storyboard */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		7D9A3BEA24B059E700D0F851 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D63463524779DD100049C30 /* HomeScreenViewController.swift */,
+				7D99E2132490EA0000334232 /* MapViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		99D81D5A74AD0F89CE4B7B5D /* Frameworks */ = {
@@ -289,6 +316,7 @@
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
+				7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */,
 				7D99E2142490EA0000334232 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

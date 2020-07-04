@@ -62,17 +62,6 @@ class MapViewController: UIViewController {
     private func initButtons() {
         rentButton.setTitle("Rent an Umbrella", for: .normal)
         backButton.setTitle("Back to Home", for: .normal)
-        
-        rentButton.layer.cornerRadius = 20
-        rentButton.layer.borderWidth = 1
-        rentButton.layer.borderColor = UIColor.black.cgColor
-        rentButton.layer.backgroundColor = UIColor.white.cgColor
-        
-        backButton.layer.cornerRadius = 20
-        backButton.layer.borderWidth = 1
-        backButton.layer.borderColor = UIColor.black.cgColor
-        backButton.layer.backgroundColor = UIColor.white.cgColor
-        
      }
     
     

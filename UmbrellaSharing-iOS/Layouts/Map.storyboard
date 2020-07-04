@@ -18,7 +18,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-2I-yUJ">
                                 <rect key="frame" x="83" y="504" width="208" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="208" id="ZjK-bo-o7S"/>
@@ -28,7 +28,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvy-Rs-Qgo">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvy-Rs-Qgo" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="208" id="ggd-E1-8LY"/>

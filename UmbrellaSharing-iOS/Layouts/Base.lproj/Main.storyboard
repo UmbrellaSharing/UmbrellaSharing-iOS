@@ -110,7 +110,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-qu-I2S">
                                 <rect key="frame" x="83.5" y="383" width="208" height="160"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax3-I6-Sfd">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax3-I6-Sfd" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ypX-Pg-e0v"/>
@@ -120,7 +120,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buyButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-iS-Nt5">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buyButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-iS-Nt5" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="93O-y8-x5d"/>

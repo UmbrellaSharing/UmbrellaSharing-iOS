@@ -60,17 +60,7 @@ class HomeScreenViewController: UIViewController {
         rentButton.setTitle("Rent an Umbrella", for: .normal)
         buyButton.setTitle("Buy an Umbrella", for: .normal)
         
-        rentButton.layer.cornerRadius = 20
-        rentButton.layer.borderWidth = 1
-        rentButton.layer.borderColor = UIColor.black.cgColor
-        
-        buyButton.layer.cornerRadius = 20
-        buyButton.layer.borderWidth = 1
-        buyButton.layer.borderColor = UIColor.black.cgColor
-        
         checkLocationsButton.setTitle("Check Locations on the Map", for: .normal)
-        // TODO: Set an image for this button
-        rentButton.setTitle("Rent an Umbrella", for: UIControl.State.normal)
     }
 }
 
