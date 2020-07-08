@@ -119,6 +119,9 @@
                                         <state key="normal" title="Rent Button">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rentUmbrella:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WeT-z5-zag"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buyButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-iS-Nt5" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="208" height="40"/>
@@ -129,6 +132,9 @@
                                         <state key="normal" title="Buy Button">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buyUmbrella:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZb-Q0-AMM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="checkLocationsButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-Zo-O5c">
                                         <rect key="frame" x="0.0" y="120" width="208" height="40"/>

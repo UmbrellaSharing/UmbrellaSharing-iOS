@@ -1,47 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Payment Screen View Controller-->
         <scene sceneID="sFO-ai-7Dv">
             <objects>
-                <viewController id="7Aa-5i-mkY" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pP-tc-UOQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9x-lu-UoT">
-                                <rect key="frame" x="20" y="269" width="374" height="268"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmaton" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
+                                <rect key="frame" x="25" y="45" width="324" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6wc-Da-irD" secondAttribute="height" multiplier="162:19" id="S1h-ct-Z5V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTe-j6-Efa">
+                                <rect key="frame" x="25" y="82" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7">
-                                <rect key="frame" x="85" y="673" width="244" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
-                                <rect key="frame" x="20" y="182" width="374" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
+                                <rect key="frame" x="21" y="114" width="333" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="333" id="sI1-kl-m8V"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-aP-V2y">
+                                <rect key="frame" x="83" y="483" width="208" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="208" id="kxU-3n-Cjg"/>
+                                            <constraint firstAttribute="height" constant="40" id="pjw-EU-cm0"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="PressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="6eT-uI-j6F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="208" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7zb-4e-TmD"/>
+                                            <constraint firstAttribute="width" constant="208" id="iv5-ZM-b9e"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="back:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="u3F-6a-PYB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="6wc-Da-irD" secondAttribute="trailing" constant="26" id="3wp-VQ-i9O"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="jVb-aP-V2y" secondAttribute="trailing" constant="84" id="49m-F8-epl"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="top" secondItem="2Ed-9L-meC" secondAttribute="top" constant="45" id="EfN-AS-jO1"/>
+                            <constraint firstItem="eZs-4r-9C5" firstAttribute="top" secondItem="6wc-Da-irD" secondAttribute="bottom" constant="31" id="JeL-2t-k7n"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="bottom" secondItem="jVb-aP-V2y" secondAttribute="bottom" constant="84" id="UX8-by-UJB"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="eZs-4r-9C5" secondAttribute="trailing" constant="21" id="Wcs-fK-uaP"/>
+                            <constraint firstItem="jVb-aP-V2y" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="83" id="cKZ-cP-zmT"/>
+                            <constraint firstItem="eZs-4r-9C5" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="21" id="gnk-RQ-RYj"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="25" id="wcU-Re-S4Z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Ed-9L-meC"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="XLK-f2-zQW" id="nv2-Xm-0fr"/>
+                        <outlet property="continueButton" destination="jQs-nk-hq7" id="riH-wx-nAJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9b-LG-FiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144.92753623188406" y="85.714285714285708"/>
+            <point key="canvasLocation" x="144.80000000000001" y="85.007496251874073"/>
         </scene>
     </scenes>
 </document>

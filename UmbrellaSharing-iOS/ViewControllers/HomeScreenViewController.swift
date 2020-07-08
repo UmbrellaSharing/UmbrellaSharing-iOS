@@ -32,6 +32,24 @@ class HomeScreenViewController: UIViewController {
         initInterface()
     }
     
+    
+    private func formOrderAndProceed() {
+        // TODO: Here should be an order but for now it will be just opening another screen
+        let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func rentUmbrella(_ sender: Any) {
+        formOrderAndProceed()
+    }
+    
+    @IBAction func buyUmbrella(_ sender: Any) {
+        formOrderAndProceed()
+    }
+    
+    
     @IBAction func checkLocations(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
