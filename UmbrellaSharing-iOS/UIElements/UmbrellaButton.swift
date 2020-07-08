@@ -26,5 +26,6 @@ class UmbrellaButton: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
         layer.backgroundColor = UIColor.white.cgColor
+        self.setTitleColor(.black, for: .normal)
     }
 }
