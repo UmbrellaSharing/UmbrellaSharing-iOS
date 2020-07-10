@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code Screen View Controller-->
+        <scene sceneID="LGb-xL-VOo">
+            <objects>
+                <viewController restorationIdentifier="QRCodeScreenViewController" storyboardIdentifier="QRCodeScreenViewController" id="S52-VI-8q2" customClass="QRCodeScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gxb-Py-Rar">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show the QR Code to the Operator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-2v-qUP">
+                                <rect key="frame" x="62" y="98" width="250" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="gxx-76-MBr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FVS-fh-Px3">
+                                <rect key="frame" x="62" y="226" width="250" height="250"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-za-IpD">
+                                <rect key="frame" x="83" y="507" width="208" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-75-CLa" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="208" id="Tq3-Sj-J3F"/>
+                                            <constraint firstAttribute="height" constant="40" id="Tyf-4y-7zU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="pressContinue:" destination="S52-VI-8q2" eventType="touchUpInside" id="uXZ-0U-QQe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5E-yr-zVo" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="208" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Pcr-Py-xUC"/>
+                                            <constraint firstAttribute="width" constant="208" id="mUO-CF-Owe"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="back:" destination="S52-VI-8q2" eventType="touchUpInside" id="ZTz-Cg-fZ3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="62" id="0wA-20-q82"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" constant="63" id="2pL-iI-HXK"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="width" secondItem="i1N-2v-qUP" secondAttribute="width" id="6d5-V6-bGs"/>
+                            <constraint firstItem="utn-75-CLa" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="83" id="OQG-dp-hjD"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="40" id="eB5-Kg-SQY"/>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="top" secondItem="k3y-4W-2Ao" secondAttribute="top" constant="98" id="izz-gd-4Fr"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="leading" secondItem="i1N-2v-qUP" secondAttribute="leading" id="kuW-Uc-0ks"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="bottom" secondItem="J5E-yr-zVo" secondAttribute="bottom" constant="60" id="liV-Bf-d54"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" id="qua-7P-gFA"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="height" secondItem="i1N-2v-qUP" secondAttribute="height" multiplier="2.84091" id="ual-rE-bUO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k3y-4W-2Ao"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="J5E-yr-zVo" id="cdY-Je-LKO"/>
+                        <outlet property="continueButton" destination="utn-75-CLa" id="VkC-Cm-z03"/>
+                        <outlet property="qrCodeImageView" destination="FVS-fh-Px3" id="cgj-3T-VQl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G29-7b-axO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="81.409295352323838"/>
+        </scene>
+    </scenes>
+</document>

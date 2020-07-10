@@ -52,7 +52,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="PressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="6eT-uI-j6F"/>
+                                            <action selector="pressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="KuQ-CJ-bec"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">

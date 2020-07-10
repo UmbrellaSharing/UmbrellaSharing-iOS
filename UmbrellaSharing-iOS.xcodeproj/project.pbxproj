@@ -20,6 +20,8 @@
 		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
 		7D99E2162490EA4C00334232 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2152490EA4C00334232 /* Map.storyboard */; };
 		7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */; };
+		7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */; };
+		7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */; };
 		7DE18A0C24B361A5003649EE /* PaymentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		7D99E2132490EA0000334232 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D99E2152490EA4C00334232 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaButton.swift; sourceTree = "<group>"; };
+		7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeScreen.storyboard; sourceTree = "<group>"; };
+		7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScreenViewController.swift; sourceTree = "<group>"; };
 		7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentScreen.storyboard; sourceTree = "<group>"; };
 		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +138,7 @@
 				7D63463724779DD100049C30 /* Main.storyboard */,
 				7D99E2152490EA4C00334232 /* Map.storyboard */,
 				7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */,
+				7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				7D63463524779DD100049C30 /* HomeScreenViewController.swift */,
 				7D99E2132490EA0000334232 /* MapViewController.swift */,
 				7D85A21F24B5DDDB00E9CFFB /* PaymentScreenViewController.swift */,
+				7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				7D63463E24779DD300049C30 /* LaunchScreen.storyboard in Resources */,
 				7DE18A0C24B361A5003649EE /* PaymentScreen.storyboard in Resources */,
 				7D63463B24779DD300049C30 /* Assets.xcassets in Resources */,
+				7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */,
 				7D99E2162490EA4C00334232 /* Map.storyboard in Resources */,
 				7D99E2122490DF9A00334232 /* Podfile in Resources */,
 				7D63463924779DD100049C30 /* Main.storyboard in Resources */,
@@ -322,6 +329,7 @@
 			files = (
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
+				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
 				7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */,
 				7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */,
