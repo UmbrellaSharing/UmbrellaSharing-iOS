@@ -14,7 +14,6 @@
 		7D63463B24779DD300049C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463A24779DD300049C30 /* Assets.xcassets */; };
 		7D63463E24779DD300049C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463C24779DD300049C30 /* LaunchScreen.storyboard */; };
 		7D63464924779DD300049C30 /* UmbrellaSharing_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63464824779DD300049C30 /* UmbrellaSharing_iOSTests.swift */; };
-		7D7C6C6A3918F61F7D89689D /* libPods-UmbrellaSharing-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EDEB62641B8B4FD7D8A63B /* libPods-UmbrellaSharing-iOS.a */; };
 		7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85A21F24B5DDDB00E9CFFB /* PaymentScreenViewController.swift */; };
 		7D99E2122490DF9A00334232 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2112490DF9900334232 /* Podfile */; };
 		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
@@ -23,6 +22,9 @@
 		7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */; };
 		7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */; };
 		7DE18A0C24B361A5003649EE /* PaymentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */; };
+		7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378F824B95438001D1BD8 /* OrderInformation.swift */; };
+		7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */; };
+		EED7666447CD190F18AE8977 /* Pods_UmbrellaSharing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16EDEB62641B8B4FD7D8A63B /* libPods-UmbrellaSharing-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UmbrellaSharing-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647AE89D4145F5B3AD6AAE41 /* Pods-UmbrellaSharing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaSharing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63462E24779DD100049C30 /* UmbrellaSharing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UmbrellaSharing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63463124779DD100049C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D63463324779DD100049C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeScreen.storyboard; sourceTree = "<group>"; };
 		7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScreenViewController.swift; sourceTree = "<group>"; };
 		7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentScreen.storyboard; sourceTree = "<group>"; };
+		7DF378F824B95438001D1BD8 /* OrderInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformation.swift; sourceTree = "<group>"; };
+		7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7C6C6A3918F61F7D89689D /* libPods-UmbrellaSharing-iOS.a in Frameworks */,
+				EED7666447CD190F18AE8977 /* Pods_UmbrellaSharing_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +107,8 @@
 		7D63463024779DD100049C30 /* UmbrellaSharing-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7DF378FA24B956C9001D1BD8 /* ViewModels */,
+				7DF378F724B9540C001D1BD8 /* DataTransferObjects */,
 				7D9A3BEA24B059E700D0F851 /* ViewControllers */,
 				7D9A3BE924B059B500D0F851 /* Layouts */,
 				7D9A3BE624B0537900D0F851 /* UIElements */,
@@ -154,10 +160,26 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		7DF378F724B9540C001D1BD8 /* DataTransferObjects */ = {
+			isa = PBXGroup;
+			children = (
+				7DF378F824B95438001D1BD8 /* OrderInformation.swift */,
+			);
+			path = DataTransferObjects;
+			sourceTree = "<group>";
+		};
+		7DF378FA24B956C9001D1BD8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		99D81D5A74AD0F89CE4B7B5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16EDEB62641B8B4FD7D8A63B /* libPods-UmbrellaSharing-iOS.a */,
+				6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,6 +205,7 @@
 				7D63462B24779DD100049C30 /* Frameworks */,
 				7D63462C24779DD100049C30 /* Resources */,
 				AE5AC13A356AAA093516A7D7 /* [CP] Copy Pods Resources */,
+				54EBCB8EC25F361901F6B7A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +297,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		54EBCB8EC25F361901F6B7A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5A5AE45D74097BC6AF02F6FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +375,8 @@
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
 				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
+				7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */,
+				7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
 				7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */,
 				7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */,

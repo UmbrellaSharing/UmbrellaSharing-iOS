@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+
+class OrderInformation {
+    
+    let userId: Int?
+    
+    init(userId: Int?){
+        self.userId = userId
+    }
+    
+}

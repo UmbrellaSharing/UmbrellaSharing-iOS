@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 
 class PaymentScreenViewController: UIViewController {
-    
+    // TODO: Make all needed func private
     
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
+    private let paymentViewModel = PaymentViewModel()
     
-    // TODO: Make all needed func private
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
