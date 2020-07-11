@@ -17,10 +17,9 @@ class PaymentScreenViewController: UIViewController {
     
     private let paymentViewModel = PaymentViewModel()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        paymentViewModel.load()
         initView()
     }
     
@@ -29,8 +28,6 @@ class PaymentScreenViewController: UIViewController {
         backButton.setTitle("Go Back", for: .normal)
     }
     
-    
-  
     @IBAction func pressContinue(_ sender: Any) {
         print("POC pressed Continue")
         // TODO: First we need to check all payments and if everthing is fine move to another screen
@@ -38,15 +35,11 @@ class PaymentScreenViewController: UIViewController {
     }
     
     private func openQRCodeScreen() {
-        print("POC pressed Continue - 1")
         let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
-        print("POC pressed Continue -2 ")
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
-        print("POC pressed Continue - 3")
         newViewController.modalPresentationStyle = .fullScreen
-        print("POC pressed Continue - 4")
+        newViewController.orderInformation = paymentViewModel.orderInformatoin
         self.present(newViewController, animated: true, completion: nil)
-        print("POC pressed Continue - 5")
     }
     
     @IBAction func back(_ sender: Any) {

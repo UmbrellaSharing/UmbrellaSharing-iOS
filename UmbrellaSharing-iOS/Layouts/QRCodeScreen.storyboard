@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FVS-fh-Px3">
-                                <rect key="frame" x="62" y="226" width="250" height="250"/>
+                                <rect key="frame" x="62" y="211" width="250" height="250"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-za-IpD">
                                 <rect key="frame" x="83" y="507" width="208" height="100"/>
@@ -61,7 +61,7 @@
                             <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" constant="63" id="2pL-iI-HXK"/>
                             <constraint firstItem="FVS-fh-Px3" firstAttribute="width" secondItem="i1N-2v-qUP" secondAttribute="width" id="6d5-V6-bGs"/>
                             <constraint firstItem="utn-75-CLa" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="83" id="OQG-dp-hjD"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="40" id="eB5-Kg-SQY"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="25" id="eB5-Kg-SQY"/>
                             <constraint firstItem="i1N-2v-qUP" firstAttribute="top" secondItem="k3y-4W-2Ao" secondAttribute="top" constant="98" id="izz-gd-4Fr"/>
                             <constraint firstItem="FVS-fh-Px3" firstAttribute="leading" secondItem="i1N-2v-qUP" secondAttribute="leading" id="kuW-Uc-0ks"/>
                             <constraint firstItem="k3y-4W-2Ao" firstAttribute="bottom" secondItem="J5E-yr-zVo" secondAttribute="bottom" constant="60" id="liV-Bf-d54"/>
