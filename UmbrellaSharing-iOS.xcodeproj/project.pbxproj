@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D05A95824BC860E006B759D /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05A95724BC860E006B759D /* QRViewModel.swift */; };
+		7D05A95B24BC8AFA006B759D /* UmbrellaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05A95A24BC8AFA006B759D /* UmbrellaUtil.swift */; };
 		7D63463224779DD100049C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463124779DD100049C30 /* AppDelegate.swift */; };
 		7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463324779DD100049C30 /* SceneDelegate.swift */; };
 		7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63463524779DD100049C30 /* HomeScreenViewController.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		647AE89D4145F5B3AD6AAE41 /* Pods-UmbrellaSharing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaSharing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D05A95724BC860E006B759D /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
+		7D05A95A24BC8AFA006B759D /* UmbrellaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaUtil.swift; sourceTree = "<group>"; };
 		7D63462E24779DD100049C30 /* UmbrellaSharing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UmbrellaSharing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63463124779DD100049C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D63463324779DD100049C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D05A95924BC8AEA006B759D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7D05A95A24BC8AFA006B759D /* UmbrellaUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		7D63462524779DD100049C30 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 		7D63463024779DD100049C30 /* UmbrellaSharing-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7D05A95924BC8AEA006B759D /* Util */,
 				7DCD660F24B9A62600094E36 /* Entities */,
 				7DF378FA24B956C9001D1BD8 /* ViewModels */,
 				7DF378F724B9540C001D1BD8 /* DataTransferObjects */,
@@ -183,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */,
+				7D05A95724BC860E006B759D /* QRViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -390,8 +404,10 @@
 				7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */,
 				7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
+				7D05A95B24BC8AFA006B759D /* UmbrellaUtil.swift in Sources */,
 				7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */,
 				7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */,
+				7D05A95824BC860E006B759D /* QRViewModel.swift in Sources */,
 				7D99E2142490EA0000334232 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
