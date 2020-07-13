@@ -16,6 +16,7 @@ class PaymentScreenViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     private let paymentViewModel = PaymentViewModel()
+    var operationType: UmbrellaUtil.OperationType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +30,20 @@ class PaymentScreenViewController: UIViewController {
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        print("POC pressed Continue")
         // TODO: First we need to check all payments and if everthing is fine move to another screen
         openQRCodeScreen()
     }
     
     private func openQRCodeScreen() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
-        newViewController.modalPresentationStyle = .fullScreen
-        newViewController.orderInformation = paymentViewModel.orderInformatoin
-        self.present(newViewController, animated: true, completion: nil)
+        if let operationType = operationType {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
+            newViewController.modalPresentationStyle = .fullScreen
+            newViewController.orderInformation = paymentViewModel.orderInformatoin
+            newViewController.operationType = operationType
+            self.present(newViewController, animated: true, completion: nil)
+        }
+        
     }
     
     @IBAction func back(_ sender: Any) {

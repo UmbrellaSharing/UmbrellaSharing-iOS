@@ -33,20 +33,21 @@ class HomeScreenViewController: UIViewController {
     }
     
     
-    private func formOrderAndProceed() {
+    private func formOrderAndProceed(_ operationType: UmbrellaUtil.OperationType) {
         // TODO: Here should be an order but for now it will be just opening another screen
         let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
+        newViewController.operationType = operationType
         self.present(newViewController, animated: true, completion: nil)
     }
     
     @IBAction func rentUmbrella(_ sender: Any) {
-        formOrderAndProceed()
+        formOrderAndProceed(UmbrellaUtil.OperationType.rentUmbrella)
     }
     
     @IBAction func buyUmbrella(_ sender: Any) {
-        formOrderAndProceed()
+        formOrderAndProceed(UmbrellaUtil.OperationType.buyUmbrella)
     }
     
     

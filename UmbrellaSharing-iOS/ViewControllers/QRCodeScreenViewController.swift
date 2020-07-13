@@ -10,23 +10,22 @@ import Foundation
 import UIKit
 
 class QRCodeScreenViewController: UIViewController {
+    // TODO: Comments
+    // TODO: Exctract all logic to view model
     
     @IBOutlet weak var continueButton: UmbrellaButton!
     @IBOutlet weak var backButton: UmbrellaButton!
     @IBOutlet weak var qrCodeImageView: UIImageView!
     
+    let qrViewModel = QRViewModel()
+    
+    // TODO: For now: 1 – buy, 2- rent, 3 – return
+    var operationType: UmbrellaUtil.OperationType?
     var orderInformation: OrderInformation?
     
     override func viewDidLoad() {
         // TODO: We need to store qr code somewhere
-        // TODO: We need to init qr code
         super.viewDidLoad()
-        
-        if let orderInformation = orderInformation {
-            
-            print("POC from QR screen \(orderInformation)")
-        }
-        
         initView()
     }
     
@@ -43,7 +42,14 @@ class QRCodeScreenViewController: UIViewController {
     
     @IBAction func pressContinue(_ sender: Any) {
         // We can't just press - we need to check if the operation was sumbitted
-        print("POC - pressed")
+        if let orderInformation = orderInformation, let orderId = orderInformation.orderId, let operationType = operationType {
+            if (qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)) {
+                // TODO: We need to add switch for all three cases of coming to this screen (buy,rent,return)
+                openHomeScreen()
+            } else {
+                // TODO: Show the notification that QR need to be scanned
+            }
+        }
     }
     
     @IBAction func back(_ sender: Any) {
@@ -63,6 +69,14 @@ class QRCodeScreenViewController: UIViewController {
             }
         }
         return nil
+    }
+    
+    private func openHomeScreen() {
+        print("POC - openHomeScreen")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
 
     

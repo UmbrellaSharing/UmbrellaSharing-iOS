@@ -25,6 +25,7 @@ class PaymentViewModel {
     
     func load() {
         // TODO: Make this screen doesn't load until we get this information
+        // TODO: Save this id in the phone memory and check if we have it before add new user
         fetchUserId().then { [weak self] userId -> Promise<OrderEntity> in
             // TODO: Here we should change later the source of isBuy var
             guard let self = self else { return brokenPromise() }
