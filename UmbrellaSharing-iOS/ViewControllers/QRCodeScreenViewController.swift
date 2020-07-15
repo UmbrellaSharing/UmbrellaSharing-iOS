@@ -41,11 +41,17 @@ class QRCodeScreenViewController: UIViewController {
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // We can't just press - we need to check if the operation was sumbitted
+        // TODO: We can't just press - we need to check if the operation was sumbitted
         if let orderInformation = orderInformation, let orderId = orderInformation.orderId, let operationType = operationType {
             if (qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)) {
-                // TODO: We need to add switch for all three cases of coming to this screen (buy,rent,return)
-                openHomeScreen()
+                switch operationType {
+                case .buyUmbrella:
+                    openHomeScreen()
+                case.rentUmbrella:
+                    openMapScreen()
+                case.returnUmbrella:
+                    print("Return")
+                }
             } else {
                 // TODO: Show the notification that QR need to be scanned
             }
@@ -78,7 +84,12 @@ class QRCodeScreenViewController: UIViewController {
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: true, completion: nil)
     }
-
     
-    
+    private func openMapScreen() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.mapMode = UmbrellaUtil.MapMode.rentalMode
+        self.present(newViewController, animated: true, completion: nil)
+    }
 }

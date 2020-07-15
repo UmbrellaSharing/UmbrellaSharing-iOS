@@ -10,6 +10,7 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
+    // TODO: On all screens rename newViewController for the going to another screen methods
     // TODO: Think do we really need all of those params here? Just occupy a lot of space
     @IBOutlet weak var rentPriceHeaderLabel: UILabel!
     @IBOutlet weak var firstOptionRentLabel: UILabel!
@@ -55,6 +56,7 @@ class HomeScreenViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         newViewController.modalPresentationStyle = .fullScreen
+        newViewController.mapMode = UmbrellaUtil.MapMode.locationsMode
         self.present(newViewController, animated: true, completion: nil)
     }
     

@@ -12,11 +12,14 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
-    
     @IBOutlet weak var rentButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
+    
+    // TODO Implement stopwatches with a price that changes
     
     var mapView: GMSMapView?
+    var mapMode: UmbrellaUtil.MapMode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,14 @@ class MapViewController: UIViewController {
         initButtons()
         initMap()
         initMarkers(mapView!)
+        initCounter()
+    }
+    
+    private func initCounter() {
+        timeAndPriceLabel.isHidden = true
+        if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
+            timeAndPriceLabel.isHidden = false
+        }
     }
     
     private func initMap() {
@@ -60,9 +71,17 @@ class MapViewController: UIViewController {
     }
     
     private func initButtons() {
-        rentButton.setTitle("Rent an Umbrella", for: .normal)
-        backButton.setTitle("Back to Home", for: .normal)
-     }
+        if let mapMode = mapMode {
+            switch mapMode {
+            case .locationsMode:
+                rentButton.setTitle("Rent an Umbrella", for: .normal)
+                backButton.setTitle("Back to Home", for: .normal)
+            case .rentalMode:
+                rentButton.setTitle("Return an Umbrella", for: .normal)
+                backButton.isHidden = true
+            }
+        }
+    }
     
     
     @IBAction func backToHome(_ sender: Any) {

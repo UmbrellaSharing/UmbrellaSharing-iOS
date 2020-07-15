@@ -16,6 +16,7 @@
 		7D63463B24779DD300049C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463A24779DD300049C30 /* Assets.xcassets */; };
 		7D63463E24779DD300049C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D63463C24779DD300049C30 /* LaunchScreen.storyboard */; };
 		7D63464924779DD300049C30 /* UmbrellaSharing_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63464824779DD300049C30 /* UmbrellaSharing_iOSTests.swift */; };
+		7D7DDA9B24BF37100016DAAA /* MapCounterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DDA9A24BF37100016DAAA /* MapCounterLabel.swift */; };
 		7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85A21F24B5DDDB00E9CFFB /* PaymentScreenViewController.swift */; };
 		7D99E2122490DF9A00334232 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2112490DF9900334232 /* Podfile */; };
 		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
@@ -56,6 +57,7 @@
 		7D63464424779DD300049C30 /* UmbrellaSharing-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UmbrellaSharing-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63464824779DD300049C30 /* UmbrellaSharing_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaSharing_iOSTests.swift; sourceTree = "<group>"; };
 		7D63464A24779DD400049C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D7DDA9A24BF37100016DAAA /* MapCounterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCounterLabel.swift; sourceTree = "<group>"; };
 		7D85A21F24B5DDDB00E9CFFB /* PaymentScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScreenViewController.swift; sourceTree = "<group>"; };
 		7D99E2112490DF9900334232 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D99E2132490EA0000334232 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */,
+				7D7DDA9A24BF37100016DAAA /* MapCounterLabel.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
 				7D05A95B24BC8AFA006B759D /* UmbrellaUtil.swift in Sources */,
+				7D7DDA9B24BF37100016DAAA /* MapCounterLabel.swift in Sources */,
 				7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */,
 				7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */,
 				7D05A95824BC860E006B759D /* QRViewModel.swift in Sources */,

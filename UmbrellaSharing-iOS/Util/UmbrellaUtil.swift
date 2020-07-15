@@ -15,4 +15,9 @@ class UmbrellaUtil {
         case rentUmbrella
         case returnUmbrella
     }
+    
+    enum MapMode {
+        case locationsMode
+        case rentalMode
+    }
 }

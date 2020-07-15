@@ -43,11 +43,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time and Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Ab-CBy" customClass="MapCounterLabel" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                <rect key="frame" x="83.5" y="61" width="208" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tNw-So-D8F"/>
+                                    <constraint firstAttribute="width" constant="208" id="ylS-7o-1j2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="iAw-Ab-CBy" firstAttribute="centerX" secondItem="9g5-bc-9T0" secondAttribute="centerX" id="8wA-4q-zxV"/>
                             <constraint firstItem="9g5-bc-9T0" firstAttribute="bottom" secondItem="Gik-2I-yUJ" secondAttribute="bottom" constant="63" id="GOh-Ww-kE3"/>
                             <constraint firstItem="Gik-2I-yUJ" firstAttribute="leading" secondItem="9g5-bc-9T0" secondAttribute="leading" constant="83" id="MYR-Iz-b1L"/>
+                            <constraint firstItem="iAw-Ab-CBy" firstAttribute="top" secondItem="9g5-bc-9T0" secondAttribute="top" constant="61" id="NS6-Zs-kGh"/>
                             <constraint firstItem="9g5-bc-9T0" firstAttribute="trailing" secondItem="Gik-2I-yUJ" secondAttribute="trailing" constant="84" id="nbJ-zx-ZXo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9g5-bc-9T0"/>
@@ -55,6 +67,7 @@
                     <connections>
                         <outlet property="backButton" destination="Uvy-Rs-Qgo" id="GAS-Ph-Z2l"/>
                         <outlet property="rentButton" destination="ilu-dg-Dce" id="fao-b2-U9T"/>
+                        <outlet property="timeAndPriceLabel" destination="iAw-Ab-CBy" id="iDg-Iu-3RX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSH-cS-R6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
