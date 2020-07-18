@@ -12,16 +12,26 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
-    @IBOutlet weak var rentButton: UIButton!
+//    @IBOutlet weak var proceedButton: UmbrellaButton!
+    
+    
+    @IBOutlet weak var proceedButton: UmbrellaButton!
+    
+    
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
     
     // TODO Implement stopwatches with a price that changes
+    // How to do stopwatches: https://www.youtube.com/watch?v=lx3EMAs924w
     
     var mapView: GMSMapView?
     var mapMode: UmbrellaUtil.MapMode?
     
+    var orderInformation: OrderInformation?
+    
     override func viewDidLoad() {
+        print("POC init")
         super.viewDidLoad()
         initView()
     }
@@ -74,15 +84,39 @@ class MapViewController: UIViewController {
         if let mapMode = mapMode {
             switch mapMode {
             case .locationsMode:
-                rentButton.setTitle("Rent an Umbrella", for: .normal)
-                backButton.setTitle("Back to Home", for: .normal)
+                proceedButton.setTitle("Rent an Umbrella", for: .normal)
+                proceedButton.setTitle("Back to Home", for: .normal)
             case .rentalMode:
-                rentButton.setTitle("Return an Umbrella", for: .normal)
+                proceedButton.setTitle("Return an Umbrella", for: .normal)
                 backButton.isHidden = true
             }
         }
     }
     
+    @IBAction func `continue`(_ sender: Any) {
+        if let mapMode = mapMode {
+            switch mapMode {
+            case .locationsMode:
+                // TODO: Ask if we need actually to send a user for the next screen
+                print("Locations Mode")
+            case .rentalMode:
+                openQRScreenToReturnUmbrella()
+                print("Rental mode")
+            }
+        }
+    }
+    
+    private func openQRScreenToReturnUmbrella() {
+        // TODO: Think better about which kind of orderInformation we should pass here and what kind of QR should be generated there
+        let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        if let orderInformation = orderInformation {
+            newViewController.orderInformation = orderInformation
+        }
+        newViewController.operationType = UmbrellaUtil.OperationType.returnUmbrella
+        self.present(newViewController, animated: true, completion: nil)
+    }
     
     @IBAction func backToHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)

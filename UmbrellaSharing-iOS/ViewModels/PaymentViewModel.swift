@@ -15,6 +15,12 @@ class PaymentViewModel {
     // TODO: Exctract all api requests to the common file
     // TODO This class has to load all information
     
+    // Usefull links for making URL sessions. Please use them while working on this class
+    // https://learnappmaking.com/urlsession-swift-networking-how-to/
+    // https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
+    // https://www.raywenderlich.com/9208-getting-started-with-promisekit
+    
+    
     
     private let URLBase: String = "https://us.2ssupport.ru/"
     

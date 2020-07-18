@@ -19,7 +19,6 @@ class QRCodeScreenViewController: UIViewController {
     
     let qrViewModel = QRViewModel()
     
-    // TODO: For now: 1 – buy, 2- rent, 3 – return
     var operationType: UmbrellaUtil.OperationType?
     var orderInformation: OrderInformation?
     
@@ -50,7 +49,7 @@ class QRCodeScreenViewController: UIViewController {
                 case.rentUmbrella:
                     openMapScreen()
                 case.returnUmbrella:
-                    print("Return")
+                    openFeedbackScreen()
                 }
             } else {
                 // TODO: Show the notification that QR need to be scanned
@@ -78,7 +77,6 @@ class QRCodeScreenViewController: UIViewController {
     }
     
     private func openHomeScreen() {
-        print("POC - openHomeScreen")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
@@ -90,6 +88,14 @@ class QRCodeScreenViewController: UIViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         newViewController.modalPresentationStyle = .fullScreen
         newViewController.mapMode = UmbrellaUtil.MapMode.rentalMode
+        newViewController.orderInformation = orderInformation
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    private func openFeedbackScreen() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "FeedbackScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "FeedbackScreenViewController") as! FeedbackScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: true, completion: nil)
     }
 }

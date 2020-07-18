@@ -18,15 +18,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-2I-yUJ">
                                 <rect key="frame" x="83" y="504" width="208" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="proceedButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="208" id="ZjK-bo-o7S"/>
                                             <constraint firstAttribute="height" constant="40" id="fW5-NO-JfS"/>
                                         </constraints>
-                                        <state key="normal" title="Rent Button">
+                                        <state key="normal" title="Proceed Button">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="continue:" destination="rVy-LD-VSZ" eventType="touchUpInside" id="4pU-dp-PTG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvy-Rs-Qgo" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="208" height="40"/>
@@ -66,7 +69,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Uvy-Rs-Qgo" id="GAS-Ph-Z2l"/>
-                        <outlet property="rentButton" destination="ilu-dg-Dce" id="fao-b2-U9T"/>
+                        <outlet property="proceedButton" destination="ilu-dg-Dce" id="FKq-Bs-sRs"/>
                         <outlet property="timeAndPriceLabel" destination="iAw-Ab-CBy" id="iDg-Iu-3RX"/>
                     </connections>
                 </viewController>
