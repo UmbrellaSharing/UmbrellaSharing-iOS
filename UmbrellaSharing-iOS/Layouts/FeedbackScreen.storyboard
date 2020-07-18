@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feedback Screen View Controller-->
+        <scene sceneID="MDE-Kz-1VW">
+            <objects>
+                <viewController restorationIdentifier="FeedbackScreenViewController" storyboardIdentifier="FeedbackScreenViewController" id="48S-J0-y3M" customClass="FeedbackScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NeQ-nI-G1E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please, write the comment here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9g-87-oRC">
+                                <rect key="frame" x="61.5" y="281" width="252" height="104"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="0QG-u8-B20"/>
+                                    <constraint firstAttribute="height" constant="104" id="a4L-14-2Be"/>
+                                </constraints>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-T1-iKt" customClass="RatingControl" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                <rect key="frame" x="61.5" y="191" width="252" height="44"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Was the Service?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epR-eE-y33">
+                                <rect key="frame" x="61.5" y="108" width="252" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="8ex-nb-isr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-09-LUk" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                <rect key="frame" x="83.5" y="451" width="208" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="EOx-GC-9UC"/>
+                                    <constraint firstAttribute="height" constant="40" id="haf-G6-g3i"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="48S-J0-y3M" eventType="touchUpInside" id="Ymz-Wd-khA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="epR-eE-y33" firstAttribute="centerX" secondItem="RBZ-Kr-gix" secondAttribute="centerX" id="7fa-YO-pPg"/>
+                            <constraint firstItem="iEl-T1-iKt" firstAttribute="centerX" secondItem="epR-eE-y33" secondAttribute="centerX" id="9Ez-6A-0gA"/>
+                            <constraint firstItem="Smf-09-LUk" firstAttribute="centerX" secondItem="RBZ-Kr-gix" secondAttribute="centerX" id="BFy-f2-gQr"/>
+                            <constraint firstItem="epR-eE-y33" firstAttribute="top" secondItem="RBZ-Kr-gix" secondAttribute="top" constant="108" id="qCx-v3-FHb"/>
+                            <constraint firstItem="iEl-T1-iKt" firstAttribute="top" secondItem="epR-eE-y33" secondAttribute="bottom" constant="56.5" id="tvy-yd-sD2"/>
+                            <constraint firstItem="RBZ-Kr-gix" firstAttribute="bottom" secondItem="Smf-09-LUk" secondAttribute="bottom" constant="176" id="xQh-rK-nRI"/>
+                            <constraint firstItem="y9g-87-oRC" firstAttribute="top" secondItem="iEl-T1-iKt" secondAttribute="bottom" constant="46" id="xyp-w6-JMV"/>
+                            <constraint firstItem="y9g-87-oRC" firstAttribute="centerX" secondItem="iEl-T1-iKt" secondAttribute="centerX" id="yha-ye-uYY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RBZ-Kr-gix"/>
+                    </view>
+                    <connections>
+                        <outlet property="comment" destination="y9g-87-oRC" id="IC7-ar-tpW"/>
+                        <outlet property="ratingControl" destination="iEl-T1-iKt" id="YyA-sc-bp0"/>
+                        <outlet property="submitButton" destination="Smf-09-LUk" id="i4X-vD-nfV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUz-C7-LXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178.40000000000001" y="173.16341829085459"/>
+        </scene>
+    </scenes>
+</document>
