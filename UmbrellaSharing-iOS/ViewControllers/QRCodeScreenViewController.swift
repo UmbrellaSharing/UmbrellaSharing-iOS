@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class QRCodeScreenViewController: UIViewController {
-    // TODO: Comments
-    // TODO: Exctract all logic to view model
     
     @IBOutlet weak var continueButton: UmbrellaButton!
     @IBOutlet weak var backButton: UmbrellaButton!
@@ -23,7 +21,7 @@ class QRCodeScreenViewController: UIViewController {
     var orderInformation: OrderInformation?
     
     override func viewDidLoad() {
-        // TODO: We need to store qr code somewhere
+        // TODO: Level 1 - We need to store qr code somewhere
         super.viewDidLoad()
         initView()
     }
@@ -40,7 +38,7 @@ class QRCodeScreenViewController: UIViewController {
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // TODO: We can't just press - we need to check if the operation was sumbitted
+        // TODO: Level 1 - We can't just press - we need to check if the operation was sumbitted
         if let orderInformation = orderInformation, let orderId = orderInformation.orderId, let operationType = operationType {
             if (qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)) {
                 switch operationType {
@@ -52,7 +50,7 @@ class QRCodeScreenViewController: UIViewController {
                     openFeedbackScreen()
                 }
             } else {
-                // TODO: Show the notification that QR need to be scanned
+                // TODO: Level 1 - Show the notification that QR need to be scanned
             }
         }
     }
@@ -61,7 +59,7 @@ class QRCodeScreenViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // TODO: Understand what does it mean
+    // TODO: Level 2 - Understand what does it mean
     func generateQRCode(from string: String) -> UIImage? {
         let data = string.data(using: String.Encoding.ascii)
 

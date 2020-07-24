@@ -23,7 +23,7 @@ class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
     
     
     @IBAction func submit(_ sender: Any) {
-        // TODO: Insert here the API call for the server side and send rating and comment
+        // TODO: Level 2 - Insert here the API call for the server side and send rating and comment
         openHomeScreen()
     }
     

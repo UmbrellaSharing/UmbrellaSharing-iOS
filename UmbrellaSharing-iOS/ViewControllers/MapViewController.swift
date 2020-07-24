@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
     
-    // TODO Implement stopwatches with a price that changes
+    // TODO: Level 1 - Implement stopwatches with a price that changes
     // How to do stopwatches: https://www.youtube.com/watch?v=lx3EMAs924w
     
     var mapView: GMSMapView?
@@ -59,7 +59,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    // TODO: Implement real data initialization
+    // TODO: Level 1 - Implement real data initialization
     private func initMarkers(_ mapView: GMSMapView) {
         let firstMarker = GMSMarker()
         firstMarker.position = CLLocationCoordinate2D(latitude: 55.76, longitude: 37.62)
@@ -97,7 +97,7 @@ class MapViewController: UIViewController {
         if let mapMode = mapMode {
             switch mapMode {
             case .locationsMode:
-                // TODO: Ask if we need actually to send a user for the next screen
+                // TODO: Level 1 - Ask Ilya what shold be done in this case if we need actually to send a user for the next screen
                 print("Locations Mode")
             case .rentalMode:
                 openQRScreenToReturnUmbrella()
@@ -107,7 +107,7 @@ class MapViewController: UIViewController {
     }
     
     private func openQRScreenToReturnUmbrella() {
-        // TODO: Think better about which kind of orderInformation we should pass here and what kind of QR should be generated there
+        // TODO: Level 2 - Think better about which kind of orderInformation we should pass here and what kind of QR should be generated there
         let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
         newViewController.modalPresentationStyle = .fullScreen

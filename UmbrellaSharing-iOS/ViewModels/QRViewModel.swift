@@ -11,7 +11,7 @@ import Foundation
 class QRViewModel {
     
     func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) -> Bool {
-        // TODO: This suppose to call API "/Order/CanGoFurther" - When Iliya fix the API
+        // TODO: Level 2 - This suppose to call API "/Order/CanGoFurther" - When Iliya fix the API
         return true
     }
     

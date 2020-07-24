@@ -10,8 +10,8 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
-    // TODO: On all screens rename newViewController for the going to another screen methods
-    // TODO: Think do we really need all of those params here? Just occupy a lot of space
+    // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
+    // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space
     @IBOutlet weak var rentPriceHeaderLabel: UILabel!
     @IBOutlet weak var firstOptionRentLabel: UILabel!
     @IBOutlet weak var secondOptionRentLabel: UILabel!
@@ -36,7 +36,7 @@ class HomeScreenViewController: UIViewController {
     
     
     private func formOrderAndProceed(_ operationType: UmbrellaUtil.OperationType) {
-        // TODO: Here should be an order but for now it will be just opening another screen
+        // TODO: Level 1 - Here should be an order but for now it will be just opening another screen
         let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
@@ -62,8 +62,8 @@ class HomeScreenViewController: UIViewController {
     }
     
     private func initInterface() {
-        // TODO: Exctract all constant string to the separate file
-        // TODO: Check if all versions of iPhone follow the design
+        // TODO: Level 4 -  Exctract all constant string to the separate file
+        // TODO: Level 3 - Check if all versions of iPhone follow the design
         
         // MARK: Init labels
         

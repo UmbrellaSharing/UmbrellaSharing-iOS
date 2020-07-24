@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class InformationButton: UIButton {
 
-    // TODO: Change the image for the button - too gray.
+    // TODO: Level 4 - Change the image for the button - too gray.
     
     // MARK: Initialization
     
@@ -31,7 +31,7 @@ import UIKit
         let bundle = Bundle(for: type(of: self))
         let informationSign = UIImage(named: "informationSign", in: bundle, compatibleWith: self.traitCollection)
         
-        // TODO: As an addition - we can put the same sign with different color to make small animation here
+        // TODO: Level 4 - As an addition - we can put the same sign with different color to make small animation here
         self.setImage(informationSign, for: .normal)
         
         // Add constraints

@@ -11,16 +11,13 @@ import PromiseKit
 
 class PaymentViewModel {
     
-    // TODO: Make all validatoin and error check inhere
-    // TODO: Exctract all api requests to the common file
-    // TODO This class has to load all information
+    // TODO: Level 3 - Make all validatoin and error check inhere
+    // TODO: Level 2 - Exctract all api requests to the common file
     
     // Usefull links for making URL sessions. Please use them while working on this class
     // https://learnappmaking.com/urlsession-swift-networking-how-to/
     // https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
     // https://www.raywenderlich.com/9208-getting-started-with-promisekit
-    
-    
     
     private let URLBase: String = "https://us.2ssupport.ru/"
     
@@ -30,10 +27,10 @@ class PaymentViewModel {
     var orderInformatoin = OrderInformation()
     
     func load() {
-        // TODO: Make this screen doesn't load until we get this information
-        // TODO: Save this id in the phone memory and check if we have it before add new user
+        // TODO: Level 2 - Make this screen doesn't load until we get this information
+        // TODO: Level 2 - Save this id in the phone memory and check if we have it before add new user
         fetchUserId().then { [weak self] userId -> Promise<OrderEntity> in
-            // TODO: Here we should change later the source of isBuy var
+            // TODO: Level 1 - Here we should change later the source of isBuy var
             guard let self = self else { return brokenPromise() }
             self.orderInformatoin.userId = userId
             return self.fetchQRCodeInformation(userId: userId, isBuy: false)
@@ -172,7 +169,7 @@ class PaymentViewModel {
     
 }
 
-// TODO: Extract in a separate file
+// TODO: Level - 3 Extract in a separate file
 
 func brokenPromise<T>(method: String = #function) -> Promise<T> {
   return Promise<T>() { seal in

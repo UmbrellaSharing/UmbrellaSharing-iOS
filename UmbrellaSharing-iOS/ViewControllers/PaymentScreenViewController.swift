@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class PaymentScreenViewController: UIViewController {
-    // TODO: Make all needed func private
     
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -30,7 +29,7 @@ class PaymentScreenViewController: UIViewController {
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // TODO: First we need to check all payments and if everthing is fine move to another screen
+        // TODO: Level 1 - First we need to check all payments and if everthing is fine move to another screen
         openQRCodeScreen()
     }
     
