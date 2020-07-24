@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="50" id="4dT-Pz-2je"/>
                                     <constraint firstAttribute="width" constant="50" id="X6L-Qq-sKn"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="cross"/>
+                                <state key="normal" title="Button" image="closeSign"/>
                                 <connections>
                                     <action selector="closeInformationScreen:" destination="zCY-wd-jeE" eventType="touchUpInside" id="ZjA-NZ-t07"/>
                                 </connections>
@@ -122,6 +122,6 @@
     </scenes>
     <resources>
         <image name="arrowDown" width="256" height="256"/>
-        <image name="cross" width="320" height="320"/>
+        <image name="closeSign" width="320" height="320"/>
     </resources>
 </document>

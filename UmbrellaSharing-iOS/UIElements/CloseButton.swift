@@ -28,9 +28,9 @@ class CloseButton: UIButton {
     private func setupButton() {
         // Load Button Images
         let bundle = Bundle(for: type(of: self))
-        let informationSign = UIImage(named: "cross", in: bundle, compatibleWith: self.traitCollection)
+        let informationSign = UIImage(named: "closeSign", in: bundle, compatibleWith: self.traitCollection)
         
-        // TODO: As an addition - we can put the same sign with different color to make small animation here
+        // TODO: Level 4 - As an addition - we can put the same sign with different color to make small animation here
         self.setImage(informationSign, for: .normal)
         
         // Add constraints
