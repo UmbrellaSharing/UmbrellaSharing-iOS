@@ -151,31 +151,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="helpIcon" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-GB-JbF">
-                                <rect key="frame" x="295" y="15" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="XaU-kV-RKy"/>
-                                    <constraint firstAttribute="height" constant="50" id="qY2-Sj-7mw"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="rentalRateHeaderLabel" text="Rent rate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m03-uo-GpW">
                                 <rect key="frame" x="140.5" y="71" width="94" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMD-MA-ca3" customClass="InformationButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                <rect key="frame" x="313" y="20" width="50" height="50"/>
+                                <state key="normal" title="Button" image="informationSign">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="openInformation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEj-Ch-49a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="m03-uo-GpW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="1vS-mU-wl4"/>
+                            <constraint firstItem="vMD-MA-ca3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="313" id="67K-L5-oAO"/>
                             <constraint firstItem="jmH-jc-6rE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9zC-Gi-4ni"/>
                             <constraint firstItem="jmH-jc-6rE" firstAttribute="top" secondItem="vAh-8d-4Bt" secondAttribute="bottom" constant="20" id="FV2-GR-Zl7"/>
                             <constraint firstItem="vAh-8d-4Bt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pvs-ZT-RgH"/>
                             <constraint firstItem="I7w-qu-I2S" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UeH-Ub-ca7"/>
-                            <constraint firstItem="hgv-GB-JbF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Ukm-6H-Y1F"/>
                             <constraint firstItem="2wt-36-BbZ" firstAttribute="top" secondItem="jmH-jc-6rE" secondAttribute="bottom" constant="32" id="Xcf-ql-dER"/>
-                            <constraint firstItem="m03-uo-GpW" firstAttribute="top" secondItem="hgv-GB-JbF" secondAttribute="bottom" constant="6" id="XvO-Ho-8E3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hgv-GB-JbF" secondAttribute="trailing" constant="30" id="ahf-gp-t4f"/>
                             <constraint firstItem="m03-uo-GpW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bet-kR-Dcl"/>
+                            <constraint firstItem="vMD-MA-ca3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="cFy-za-Kpr"/>
                             <constraint firstItem="vAh-8d-4Bt" firstAttribute="top" secondItem="m03-uo-GpW" secondAttribute="bottom" constant="15" id="cNw-e6-d1m"/>
                             <constraint firstItem="2wt-36-BbZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e0j-z7-RaP"/>
                             <constraint firstItem="I7w-qu-I2S" firstAttribute="top" secondItem="2wt-36-BbZ" secondAttribute="bottom" constant="20" id="xZF-eK-ibl"/>
@@ -190,6 +192,7 @@
                         <outlet property="firstOptionBuyPriceLabel" destination="UpD-UK-7RZ" id="4Gn-Oc-QCt"/>
                         <outlet property="firstOptionRentLabel" destination="45W-d2-ElV" id="PCJ-gw-f1T"/>
                         <outlet property="firstOptionRentPriceLabel" destination="hPw-3t-hQ2" id="hUS-u3-ybk"/>
+                        <outlet property="informationButton" destination="vMD-MA-ca3" id="Cba-ed-7q4"/>
                         <outlet property="rentButton" destination="ax3-I6-Sfd" id="AVO-6m-qxk"/>
                         <outlet property="rentPriceHeaderLabel" destination="m03-uo-GpW" id="SfM-EW-wHS"/>
                         <outlet property="secondOptionRentLabel" destination="IIw-yT-V7d" id="vcC-aI-MDT"/>
@@ -204,6 +207,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="help" width="256" height="256"/>
+        <image name="informationSign" width="256" height="256"/>
     </resources>
 </document>

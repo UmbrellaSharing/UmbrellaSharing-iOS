@@ -8,14 +8,35 @@
 
 import UIKit
 
-class InformationButton: UIButton {
+@IBDesignable class InformationButton: UIButton {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // TODO: Change the image for the button - too gray.
+    
+    // MARK: Initialization
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupButton()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupButton()
+    }
+    
+    // MARK: Private Methods
+    
+    private func setupButton() {
+        // Load Button Images
+        let bundle = Bundle(for: type(of: self))
+        let informationSign = UIImage(named: "informationSign", in: bundle, compatibleWith: self.traitCollection)
+        
+        // TODO: As an addition - we can put the same sign with different color to make small animation here
+        self.setImage(informationSign, for: .normal)
+        
+        // Add constraints
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+    }
 }

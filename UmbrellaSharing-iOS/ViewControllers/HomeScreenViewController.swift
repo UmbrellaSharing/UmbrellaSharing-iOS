@@ -26,7 +26,8 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var rentButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var checkLocationsButton: UIButton!
-    @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var informationButton: InformationButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,13 @@ class HomeScreenViewController: UIViewController {
         buyButton.setTitle("Buy an Umbrella", for: .normal)
         
         checkLocationsButton.setTitle("Check Locations on the Map", for: .normal)
+    }
+
+    @IBAction func openInformation(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "InformationScreenViewController") as! InformationScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
 }
 

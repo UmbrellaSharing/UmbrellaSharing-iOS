@@ -19,7 +19,7 @@ class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         comment.delegate = self
-       }
+    }
     
     
     @IBAction func submit(_ sender: Any) {
