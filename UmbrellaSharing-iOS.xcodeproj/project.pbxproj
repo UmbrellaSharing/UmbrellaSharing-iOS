@@ -11,6 +11,7 @@
 		7D05A95B24BC8AFA006B759D /* UmbrellaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05A95A24BC8AFA006B759D /* UmbrellaUtil.swift */; };
 		7D3981B424CA9759007B76CC /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B324CA9759007B76CC /* AnswerCell.swift */; };
 		7D3981B624CABB44007B76CC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B524CABB44007B76CC /* CloseButton.swift */; };
+		7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B824D03FDF007B76CC /* NetworkManager.swift */; };
 		7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */; };
 		7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */; };
 		7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */; };
@@ -57,6 +58,7 @@
 		7D05A95A24BC8AFA006B759D /* UmbrellaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaUtil.swift; sourceTree = "<group>"; };
 		7D3981B324CA9759007B76CC /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		7D3981B524CABB44007B76CC /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		7D3981B824D03FDF007B76CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		7D3981B724D03FC2007B76CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D3981B824D03FDF007B76CC /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		7D63462524779DD100049C30 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		7D63463024779DD100049C30 /* UmbrellaSharing-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7D3981B724D03FC2007B76CC /* Network */,
 				7D05A95924BC8AEA006B759D /* Util */,
 				7DCD660F24B9A62600094E36 /* Entities */,
 				7DF378FA24B956C9001D1BD8 /* ViewModels */,
@@ -432,6 +443,7 @@
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
 				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
+				7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */,
 				7DCD661124B9A64A00094E36 /* OrderEntity.swift in Sources */,
 				7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */,
 				7D5CEDF124C2D409003DB6EE /* InformationScreenViewController.swift in Sources */,

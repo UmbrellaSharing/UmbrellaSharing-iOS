@@ -12,7 +12,6 @@ import PromiseKit
 class PaymentViewModel {
     
     // TODO: Level 3 - Make all validatoin and error check inhere
-    // TODO: Level 2 - Exctract all api requests to the common file
     
     // Usefull links for making URL sessions. Please use them while working on this class
     // https://learnappmaking.com/urlsession-swift-networking-how-to/
@@ -29,11 +28,11 @@ class PaymentViewModel {
     func load() {
         // TODO: Level 2 - Make this screen doesn't load until we get this information
         // TODO: Level 2 - Save this id in the phone memory and check if we have it before add new user
-        fetchUserId().then { [weak self] userId -> Promise<OrderEntity> in
+        NetworkManager.shared.getUserId().then { [weak self] userId -> Promise<OrderEntity> in
             // TODO: Level 1 - Here we should change later the source of isBuy var
             guard let self = self else { return brokenPromise() }
             self.orderInformatoin.userId = userId
-            return self.fetchQRCodeInformation(userId: userId, isBuy: false)
+            return NetworkManager.shared.getQRCodeInformation(userId: userId, isBuy: false)
         }.done(on: DispatchQueue.main) { orderEntity in
             self.orderInformatoin.code = orderEntity.code
             self.orderInformatoin.orderId = orderEntity.orderId
@@ -42,26 +41,10 @@ class PaymentViewModel {
             print("Error: \(error)")
         }
     }
-    
-    func fetchUserId() -> Promise<Int> {
-        let url = URL(string: URLBase + "data/addUser")!
-        return firstly {
-            URLSession.shared.dataTask(.promise, with: url)
-        }.compactMap {
-            return try JSONDecoder().decode(Int.self, from: $0.data)
-        }
-    }
-    
-    private func fetchQRCodeInformation(userId: Int, isBuy: Bool) -> Promise<OrderEntity> {
-        let urlString = URLBase + "order/getQrCodeToTake?userId=\(userId)&isBuy=\(isBuy)"
-        let url = URL(string: urlString)!
-        
-        return firstly {
-            URLSession.shared.dataTask(.promise, with: url)
-        } .compactMap {
-            return try JSONDecoder().decode(OrderEntity.self, from: $0.data)
-        }
-    }
+}
+
+// TODO: Level 1 - read this code and decide what is usefull is from here and put it in appropriate place.
+// Get rid of this garbage
     
     
 //
@@ -167,7 +150,6 @@ class PaymentViewModel {
 //
 //    }
     
-}
 
 // TODO: Level - 3 Extract in a separate file
 
