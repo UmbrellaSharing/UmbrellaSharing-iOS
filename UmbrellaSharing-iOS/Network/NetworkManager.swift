@@ -14,6 +14,13 @@ class NetworkManager {
     // TODO: Level 3 - Exctract all path in a config file or so
     // TODO: Level 1 - Implement all API calls
     
+    // TODO: Level 3 - Make all validatoin and error check inhere
+    
+    // Usefull links for making URL sessions. Please use them while working on this class
+    // https://learnappmaking.com/urlsession-swift-networking-how-to/
+    // https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
+    // https://www.raywenderlich.com/9208-getting-started-with-promisekit
+    
     // MARK: Properties
     
     static let shared = NetworkManager(pathBaseURL: "https://us.2ssupport.ru/")
@@ -82,4 +89,11 @@ extension URL {
         // Returns the url from new url components
         return urlComponents.url!
     }
+}
+
+func brokenPromise<T>(method: String = #function) -> Promise<T> {
+  return Promise<T>() { seal in
+    let err = NSError(domain: "WeatherOrNot", code: 0, userInfo: [NSLocalizedDescriptionKey: "'\(method)' not yet implemented."])
+    seal.reject(err)
+  }
 }

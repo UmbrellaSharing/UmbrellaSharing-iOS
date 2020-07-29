@@ -12,6 +12,7 @@
 		7D3981B424CA9759007B76CC /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B324CA9759007B76CC /* AnswerCell.swift */; };
 		7D3981B624CABB44007B76CC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B524CABB44007B76CC /* CloseButton.swift */; };
 		7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B824D03FDF007B76CC /* NetworkManager.swift */; };
+		7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */; };
 		7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */; };
 		7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */; };
 		7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */; };
@@ -32,7 +33,6 @@
 		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
 		7D99E2162490EA4C00334232 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2152490EA4C00334232 /* Map.storyboard */; };
 		7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */; };
-		7DCD661124B9A64A00094E36 /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCD661024B9A64A00094E36 /* OrderEntity.swift */; };
 		7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */; };
 		7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */; };
 		7DE18A0C24B361A5003649EE /* PaymentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */; };
@@ -59,6 +59,7 @@
 		7D3981B324CA9759007B76CC /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		7D3981B524CABB44007B76CC /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		7D3981B824D03FDF007B76CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		7D99E2132490EA0000334232 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D99E2152490EA4C00334232 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaButton.swift; sourceTree = "<group>"; };
-		7DCD661024B9A64A00094E36 /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
 		7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeScreen.storyboard; sourceTree = "<group>"; };
 		7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScreenViewController.swift; sourceTree = "<group>"; };
 		7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentScreen.storyboard; sourceTree = "<group>"; };
@@ -123,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7D3981B824D03FDF007B76CC /* NetworkManager.swift */,
+				7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -220,7 +221,6 @@
 		7DCD660F24B9A62600094E36 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				7DCD661024B9A64A00094E36 /* OrderEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -444,9 +444,9 @@
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
 				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
 				7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */,
-				7DCD661124B9A64A00094E36 /* OrderEntity.swift in Sources */,
 				7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */,
 				7D5CEDF124C2D409003DB6EE /* InformationScreenViewController.swift in Sources */,
+				7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */,
 				7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
 				7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */,
