@@ -21,11 +21,11 @@ class PaymentViewModel {
     func load() {
         // TODO: Level 2 - Make this screen doesn't load until we get this information
         // TODO: Level 2 - Save this id in the phone memory and check if we have it before add new user
-        NetworkManager.shared.getUserId().then { [weak self] userId -> Promise<OrderEntity> in
+        NetworkManager.shared.getUserId().then { [weak self] response -> Promise<OrderEntity> in
             // TODO: Level 1 - Here we should change later the source of isBuy var
             guard let self = self else { return brokenPromise() }
-            self.orderInformatoin.userId = userId
-            return NetworkManager.shared.getQRCodeInformation(userId: userId, isBuy: false)
+            self.orderInformatoin.userId = response.userId
+            return NetworkManager.shared.getQRCodeInformation(userId: response.userId, isBuy: false)
         }.done(on: DispatchQueue.main) { orderEntity in
             self.orderInformatoin.code = orderEntity.code
             self.orderInformatoin.orderId = orderEntity.orderId

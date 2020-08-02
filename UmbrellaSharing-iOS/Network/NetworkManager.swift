@@ -54,12 +54,12 @@ class NetworkManager {
     // MARK: Add New User
     // Type: GET
     // TODO: Level 2 - After Ilia transform all of this
-    func getUserId() -> Promise<Int> {
+    func getUserId() -> Promise<UserEntity> {
         let requestURL = self.baseURL.appendingPathComponent("data/addUser")
         return firstly {
             URLSession.shared.dataTask(.promise, with: requestURL)
         }.compactMap {
-            return try JSONDecoder().decode(Int.self, from: $0.data)
+            return try JSONDecoder().decode(UserEntity.self, from: $0.data)
         }
     }
     
