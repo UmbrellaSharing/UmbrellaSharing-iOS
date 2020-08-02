@@ -10,18 +10,16 @@ import UIKit
 import Foundation
 import GoogleMaps
 
-class MapViewController: UIViewController {
-    
+class MapViewController: UIViewController, MapDataModelDelegate {
+ 
     @IBOutlet weak var proceedButton: UmbrellaButton!
-    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
     
+    private let mapViewModel = MapViewModel()
+    
     var timer: Timer?
     var counter = 0.0
-    
-    // TODO: Level 1 - Implement stopwatches with a price that changes
-    // How to do stopwatches: https://www.youtube.com/watch?v=lx3EMAs924w
     
     var mapView: GMSMapView?
     var mapMode: UmbrellaUtil.MapMode?
@@ -33,24 +31,22 @@ class MapViewController: UIViewController {
         initView()
     }
     
-    private func test() {
-        
-    }
-    
-    
     private func initView() {
+        loadLocations()
         initButtons()
         initMap()
-        initMarkers(mapView!)
         initCounter()
+    }
+    
+    private func loadLocations() {
+        mapViewModel.delegate = self
+        mapViewModel.load()
     }
     
     private func initCounter() {
         timeAndPriceLabel.isHidden = true
         if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
             timeAndPriceLabel.isHidden = false
-            
-            
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
         }
     }
@@ -68,13 +64,12 @@ class MapViewController: UIViewController {
         return String(rawTimeValue)
     }
     
+    // TODO: Level 2 - Put it in a model class
     private func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
         let hours = normilizeTimeValue(Int(counter) / 3600)
         let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
         let seconds = normilizeTimeValue(Int(counter) % 60)
         var timeString = "00:00"
-        // TODO: Level 3 - Display time in different way depends on hours and minutes.
-        // For example if there is 0 hours then don't display hours at all
         if (Int(hours) == 0) {
             timeString = "\(minutes):\(seconds)"
         } else {
@@ -95,25 +90,16 @@ class MapViewController: UIViewController {
         }
     }
     
-    // TODO: Level 1 - Implement real data initialization
-    private func initMarkers(_ mapView: GMSMapView) {
-        let firstMarker = GMSMarker()
-        firstMarker.position = CLLocationCoordinate2D(latitude: 55.76, longitude: 37.62)
-        firstMarker.title = "First spot"
-        firstMarker.snippet = "First spot"
-        firstMarker.map = mapView
-        
-        let secondMarker = GMSMarker()
-        secondMarker.position = CLLocationCoordinate2D(latitude: 55.79, longitude: 37.64)
-        secondMarker.title = "Second Spot"
-        secondMarker.snippet = "Second Spot"
-        secondMarker.map = mapView
-        
-        let thirdMarker = GMSMarker()
-        thirdMarker.position = CLLocationCoordinate2D(latitude: 55.71, longitude: 37.57)
-        thirdMarker.title = "Third Spot"
-        thirdMarker.snippet = "Third Spot"
-        thirdMarker.map = mapView
+    private func initMarkers(_ mapView: GMSMapView, _ locations: [LocationPointEntity]) {
+        // TODO: Level 2 - Ask Ilia about the title for each location. Now it is default.
+        for location in locations {
+            print(location)
+            let currentMarker = GMSMarker()
+            currentMarker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            currentMarker.title = "Marker"
+            currentMarker.snippet = location.description
+            currentMarker.map = mapView
+        }
     }
     
     private func initButtons() {
@@ -157,4 +143,11 @@ class MapViewController: UIViewController {
     @IBAction func backToHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: MapViewModel Delegate
+    
+    func didLoadLocations(locations: [LocationPointEntity]) {
+         initMarkers(mapView!, locations)
+     }
+     
 }

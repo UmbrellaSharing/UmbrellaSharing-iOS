@@ -13,6 +13,7 @@
 		7D3981B624CABB44007B76CC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B524CABB44007B76CC /* CloseButton.swift */; };
 		7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B824D03FDF007B76CC /* NetworkManager.swift */; };
 		7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */; };
+		7D3981BD24D6B284007B76CC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BC24D6B284007B76CC /* MapViewModel.swift */; };
 		7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */; };
 		7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */; };
 		7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */; };
@@ -60,6 +61,7 @@
 		7D3981B524CABB44007B76CC /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		7D3981B824D03FDF007B76CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
+		7D3981BC24D6B284007B76CC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -154,7 +156,6 @@
 			children = (
 				7D3981B724D03FC2007B76CC /* Network */,
 				7D05A95924BC8AEA006B759D /* Util */,
-				7DCD660F24B9A62600094E36 /* Entities */,
 				7DF378FA24B956C9001D1BD8 /* ViewModels */,
 				7DF378F724B9540C001D1BD8 /* DataTransferObjects */,
 				7D9A3BEA24B059E700D0F851 /* ViewControllers */,
@@ -218,13 +219,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7DCD660F24B9A62600094E36 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		7DF378F724B9540C001D1BD8 /* DataTransferObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +232,7 @@
 			children = (
 				7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */,
 				7D05A95724BC860E006B759D /* QRViewModel.swift */,
+				7D3981BC24D6B284007B76CC /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -457,6 +452,7 @@
 				7D85A22024B5DDDB00E9CFFB /* PaymentScreenViewController.swift in Sources */,
 				7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */,
 				7D05A95824BC860E006B759D /* QRViewModel.swift in Sources */,
+				7D3981BD24D6B284007B76CC /* MapViewModel.swift in Sources */,
 				7D5CEDF324C2D5B6003DB6EE /* InformationButton.swift in Sources */,
 				7D8962EA24C5A8E100724AFF /* QuestionCell.swift in Sources */,
 				7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */,

@@ -13,7 +13,6 @@ class NetworkManager {
     
     // TODO: Level 3 - Exctract all path in a config file or so
     // TODO: Level 1 - Implement all API calls
-    
     // TODO: Level 3 - Make all validatoin and error check inhere
     
     // Usefull links for making URL sessions. Please use them while working on this class
@@ -65,8 +64,15 @@ class NetworkManager {
     
     // MARK: GET RATE PLAN
     // MARK: GET FAQS
-    // MARK: GET POINTS
-    // MARK: GET POINTS
+    
+    func getLocationPoints() -> Promise<[LocationPointEntity]> {
+        let requestURL = self.baseURL.appendingPathComponent("data/getPoints")
+        return firstly {
+            URLSession.shared.dataTask(.promise, with: requestURL)
+        }.compactMap {
+            return try JSONDecoder().decode([LocationPointEntity].self, from: $0.data)
+        }
+    }
 }
 
 extension URL {

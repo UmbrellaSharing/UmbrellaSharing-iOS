@@ -42,9 +42,9 @@ struct FAQEntity: Decodable {
     var answer: String
 }
 
-struct LocationPoints: Decodable {
+struct LocationPointEntity: Decodable {
     var pointId: Int
     var longitude: Double
     var latitude: Double
-    var descritption: String
+    var description: String
 }
