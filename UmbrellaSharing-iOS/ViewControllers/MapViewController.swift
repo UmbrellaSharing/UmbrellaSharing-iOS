@@ -12,15 +12,13 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
-//    @IBOutlet weak var proceedButton: UmbrellaButton!
-    
-    
     @IBOutlet weak var proceedButton: UmbrellaButton!
-    
-    
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
+    
+    var timer: Timer?
+    var counter = 0.0
     
     // TODO: Level 1 - Implement stopwatches with a price that changes
     // How to do stopwatches: https://www.youtube.com/watch?v=lx3EMAs924w
@@ -31,10 +29,14 @@ class MapViewController: UIViewController {
     var orderInformation: OrderInformation?
     
     override func viewDidLoad() {
-        print("POC init")
         super.viewDidLoad()
         initView()
     }
+    
+    private func test() {
+        
+    }
+    
     
     private func initView() {
         initButtons()
@@ -47,7 +49,41 @@ class MapViewController: UIViewController {
         timeAndPriceLabel.isHidden = true
         if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
             timeAndPriceLabel.isHidden = false
+            
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
         }
+    }
+    
+    @objc func updateTimerLabel() {
+        counter += 1
+        timeAndPriceLabel.text = prepareTextForTimeAndPriceLabel(counter)
+    }
+    
+    private func normilizeTimeValue(_ rawTimeValue: Int) -> String {
+        if rawTimeValue < 10 {
+            let result = "0" + String(rawTimeValue)
+            return result
+        }
+        return String(rawTimeValue)
+    }
+    
+    private func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
+        let hours = normilizeTimeValue(Int(counter) / 3600)
+        let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
+        let seconds = normilizeTimeValue(Int(counter) % 60)
+        var timeString = "00:00"
+        // TODO: Level 3 - Display time in different way depends on hours and minutes.
+        // For example if there is 0 hours then don't display hours at all
+        if (Int(hours) == 0) {
+            timeString = "\(minutes):\(seconds)"
+        } else {
+            timeString = "\(hours):\(minutes):\(seconds)"
+        }
+        
+        // TODO: Level 1 - Implement Price calculation
+        let priceString = "Price"
+        return timeString + " " + priceString
     }
     
     private func initMap() {

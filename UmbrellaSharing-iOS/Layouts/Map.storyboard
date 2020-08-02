@@ -46,7 +46,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time and Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Ab-CBy" customClass="MapCounterLabel" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Ab-CBy" customClass="MapCounterLabel" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
                                 <rect key="frame" x="83.5" y="61" width="208" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tNw-So-D8F"/>
