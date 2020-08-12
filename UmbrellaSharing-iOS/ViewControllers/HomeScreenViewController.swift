@@ -8,9 +8,12 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController {    
+    // TODO: Level 1 - Think which values should be stored in the local storage
+    // TODO: Level 1 - If you close the app during the map, it should open the same screen again
 
-    // TODO: Think do we really need all of those params here? Just occupy a lot of space
+    // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
+    // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space
     @IBOutlet weak var rentPriceHeaderLabel: UILabel!
     @IBOutlet weak var firstOptionRentLabel: UILabel!
     @IBOutlet weak var secondOptionRentLabel: UILabel!
@@ -25,28 +28,28 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var rentButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var checkLocationsButton: UIButton!
-    @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var informationButton: InformationButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initInterface()
     }
     
-    
-    private func formOrderAndProceed() {
-        // TODO: Here should be an order but for now it will be just opening another screen
+    private func formOrderAndProceed(_ operationType: UmbrellaUtil.OperationType) {
+        // TODO: Level 1 - Here should be an order but for now it will be just opening another screen
         let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
+        newViewController.operationType = operationType
         self.present(newViewController, animated: true, completion: nil)
     }
     
     @IBAction func rentUmbrella(_ sender: Any) {
-        formOrderAndProceed()
+        formOrderAndProceed(UmbrellaUtil.OperationType.rentUmbrella)
     }
     
     @IBAction func buyUmbrella(_ sender: Any) {
-        formOrderAndProceed()
+        formOrderAndProceed(UmbrellaUtil.OperationType.buyUmbrella)
     }
     
     
@@ -54,12 +57,13 @@ class HomeScreenViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         newViewController.modalPresentationStyle = .fullScreen
+        newViewController.mapMode = UmbrellaUtil.MapMode.locationsMode
         self.present(newViewController, animated: true, completion: nil)
     }
     
     private func initInterface() {
-        // TODO: Exctract all constant string to the separate file
-        // TODO: Check if all versions of iPhone follow the design
+        // TODO: Level 4 -  Exctract all constant string to the separate file
+        // TODO: Level 3 - Check if all versions of iPhone follow the design
         
         // MARK: Init labels
         
@@ -79,6 +83,13 @@ class HomeScreenViewController: UIViewController {
         buyButton.setTitle("Buy an Umbrella", for: .normal)
         
         checkLocationsButton.setTitle("Check Locations on the Map", for: .normal)
+    }
+
+    @IBAction func openInformation(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "InformationScreenViewController") as! InformationScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
 }
 

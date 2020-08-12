@@ -1,30 +1,30 @@
 //
-//  UmbrellaButton.swift
+//  MapCounter.swift
 //  UmbrellaSharing-iOS
 //
-//  Created by Katselenbogen, Igor on 2020/07/04.
+//  Created by Katselenbogen, Igor on 2020/07/15.
 //  Copyright © 2020 Katselenbogen, Igor. All rights reserved.
 //
 
 import UIKit
 
-class UmbrellaButton: UIButton {
-
+class MapCounterLabel: UILabel {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setupLabel()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setupLabel()
     }
     
-    private func setupButton() {
+    private func setupLabel() {
         layer.cornerRadius = 20
         layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
         layer.backgroundColor = UIColor.white.cgColor
-        self.setTitleColor(.black, for: .normal)
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderColor = UIColor.black.cgColor
     }
 }

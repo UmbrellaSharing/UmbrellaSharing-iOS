@@ -11,15 +11,15 @@ import UIKit
 
 class PaymentScreenViewController: UIViewController {
     
-    
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    
-    // TODO: Make all needed func private
+    private let paymentViewModel = PaymentViewModel()
+    var operationType: UmbrellaUtil.OperationType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        paymentViewModel.load(operationType)
         initView()
     }
     
@@ -28,24 +28,21 @@ class PaymentScreenViewController: UIViewController {
         backButton.setTitle("Go Back", for: .normal)
     }
     
-    
-  
     @IBAction func pressContinue(_ sender: Any) {
-        print("POC pressed Continue")
-        // TODO: First we need to check all payments and if everthing is fine move to another screen
+        // TODO: Level 1 - First we need to check all payments and if everthing is fine move to another screen
         openQRCodeScreen()
     }
     
     private func openQRCodeScreen() {
-        print("POC pressed Continue - 1")
-        let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
-        print("POC pressed Continue -2 ")
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
-        print("POC pressed Continue - 3")
-        newViewController.modalPresentationStyle = .fullScreen
-        print("POC pressed Continue - 4")
-        self.present(newViewController, animated: true, completion: nil)
-        print("POC pressed Continue - 5")
+        if let operationType = operationType {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
+            newViewController.modalPresentationStyle = .fullScreen
+            newViewController.orderInformation = paymentViewModel.orderInformation
+            newViewController.operationType = operationType
+            self.present(newViewController, animated: true, completion: nil)
+        }
+        
     }
     
     @IBAction func back(_ sender: Any) {

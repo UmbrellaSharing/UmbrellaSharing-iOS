@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Information Screen View Controller-->
+        <scene sceneID="dYC-y1-8HC">
+            <objects>
+                <viewController restorationIdentifier="InformationScreenViewController" storyboardIdentifier="InformationScreenViewController" id="zCY-wd-jeE" customClass="InformationScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9v7-fW-BT9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fS-X0-vyd">
+                                <rect key="frame" x="185.33333333333334" y="20" width="43.333333333333343" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s8Z-VE-2ah">
+                                <rect key="frame" x="0.0" y="70" width="414" height="586"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="50" id="NuU-6b-5Nb" customClass="QuestionCell" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuU-6b-5Nb" id="bbM-sb-qBZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2E-92-8CG">
+                                                    <rect key="frame" x="15" y="14.666666666666664" width="349" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown" translatesAutoresizingMaskIntoConstraints="NO" id="c94-ov-aPF">
+                                                    <rect key="frame" x="379" y="15" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="mt1-aI-3dP"/>
+                                                        <constraint firstAttribute="height" constant="20" id="qEQ-Bm-nCL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c94-ov-aPF" firstAttribute="centerY" secondItem="bbM-sb-qBZ" secondAttribute="centerY" id="0Pc-Y3-Icu"/>
+                                                <constraint firstAttribute="trailing" secondItem="c94-ov-aPF" secondAttribute="trailing" constant="15" id="GLr-k6-DqC"/>
+                                                <constraint firstItem="d2E-92-8CG" firstAttribute="centerY" secondItem="bbM-sb-qBZ" secondAttribute="centerY" id="LbY-oD-SZ1"/>
+                                                <constraint firstItem="c94-ov-aPF" firstAttribute="leading" secondItem="d2E-92-8CG" secondAttribute="trailing" constant="15" id="N2r-fZ-L1Z"/>
+                                                <constraint firstItem="d2E-92-8CG" firstAttribute="leading" secondItem="bbM-sb-qBZ" secondAttribute="leading" constant="15" id="mwV-EF-b58"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="arrowSign" destination="c94-ov-aPF" id="1B3-qR-wUt"/>
+                                            <outlet property="questionLabel" destination="d2E-92-8CG" id="yhd-7v-IgS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="answerCell" rowHeight="100" id="pLA-D0-Oz8" userLabel="answerCell" customClass="AnswerCell" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pLA-D0-Oz8" id="gqh-vo-hgw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7f-1v-dHl">
+                                                    <rect key="frame" x="29.999999999999993" y="20" width="93.333333333333314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="I7f-1v-dHl" firstAttribute="top" secondItem="gqh-vo-hgw" secondAttribute="top" constant="20" id="AN5-ll-hyi"/>
+                                                <constraint firstItem="I7f-1v-dHl" firstAttribute="leading" secondItem="gqh-vo-hgw" secondAttribute="leading" constant="30" id="bOQ-Cr-OQf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answerLabel" destination="I7f-1v-dHl" id="fnv-GT-LkH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-kI-K7U" customClass="CloseButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                <rect key="frame" x="354" y="10" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4dT-Pz-2je"/>
+                                    <constraint firstAttribute="width" constant="50" id="X6L-Qq-sKn"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="closeSign"/>
+                                <connections>
+                                    <action selector="closeInformationScreen:" destination="zCY-wd-jeE" eventType="touchUpInside" id="ZjA-NZ-t07"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9fS-X0-vyd" firstAttribute="centerX" secondItem="ZUM-Xy-x5k" secondAttribute="centerX" id="30D-Jw-chs"/>
+                            <constraint firstItem="s8Z-VE-2ah" firstAttribute="leading" secondItem="ZUM-Xy-x5k" secondAttribute="leading" id="77J-oa-FTX"/>
+                            <constraint firstItem="DYq-kI-K7U" firstAttribute="top" secondItem="ZUM-Xy-x5k" secondAttribute="top" constant="10" id="N5p-B2-qVz"/>
+                            <constraint firstItem="s8Z-VE-2ah" firstAttribute="top" secondItem="9fS-X0-vyd" secondAttribute="bottom" constant="23.666666666666671" id="PT4-rA-UnD"/>
+                            <constraint firstItem="ZUM-Xy-x5k" firstAttribute="trailing" secondItem="DYq-kI-K7U" secondAttribute="trailing" constant="10" id="cke-Ph-Qev"/>
+                            <constraint firstItem="ZUM-Xy-x5k" firstAttribute="bottom" secondItem="s8Z-VE-2ah" secondAttribute="bottom" constant="80" id="dcj-Co-LsL"/>
+                            <constraint firstItem="ZUM-Xy-x5k" firstAttribute="trailing" secondItem="s8Z-VE-2ah" secondAttribute="trailing" id="eZy-em-m3s"/>
+                            <constraint firstItem="s8Z-VE-2ah" firstAttribute="centerX" secondItem="9fS-X0-vyd" secondAttribute="centerX" id="fmb-5r-87P"/>
+                            <constraint firstItem="9fS-X0-vyd" firstAttribute="top" secondItem="ZUM-Xy-x5k" secondAttribute="top" constant="20" id="hSY-yp-El9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZUM-Xy-x5k"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="DYq-kI-K7U" id="S7L-Ir-YNA"/>
+                        <outlet property="questionsTable" destination="s8Z-VE-2ah" id="yvE-hd-CKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vz0-fD-2NQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155.07246376811597" y="4.8913043478260869"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowDown" width="256" height="256"/>
+        <image name="closeSign" width="320" height="320"/>
+    </resources>
+</document>
