@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: Level 3 - Make all needed func private
     // TODO: Level 3 - Comments
     // TODO: Level 2 - Exctract all logic to view model in all classes
+    // TODO: Level 2 - Add loading animation for all places where we are loading anything - basically where we have some delegates
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -15,30 +15,35 @@ struct cellData {
     var sectionData = [String]()
 }
 
-class InformationScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InformationScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InformationDataModelDelegate {
     
     // TODO: Level 3 Think how to make the height of this talbe dinamic.
     // TODO: Level 3 Extend the width of the label
+    // TODO: Level 3 Think how to not show separation lines even before information is loaded
     
     @IBOutlet weak var questionsTable: UITableView!
     @IBOutlet weak var closeButton: CloseButton!
+    
+    private let informationViewModel = InformationViewModel()
     
     var tableViewData = [cellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        loadQuestionsAndAnswers()
     }
     
-    private func setupTableView() {
+    private func loadQuestionsAndAnswers() {
+        informationViewModel.delegate = self
+        informationViewModel.load()
+    }
+    
+    private func setupTableView(_ questionsAndAnswers: [FAQEntity]) {
         questionsTable.delegate = self
         questionsTable.dataSource = self
         questionsTable.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
-        // TODO: Level 1 Replace it with real data from the server
-        tableViewData = [cellData(opened: false, title: "My umbrella is broken.", sectionData: ["Go back to the place you took the ubmrella."]),
-                         cellData(opened: false, title: "I borke the umbrella along the way.", sectionData: ["Sorry, now you have to buy a new umbrella"]),
-                         cellData(opened: false, title: "I got some plans for tonight. Can't return my umbrella.", sectionData: ["No problem!"])]
+        tableViewData = questionsAndAnswers.map { cellData(opened: false, title: $0.question, sectionData: [$0.answer]) }
+        questionsTable.reloadData()
     }
         
     
@@ -97,6 +102,12 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
     
     @IBAction func closeInformationScreen(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: InformationViewModel Delegate
+    
+    func didLoadQuestionsAndAnswers(questionsAndAnswers: [FAQEntity]) {
+        setupTableView(questionsAndAnswers)
     }
 }
 

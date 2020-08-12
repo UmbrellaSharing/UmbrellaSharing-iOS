@@ -30,13 +30,10 @@ class QuestionCell: UITableViewCell {
     }
     
     func changeTheState() {
-        print("POC in change the state - state - \(isOpen)")
         self.isOpen = !self.isOpen
         if (self.isOpen) {
-            print("POC in change the state - if true - \(isOpen)")
             arrowSign.image = UIImage(named: "arrowTop")
         } else {
-            print("POC in change the state - if false - \(isOpen)")
             arrowSign.image = UIImage(named: "arrowDown")
         }
     }

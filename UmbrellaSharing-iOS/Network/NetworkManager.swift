@@ -52,7 +52,6 @@ class NetworkManager {
     
     // MARK: Add New User
     // Type: GET
-    // TODO: Level 2 - After Ilia transform all of this
     func getUserId() -> Promise<UserEntity> {
         let requestURL = self.baseURL.appendingPathComponent("data/addUser")
         return firstly {
@@ -63,8 +62,20 @@ class NetworkManager {
     }
     
     // MARK: GET RATE PLAN
-    // MARK: GET FAQS
     
+    // MARK: Fetch All Frequently Asked Question
+    // Type: GET
+    func getFAQ() -> Promise<[FAQEntity]> {
+        let requestURL = self.baseURL.appendingPathComponent("data/getFaqs")
+        return firstly {
+            URLSession.shared.dataTask(.promise, with: requestURL)
+        }.compactMap {
+            return try JSONDecoder().decode([FAQEntity].self, from: $0.data)
+        }
+    }
+    
+    // MARK: Fetch All LocationPoints
+    // Type: GET
     func getLocationPoints() -> Promise<[LocationPointEntity]> {
         let requestURL = self.baseURL.appendingPathComponent("data/getPoints")
         return firstly {
