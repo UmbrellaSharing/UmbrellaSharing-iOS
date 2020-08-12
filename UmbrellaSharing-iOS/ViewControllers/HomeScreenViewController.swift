@@ -8,13 +8,7 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
-    
-    // TODO: Level 1 - Store id in the local storage
-    // Arcticle to get inspiration:
-    // https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/PersistData.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
-    // Stackoverflow about easy solution: https://stackoverflow.com/questions/28628225/how-to-save-local-data-in-a-swift-app
-    
+class HomeScreenViewController: UIViewController {    
     // TODO: Level 1 - Think which values should be stored in the local storage
     // TODO: Level 1 - If you close the app during the map, it should open the same screen again
 
@@ -36,12 +30,10 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var checkLocationsButton: UIButton!
     @IBOutlet weak var informationButton: InformationButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initInterface()
     }
-    
     
     private func formOrderAndProceed(_ operationType: UmbrellaUtil.OperationType) {
         // TODO: Level 1 - Here should be an order but for now it will be just opening another screen

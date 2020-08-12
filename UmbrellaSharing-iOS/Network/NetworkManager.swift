@@ -32,10 +32,10 @@ class NetworkManager {
     
     // MARK: Get QR Code to Rent or To Buy an Umbrella
     // Type: GET
-    func getQRCodeInformation(userId: Int, isBuy: Bool) -> Promise<OrderEntity> {
+    func getQRCodeInformation(userId: String, isBuy: Bool) -> Promise<OrderEntity> {
         let pathComponent = "order/getQrCodeToTake"
         let requestURL = self.baseURL.appendingPathComponent(pathComponent)
-            .appending("userId", value: String(userId))
+            .appending("userId", value: userId)
             .appending("isBuy", value: String(isBuy))
         return firstly {
             URLSession.shared.dataTask(.promise, with: requestURL)
