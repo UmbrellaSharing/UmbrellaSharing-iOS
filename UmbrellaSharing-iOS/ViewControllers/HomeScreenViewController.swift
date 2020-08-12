@@ -9,6 +9,14 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
+    
+    // TODO: Level 1 - Store id in the local storage
+    // Arcticle to get inspiration:
+    // https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/PersistData.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
+    // Stackoverflow about easy solution: https://stackoverflow.com/questions/28628225/how-to-save-local-data-in-a-swift-app
+    
+    // TODO: Level 1 - Think which values should be stored in the local storage
+    // TODO: Level 1 - If you close the app during the map, it should open the same screen again
 
     // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
     // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space

@@ -18,6 +18,7 @@ struct cellData {
 class InformationScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // TODO: Level 3 Think how to make the height of this talbe dinamic.
+    // TODO: Level 3 Extend the width of the label
     
     @IBOutlet weak var questionsTable: UITableView!
     @IBOutlet weak var closeButton: CloseButton!
