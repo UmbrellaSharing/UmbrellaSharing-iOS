@@ -19,7 +19,7 @@ class PaymentScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        paymentViewModel.load()
+        paymentViewModel.load(operationType)
         initView()
     }
     
