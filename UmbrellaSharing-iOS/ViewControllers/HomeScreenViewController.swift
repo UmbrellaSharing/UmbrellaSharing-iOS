@@ -8,10 +8,9 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {    
-    // TODO: Level 1 - Think which values should be stored in the local storage
-    // TODO: Level 1 - If you close the app during the map, it should open the same screen again
-
+class HomeScreenViewController: UIViewController {
+    // TODO: Level 1 - Store in local storage the date when we start rent.
+    // TODO: Level 2 - Refactor this class!!
     // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
     // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space
     @IBOutlet weak var rentPriceHeaderLabel: UILabel!
@@ -33,6 +32,32 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initInterface()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfAppWasClosedDuringRentalMode()
+    }
+    
+    private func checkIfAppWasClosedDuringRentalMode() {
+        let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
+        if let informationAboutLastSession = informationAboutLastSession, informationAboutLastSession.mapScreenIsOpenInRentalMode == true {
+            openMapScreen()
+        }
+    }
+    
+    private func openMapScreen() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.mapMode = UmbrellaUtil.MapMode.rentalMode
+        
+        let userCredentials = GlobalDataStorage.shared.userCredentials
+        let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
+        // TODO: Think should we pass orderId and code or not? I think we don't need, but need to be checked
+        let orderInformation = OrderInformation(userId: userCredentials?.userId, orderId: orderId, code: nil)
+        newViewController.orderInformation = orderInformation
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     private func formOrderAndProceed(_ operationType: UmbrellaUtil.OperationType) {

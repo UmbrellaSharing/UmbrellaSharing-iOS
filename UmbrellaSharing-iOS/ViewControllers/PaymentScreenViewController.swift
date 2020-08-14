@@ -29,7 +29,7 @@ class PaymentScreenViewController: UIViewController {
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // TODO: Level 1 - First we need to check all payments and if everthing is fine move to another screen
+        // TODO: Level 2 ! The Most Important. We need to do all payment checks. But We are waiting before Iliya make the Yandex Payments.
         openQRCodeScreen()
     }
     

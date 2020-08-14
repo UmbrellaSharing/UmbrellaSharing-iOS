@@ -21,6 +21,7 @@ class UserCredentials: NSObject, NSCoding {
     }
     
     // MARK: Initialization
+    
     init?(userId: String?) {
         self.userId = userId
     }

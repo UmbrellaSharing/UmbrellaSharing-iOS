@@ -19,16 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: Level 3 - Comments
     // TODO: Level 2 - Exctract all logic to view model in all classes
     // TODO: Level 2 - Add loading animation for all places where we are loading anything - basically where we have some delegates
+    // TODO: Level 3 - Implement better logging system
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyBC1EwMA0Hc4DRq7l_wEE7FxHCG1K8GFLY")
         loadUserCredentials()
+        loadInformationAboutLastSession()
         return true
     }
     
     private func loadUserCredentials() {
         GlobalDataStorage.shared.loadUserCredentials()
+    }
+    
+    private func loadInformationAboutLastSession() {
+        GlobalDataStorage.shared.loadInformationAboutLastSession()
     }
     
     // TODO: Level 3 - Can we remove those two methods?

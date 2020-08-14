@@ -11,6 +11,8 @@ import Foundation
 import GoogleMaps
 
 class MapViewController: UIViewController, MapDataModelDelegate {
+    
+    // TODO: Level 1 - Show the modal screen with prices
  
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
@@ -46,8 +48,21 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     private func initCounter() {
         timeAndPriceLabel.isHidden = true
         if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
+            
+            if let orderInformation = orderInformation, let orderId = orderInformation.orderId {
+                // Saving to DataStorage information that rental time has started and the map screen is open
+                let informationAboutLastSession = InformationAboutLastSession(mapScreenIsOpenInRentalMode: true, orderId: orderId)
+                if let informationAboutLastSession = informationAboutLastSession {
+                    GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
+                }
+            }
+         
             timeAndPriceLabel.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
+            
+            
+            // TODO: Level 2 - Update counter here. Information from storage
+            // To be continued
         }
     }
     
@@ -93,7 +108,6 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     private func initMarkers(_ mapView: GMSMapView, _ locations: [LocationPointEntity]) {
         // TODO: Level 2 - Ask Ilia about the title for each location. Now it is default.
         for location in locations {
-            print(location)
             let currentMarker = GMSMarker()
             currentMarker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             currentMarker.title = "Marker"
@@ -107,7 +121,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
             switch mapMode {
             case .locationsMode:
                 proceedButton.setTitle("Rent an Umbrella", for: .normal)
-                proceedButton.setTitle("Back to Home", for: .normal)
+                backButton.setTitle("Back to Home", for: .normal)
             case .rentalMode:
                 proceedButton.setTitle("Return an Umbrella", for: .normal)
                 backButton.isHidden = true
@@ -119,13 +133,19 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         if let mapMode = mapMode {
             switch mapMode {
             case .locationsMode:
-                // TODO: Level 1 - Ask Ilya what shold be done in this case if we need actually to send a user for the next screen
-                print("Locations Mode")
+                openPaymentScreenToRentUmbrella()
             case .rentalMode:
                 openQRScreenToReturnUmbrella()
-                print("Rental mode")
             }
         }
+    }
+    
+    private func openPaymentScreenToRentUmbrella() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.operationType = UmbrellaUtil.OperationType.rentUmbrella
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     private func openQRScreenToReturnUmbrella() {

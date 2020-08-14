@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class QRCodeScreenViewController: UIViewController {
-    
+class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
+
     @IBOutlet weak var continueButton: UmbrellaButton!
     @IBOutlet weak var backButton: UmbrellaButton!
     @IBOutlet weak var qrCodeImageView: UIImageView!
@@ -21,7 +21,6 @@ class QRCodeScreenViewController: UIViewController {
     var orderInformation: OrderInformation?
     
     override func viewDidLoad() {
-        // TODO: Level 1 - We need to store qr code somewhere
         super.viewDidLoad()
         initView()
     }
@@ -29,16 +28,27 @@ class QRCodeScreenViewController: UIViewController {
     private func initView() {
         continueButton.setTitle("Continue", for: .normal)
         backButton.setTitle("Go Back", for: .normal)
-        
-        // Generating QR
-        if let orderInformation = orderInformation, let code = orderInformation.code {
-            qrCodeImageView.image = generateQRCode(from: String(code))
+        presentQR()
+    }
+    
+    private func presentQR() {
+        if let orderInformation = orderInformation, let orderId = orderInformation.orderId {
+            // Generating QR Code if user's returning an umbrella
+            if let operationType = operationType, operationType == UmbrellaUtil.OperationType.returnUmbrella {
+                qrViewModel.delegate = self
+                qrViewModel.getReturnCode(orderId: orderId)
+            } else {
+                // Generating QR if user's taking an umbrella
+                if let code = orderInformation.code {
+                    qrCodeImageView.image = generateQRCode(from: String(code))
+                }
+            }
         }
-        
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // TODO: Level 1 - We can't just press - we need to check if the operation was sumbitted
+        // TODO: Level 1 - Show the notification that QR need to be scanned
+        
         if let orderInformation = orderInformation, let orderId = orderInformation.orderId, let operationType = operationType {
             if (qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)) {
                 switch operationType {
@@ -47,10 +57,17 @@ class QRCodeScreenViewController: UIViewController {
                 case.rentUmbrella:
                     openMapScreen()
                 case.returnUmbrella:
+                    // TODO: Level 2 - Here should be some check
+                    
+                    // If everything is okay and we are ready to move to the feedback screen,
+                    // then right before that we need to inform that rental mode is over, and we don't need to open
+                    // map screen if application is closed later on
+                    GlobalDataStorage.shared.cleanInformationAboutLastSession()
+                    
                     openFeedbackScreen()
                 }
             } else {
-                // TODO: Level 1 - Show the notification that QR need to be scanned
+                // Write this code here - we can't proceed
             }
         }
     }
@@ -95,5 +112,9 @@ class QRCodeScreenViewController: UIViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "FeedbackScreenViewController") as! FeedbackScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    func didLoadReturnCode(code: Int) {
+        qrCodeImageView.image = generateQRCode(from: String(code))
     }
 }
