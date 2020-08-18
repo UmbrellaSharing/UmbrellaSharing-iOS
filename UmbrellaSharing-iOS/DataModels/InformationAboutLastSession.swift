@@ -12,21 +12,24 @@ class InformationAboutLastSession: NSObject, NSCoding {
     
     // MARK: Properties
     
-    var mapScreenIsOpenInRentalMode: Bool?
+    var hasRentStarted: Bool?
     var orderId: Int?
+    var rentStartDate: Date?
     
     // MARK: Types
     
     struct PropertyKey {
-        static let mapScreenIsOpenInRentalMode = "mapScreenIsOpenInRentalMode"
+        static let hasRentStarted = "hasRentStarted"
         static let orderId = "orderId"
+        static let rentStartDate = "rentStartDate"
     }
     
     // MARK: Initialization
     
-    init?(mapScreenIsOpenInRentalMode: Bool?, orderId: Int?) {
-        self.mapScreenIsOpenInRentalMode = mapScreenIsOpenInRentalMode
+    init?(hasRentStarted: Bool?, orderId: Int?, rentStartDate: Date?) {
+        self.hasRentStarted = hasRentStarted
         self.orderId = orderId
+        self.rentStartDate = rentStartDate
     }
     
     // TODO: Level 3 - Should we make this global? with all others data models?
@@ -36,13 +39,14 @@ class InformationAboutLastSession: NSObject, NSCoding {
     // MARK: NSCoding
     
     func encode(with coder: NSCoder) {
-        coder.encode(mapScreenIsOpenInRentalMode, forKey: PropertyKey.mapScreenIsOpenInRentalMode)
+        coder.encode(hasRentStarted, forKey: PropertyKey.hasRentStarted)
         coder.encode(orderId, forKey: PropertyKey.orderId)
+        coder.encode(rentStartDate, forKey: PropertyKey.rentStartDate)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        guard let mapScreenIsOpenInRentalMode = aDecoder.decodeObject(forKey: PropertyKey.mapScreenIsOpenInRentalMode) as? Bool else {
-            print("Unable to decode the mapScreenIsOpenInRentalMode.")
+        guard let hasRentStarted = aDecoder.decodeObject(forKey: PropertyKey.hasRentStarted) as? Bool else {
+            print("Unable to decode the hasRentStarted.")
             return nil
         }
         
@@ -51,6 +55,11 @@ class InformationAboutLastSession: NSObject, NSCoding {
             return nil
         }
         
-        self.init(mapScreenIsOpenInRentalMode: mapScreenIsOpenInRentalMode, orderId: orderId)
+        guard let rentStartDate = aDecoder.decodeObject(forKey: PropertyKey.rentStartDate) as? Date else {
+            print("Unable to decode rentStartDate")
+            return nil
+        }
+        
+        self.init(hasRentStarted: hasRentStarted, orderId: orderId, rentStartDate: rentStartDate)
     }
 }

@@ -49,17 +49,8 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         timeAndPriceLabel.isHidden = true
         if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
             
-            if let orderInformation = orderInformation, let orderId = orderInformation.orderId {
-                // Saving to DataStorage information that rental time has started and the map screen is open
-                let informationAboutLastSession = InformationAboutLastSession(mapScreenIsOpenInRentalMode: true, orderId: orderId)
-                if let informationAboutLastSession = informationAboutLastSession {
-                    GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
-                }
-            }
-         
             timeAndPriceLabel.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
-            
             
             // TODO: Level 2 - Update counter here. Information from storage
             // To be continued
@@ -149,7 +140,6 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     }
     
     private func openQRScreenToReturnUmbrella() {
-        // TODO: Level 2 - Think better about which kind of orderInformation we should pass here and what kind of QR should be generated there
         let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
         newViewController.modalPresentationStyle = .fullScreen

@@ -18,8 +18,7 @@ struct ReturnEntity: Decodable {
 }
 
 struct PassEntity: Decodable {
-    // TODO: Level 2 - Make sure that date can be converted in that way
-    var date: Date
+    var date: String
 }
 
 struct UserEntity: Decodable {

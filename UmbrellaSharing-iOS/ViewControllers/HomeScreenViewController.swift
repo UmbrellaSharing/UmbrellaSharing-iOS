@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
-    // TODO: Level 1 - Store in local storage the date when we start rent.
     // TODO: Level 2 - Refactor this class!!
     // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
     // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space
@@ -41,7 +40,7 @@ class HomeScreenViewController: UIViewController {
     
     private func checkIfAppWasClosedDuringRentalMode() {
         let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
-        if let informationAboutLastSession = informationAboutLastSession, informationAboutLastSession.mapScreenIsOpenInRentalMode == true {
+        if informationAboutLastSession?.hasRentStarted == true {
             openMapScreen()
         }
     }

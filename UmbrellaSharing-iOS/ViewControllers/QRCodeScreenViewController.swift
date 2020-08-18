@@ -23,6 +23,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        qrViewModel.delegate = self
     }
     
     private func initView() {
@@ -35,7 +36,6 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
         if let orderInformation = orderInformation, let orderId = orderInformation.orderId {
             // Generating QR Code if user's returning an umbrella
             if let operationType = operationType, operationType == UmbrellaUtil.OperationType.returnUmbrella {
-                qrViewModel.delegate = self
                 qrViewModel.getReturnCode(orderId: orderId)
             } else {
                 // Generating QR if user's taking an umbrella
@@ -48,27 +48,13 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     
     @IBAction func pressContinue(_ sender: Any) {
         // TODO: Level 1 - Show the notification that QR need to be scanned
-        
-        if let orderInformation = orderInformation, let orderId = orderInformation.orderId, let operationType = operationType {
-            if (qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)) {
-                switch operationType {
-                case .buyUmbrella:
-                    openHomeScreen()
-                case.rentUmbrella:
-                    openMapScreen()
-                case.returnUmbrella:
-                    // TODO: Level 2 - Here should be some check
-                    
-                    // If everything is okay and we are ready to move to the feedback screen,
-                    // then right before that we need to inform that rental mode is over, and we don't need to open
-                    // map screen if application is closed later on
-                    GlobalDataStorage.shared.cleanInformationAboutLastSession()
-                    
-                    openFeedbackScreen()
-                }
-            } else {
-                // Write this code here - we can't proceed
-            }
+        if let orderId = orderInformation?.orderId, let operationType = operationType {
+            
+            // TODO: Remove after complete implementation
+            
+            // Insert this request in postman:
+            print("https://us.2ssupport.ru/order/getOrderInfo?orderId=\(orderId)&code=\(orderInformation?.code)&qrType=\(operationType.rawValue)")
+            qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)
         }
     }
     
@@ -116,5 +102,42 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     
     func didLoadReturnCode(code: Int) {
         qrCodeImageView.image = generateQRCode(from: String(code))
+    }
+    
+    
+    func qrCodeHasBeenScanned(startTime: String) {
+        let rentStartDate = UmbrellaUtil.transformStringToDate(stringDate: startTime)
+        
+        switch operationType {
+        case .buyUmbrella:
+            openHomeScreen()
+        case.rentUmbrella:
+            // Write it in the local storage
+            if let orderId = orderInformation?.orderId, let rentStartDate = rentStartDate {
+            rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: rentStartDate)
+            }
+            openMapScreen()
+        case.returnUmbrella:
+            // If everything is okay and we are ready to move to the feedback screen,
+            // then right before that we need to inform that rental mode is over, and we don't need to open
+            // map screen if application is closed later on
+            GlobalDataStorage.shared.cleanInformationAboutLastSession()
+            openFeedbackScreen()
+        case .none:
+            print("This case should never be launched.")
+        }
+    }
+    
+    func qrCodeHasNotBeenScanned() {
+        // Need to put toster here
+        print("POC - Hasn't been")
+    }
+    
+    
+    private func rememberThatRentHasBeenStarted(orderId: Int, rentStartDate: Date) {
+        let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: true, orderId: orderId, rentStartDate: rentStartDate)
+        if let informationAboutLastSession = informationAboutLastSession {
+            GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
+        }
     }
 }

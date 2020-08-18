@@ -49,7 +49,7 @@ class GlobalDataStorage {
     }
     
     public func cleanInformationAboutLastSession() {
-        let informationAboutLastSession = InformationAboutLastSession(mapScreenIsOpenInRentalMode: nil, orderId: nil)
+        let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: nil, orderId: nil, rentStartDate: nil)
         saveInformationAboutLastSession(informationAboutLastSession!)
         self.informationAboutLastSession = informationAboutLastSession
     }

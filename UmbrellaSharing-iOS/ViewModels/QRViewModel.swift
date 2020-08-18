@@ -12,8 +12,18 @@ class QRViewModel {
     
     weak var delegate: QRDataModelDelegate?
     
-    func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) -> Bool {
-        return true
+    func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) {
+        NetworkManager.shared.getCanGoFurther(orderId: orderId, qrType: qrType.rawValue).done { [weak self] response in
+            guard self != nil else { return }
+            if let delegate = self?.delegate {
+                delegate.qrCodeHasBeenScanned(startTime: response.date)
+            }
+        }.catch { error in
+            print("Error: \(error)")
+            if let delegate = self.delegate {
+                delegate.qrCodeHasNotBeenScanned()
+            }
+        }
     }
     
     func getReturnCode(orderId: Int) {
@@ -30,4 +40,8 @@ class QRViewModel {
 
 protocol QRDataModelDelegate: class {
     func didLoadReturnCode(code: Int)
+    
+    func qrCodeHasBeenScanned(startTime: String)
+    
+    func qrCodeHasNotBeenScanned()
 }
