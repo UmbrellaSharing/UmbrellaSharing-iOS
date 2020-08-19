@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Toast_Swift
 
 class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
 
@@ -49,9 +50,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     @IBAction func pressContinue(_ sender: Any) {
         // TODO: Level 1 - Show the notification that QR need to be scanned
         if let orderId = orderInformation?.orderId, let operationType = operationType {
-            
-            // TODO: Remove after complete implementation
-            
+            // TODO: Level 3 - Remove after complete implementation
             // Insert this request in postman:
             print("https://us.2ssupport.ru/order/getOrderInfo?orderId=\(orderId)&code=\(orderInformation?.code)&qrType=\(operationType.rawValue)")
             qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)
@@ -101,6 +100,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     }
     
     func didLoadReturnCode(code: Int) {
+        print("POC - code - return \(code)")
         qrCodeImageView.image = generateQRCode(from: String(code))
     }
     
@@ -114,7 +114,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
         case.rentUmbrella:
             // Write it in the local storage
             if let orderId = orderInformation?.orderId, let rentStartDate = rentStartDate {
-            rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: rentStartDate)
+                rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: rentStartDate)
             }
             openMapScreen()
         case.returnUmbrella:
@@ -129,8 +129,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     }
     
     func qrCodeHasNotBeenScanned() {
-        // Need to put toster here
-        print("POC - Hasn't been")
+        self.view.makeToast("The operator must scan the code first", duration: 2.0, position: .bottom)
     }
     
     

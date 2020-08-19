@@ -15,23 +15,27 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - PromiseKit (~> 6.8)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
     - GooglePlaces
     - PromiseKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   GooglePlaces: d5f70c3e9e427964fdeca1301a665d276ccd8754
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 71c80fd8674ea6a86a27e3149c3d9229df5fa0ff
+PODFILE CHECKSUM: 8d79aa1e0949a940292e1e5a143e936fa827ec12
 
 COCOAPODS: 1.5.3

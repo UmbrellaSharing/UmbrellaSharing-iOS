@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: Level 2 - Exctract all logic to view model in all classes
     // TODO: Level 2 - Add loading animation for all places where we are loading anything - basically where we have some delegates
     // TODO: Level 3 - Implement better logging system
+    // TODO: Level 2 - Make this loads in this way:
+    // self.view.makeToastActivity(.center) - very easy and pretty nice for the first iteration
+    // self.view.hideAllToasts()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBC1EwMA0Hc4DRq7l_wEE7FxHCG1K8GFLY")
