@@ -19,12 +19,12 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     let qrViewModel = QRViewModel()
     
     var operationType: UmbrellaUtil.OperationType?
-    var orderInformation: OrderInformation?
+    var orderInformation: OrderInformation = OrderInformation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initView()
         qrViewModel.delegate = self
+        initView()
     }
     
     private func initView() {
@@ -34,25 +34,29 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     }
     
     private func presentQR() {
-        if let orderInformation = orderInformation, let orderId = orderInformation.orderId {
-            // Generating QR Code if user's returning an umbrella
-            if let operationType = operationType, operationType == UmbrellaUtil.OperationType.returnUmbrella {
-                qrViewModel.getReturnCode(orderId: orderId)
-            } else {
-                // Generating QR if user's taking an umbrella
-                if let code = orderInformation.code {
-                    qrCodeImageView.image = generateQRCode(from: String(code))
-                }
+        self.view.makeToastActivity(.center)
+        // Generating QR Code if user's returning an umbrella
+        if operationType == UmbrellaUtil.OperationType.returnUmbrella {
+            if let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId {
+                qrViewModel.getReturnQRCode(orderId: orderId)
+            }
+        } else {
+            let userCredentials = GlobalDataStorage.shared.userCredentials
+            let isBuy = operationType == UmbrellaUtil.OperationType.buyUmbrella
+            if let userId = userCredentials?.userId {
+                qrViewModel.getQRCode(userId: userId, isBuy: isBuy)
             }
         }
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // TODO: Level 1 - Show the notification that QR need to be scanned
-        if let orderId = orderInformation?.orderId, let operationType = operationType {
-            // TODO: Level 3 - Remove after complete implementation
-            // Insert this request in postman:
-            print("https://us.2ssupport.ru/order/getOrderInfo?orderId=\(orderId)&code=\(orderInformation?.code)&qrType=\(operationType.rawValue)")
+        if let orderId = orderInformation.orderId, let operationType = operationType {
+           
+            if let code = orderInformation.code {
+                // TODO: Level 3 - Remove after complete implementation
+                // Insert this request in postman:
+                print("https://us.2ssupport.ru/order/getOrderInfo?orderId=\(orderId)&code=\(code)&qrType=\(operationType.rawValue)")
+            }
             qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)
         }
     }
@@ -99,11 +103,18 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
         self.present(newViewController, animated: true, completion: nil)
     }
     
+    func didLoadQRCode(orderId: Int, code: Int) {
+          self.view.hideToastActivity()
+          orderInformation.orderId = orderId
+          orderInformation.code = code
+          qrCodeImageView.image = generateQRCode(from: String(code))
+      }
+    
     func didLoadReturnCode(code: Int) {
-        print("POC - code - return \(code)")
+        self.view.hideToastActivity()
+        self.orderInformation.code = code
         qrCodeImageView.image = generateQRCode(from: String(code))
     }
-    
     
     func qrCodeHasBeenScanned(startTime: String) {
         let rentStartDate = UmbrellaUtil.transformStringToDate(stringDate: startTime)
@@ -113,7 +124,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
             openHomeScreen()
         case.rentUmbrella:
             // Write it in the local storage
-            if let orderId = orderInformation?.orderId, let rentStartDate = rentStartDate {
+            if let orderId = orderInformation.orderId, let rentStartDate = rentStartDate {
                 rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: rentStartDate)
             }
             openMapScreen()
@@ -131,7 +142,6 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     func qrCodeHasNotBeenScanned() {
         self.view.makeToast("The operator must scan the code first", duration: 2.0, position: .bottom)
     }
-    
     
     private func rememberThatRentHasBeenStarted(orderId: Int, rentStartDate: Date) {
         let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: true, orderId: orderId, rentStartDate: rentStartDate)

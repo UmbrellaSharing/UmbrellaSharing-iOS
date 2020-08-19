@@ -42,6 +42,7 @@ class GlobalDataStorage {
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: informationAboutLastSession, requiringSecureCoding: false)
             try data.write(to: InformationAboutLastSession.ArchiveURL)
+            self.informationAboutLastSession = informationAboutLastSession
             print("Information about last session successfully saved.")
         } catch {
             print("Failed to save Information about last session.")
@@ -51,7 +52,6 @@ class GlobalDataStorage {
     public func cleanInformationAboutLastSession() {
         let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: nil, orderId: nil, rentStartDate: nil)
         saveInformationAboutLastSession(informationAboutLastSession!)
-        self.informationAboutLastSession = informationAboutLastSession
     }
     
     public func loadInformationAboutLastSessionFromStorage() -> InformationAboutLastSession? {

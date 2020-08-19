@@ -35,6 +35,7 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
     
     private func loadQuestionsAndAnswers() {
         informationViewModel.delegate = self
+        self.view.makeToastActivity(.center)
         informationViewModel.load()
     }
     
@@ -45,7 +46,6 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
         tableViewData = questionsAndAnswers.map { cellData(opened: false, title: $0.question, sectionData: [$0.answer]) }
         questionsTable.reloadData()
     }
-        
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened {
@@ -107,6 +107,7 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
     // MARK: InformationViewModel Delegate
     
     func didLoadQuestionsAndAnswers(questionsAndAnswers: [FAQEntity]) {
+        self.view.hideToastActivity()
         setupTableView(questionsAndAnswers)
     }
 }

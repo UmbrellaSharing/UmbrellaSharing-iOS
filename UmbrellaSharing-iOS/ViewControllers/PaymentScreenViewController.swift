@@ -14,12 +14,10 @@ class PaymentScreenViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    private let paymentViewModel = PaymentViewModel()
     var operationType: UmbrellaUtil.OperationType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        paymentViewModel.load(operationType)
         initView()
     }
     
@@ -38,11 +36,9 @@ class PaymentScreenViewController: UIViewController {
             let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
             newViewController.modalPresentationStyle = .fullScreen
-            newViewController.orderInformation = paymentViewModel.orderInformation
             newViewController.operationType = operationType
             self.present(newViewController, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func back(_ sender: Any) {

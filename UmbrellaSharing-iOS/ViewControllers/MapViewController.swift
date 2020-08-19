@@ -13,7 +13,6 @@ import GoogleMaps
 class MapViewController: UIViewController, MapDataModelDelegate {
     
     // TODO: Level 1 - Show the modal screen with prices
- 
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
@@ -42,6 +41,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     
     private func loadLocations() {
         mapViewModel.delegate = self
+        self.view.makeToastActivity(.center)
         mapViewModel.load()
     }
     
@@ -70,7 +70,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         return String(rawTimeValue)
     }
     
-    // TODO: Level 2 - Put it in a model class
+    // TODO: Level 2 - Put it in a ViewModel class
     private func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
         let hours = normilizeTimeValue(Int(counter) / 3600)
         let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
@@ -157,7 +157,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     // MARK: MapViewModel Delegate
     
     func didLoadLocations(locations: [LocationPointEntity]) {
-         initMarkers(mapView!, locations)
-     }
-     
+        self.view.hideToastActivity()
+        initMarkers(mapView!, locations)
+    }
 }
