@@ -12,6 +12,7 @@ class HomeScreenViewController: UIViewController {
     // TODO: Level 2 - Refactor this class!!
     // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
     // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space
+    
     @IBOutlet weak var rentPriceHeaderLabel: UILabel!
     @IBOutlet weak var firstOptionRentLabel: UILabel!
     @IBOutlet weak var secondOptionRentLabel: UILabel!
@@ -53,14 +54,14 @@ class HomeScreenViewController: UIViewController {
         
         let userCredentials = GlobalDataStorage.shared.userCredentials
         let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
-        // TODO: Think should we pass orderId and code or not? I think we don't need, but need to be checked
+        // TODO: Level 3 - Think should we pass orderId and code or not? I think we don't need, but need to be checked
         let orderInformation = OrderInformation(userId: userCredentials?.userId, orderId: orderId, code: nil)
         newViewController.orderInformation = orderInformation
         self.present(newViewController, animated: true, completion: nil)
     }
     
-    private func formOrderAndProceed(_ operationType: UmbrellaUtil.OperationType) {
-        // TODO: Level 1 - Here should be an order but for now it will be just opening another screen
+    
+    private func openPaymentScreen(_ operationType: UmbrellaUtil.OperationType) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
@@ -69,11 +70,11 @@ class HomeScreenViewController: UIViewController {
     }
     
     @IBAction func rentUmbrella(_ sender: Any) {
-        formOrderAndProceed(UmbrellaUtil.OperationType.rentUmbrella)
+        openPaymentScreen(UmbrellaUtil.OperationType.rentUmbrella)
     }
     
     @IBAction func buyUmbrella(_ sender: Any) {
-        formOrderAndProceed(UmbrellaUtil.OperationType.buyUmbrella)
+        openPaymentScreen(UmbrellaUtil.OperationType.buyUmbrella)
     }
     
     

@@ -12,10 +12,10 @@ import GoogleMaps
 
 class MapViewController: UIViewController, MapDataModelDelegate {
     
-    // TODO: Level 1 - Show the modal screen with prices
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
+    @IBOutlet weak var informationButton: InformationButton!
     
     private let mapViewModel = MapViewModel()
     
@@ -159,5 +159,11 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     func didLoadLocations(locations: [LocationPointEntity]) {
         self.view.hideToastActivity()
         initMarkers(mapView!, locations)
+    }
+    
+    
+    @IBAction func openInformation(_ sender: Any) {
+        // TODO: Level 1 - Show the modal screen with prices
+        print("Open informaiton")
     }
 }

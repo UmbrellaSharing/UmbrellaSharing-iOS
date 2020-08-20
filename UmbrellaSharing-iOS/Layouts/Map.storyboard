@@ -56,10 +56,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpg-5m-365" customClass="InformationButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                <rect key="frame" x="305" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ufe-jy-k8T"/>
+                                    <constraint firstAttribute="height" constant="50" id="xqf-N3-72M"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="informationSign"/>
+                                <connections>
+                                    <action selector="openInformation:" destination="rVy-LD-VSZ" eventType="touchUpInside" id="WEg-BU-xaP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="9g5-bc-9T0" firstAttribute="trailing" secondItem="Cpg-5m-365" secondAttribute="trailing" constant="20" id="1eV-7d-Wj1"/>
                             <constraint firstItem="iAw-Ab-CBy" firstAttribute="centerX" secondItem="9g5-bc-9T0" secondAttribute="centerX" id="8wA-4q-zxV"/>
+                            <constraint firstItem="Cpg-5m-365" firstAttribute="top" secondItem="9g5-bc-9T0" secondAttribute="top" constant="20" id="FbM-1E-Jnu"/>
                             <constraint firstItem="9g5-bc-9T0" firstAttribute="bottom" secondItem="Gik-2I-yUJ" secondAttribute="bottom" constant="63" id="GOh-Ww-kE3"/>
                             <constraint firstItem="Gik-2I-yUJ" firstAttribute="leading" secondItem="9g5-bc-9T0" secondAttribute="leading" constant="83" id="MYR-Iz-b1L"/>
                             <constraint firstItem="iAw-Ab-CBy" firstAttribute="top" secondItem="9g5-bc-9T0" secondAttribute="top" constant="61" id="NS6-Zs-kGh"/>
@@ -69,6 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Uvy-Rs-Qgo" id="GAS-Ph-Z2l"/>
+                        <outlet property="informationButton" destination="Cpg-5m-365" id="wiX-s7-bKt"/>
                         <outlet property="proceedButton" destination="ilu-dg-Dce" id="FKq-Bs-sRs"/>
                         <outlet property="timeAndPriceLabel" destination="iAw-Ab-CBy" id="iDg-Iu-3RX"/>
                     </connections>
@@ -78,4 +92,7 @@
             <point key="canvasLocation" x="86" y="123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="informationSign" width="256" height="256"/>
+    </resources>
 </document>
