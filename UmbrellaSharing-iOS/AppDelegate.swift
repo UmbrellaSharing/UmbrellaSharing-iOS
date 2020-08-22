@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: Level 3 - Comments
     // TODO: Level 2 - Exctract all logic to view model in all classes
     // TODO: Level 3 - Implement better logging system
-    // TODO: Level 2 - Add FAQ to all screens
+    // TODO: Level 2 - Feature - Add FAQ to all screens
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBC1EwMA0Hc4DRq7l_wEE7FxHCG1K8GFLY")

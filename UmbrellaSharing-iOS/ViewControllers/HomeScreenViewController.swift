@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
-    // TODO: Level 2 - Refactor this class!!
+    // TODO: Level 2 - Refactor - Home Screen View Controller Refactoring
+    
     // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
     // TODO: Level 4 - Think do we really need all of those params here? Just occupy a lot of space
     

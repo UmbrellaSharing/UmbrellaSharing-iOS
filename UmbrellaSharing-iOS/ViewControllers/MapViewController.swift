@@ -54,7 +54,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
             timeAndPriceLabel.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
             
-            // TODO: Level 2 - Update counter here. Information from storage
+            // TODO: Level 2 - Feature - Update counter here. Information from storage
             // To be continued
         }
     }
@@ -117,7 +117,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     }
     
     private func initMarkers(_ mapView: GMSMapView, _ locations: [LocationPointEntity]) {
-        // TODO: Level 2 - Ask Ilia about the title for each location. Now it is default.
+        // TODO: Level 2 - Feature - Small - Ask Ilia about the title for each location. Now it is default.
         for location in locations {
             let currentMarker = GMSMarker()
             currentMarker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)

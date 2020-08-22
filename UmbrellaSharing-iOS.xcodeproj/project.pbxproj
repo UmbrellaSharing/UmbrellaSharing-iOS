@@ -15,6 +15,7 @@
 		7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */; };
 		7D3981BD24D6B284007B76CC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BC24D6B284007B76CC /* MapViewModel.swift */; };
 		7D3DBA3224F0B5A700A9D7AF /* PriceRateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */; };
+		7D3DBA3424F0E1FE00A9D7AF /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DBA3324F0E1FD00A9D7AF /* FeedbackViewModel.swift */; };
 		7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */; };
 		7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */; };
 		7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */; };
@@ -68,6 +69,7 @@
 		7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		7D3981BC24D6B284007B76CC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRateModalViewController.swift; sourceTree = "<group>"; };
+		7D3DBA3324F0E1FD00A9D7AF /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				7D05A95724BC860E006B759D /* QRViewModel.swift */,
 				7D3981BC24D6B284007B76CC /* MapViewModel.swift */,
 				7DF354AF24E3807000C993A4 /* InformationViewModel.swift */,
+				7D3DBA3324F0E1FD00A9D7AF /* FeedbackViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
+				7D3DBA3424F0E1FE00A9D7AF /* FeedbackViewModel.swift in Sources */,
 				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
 				7D3DBA3224F0B5A700A9D7AF /* PriceRateModalViewController.swift in Sources */,
 				7DF354B924E3B96800C993A4 /* GlobalDataStorage.swift in Sources */,

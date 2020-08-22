@@ -59,19 +59,16 @@ class NetworkManager {
     
     // MARK: Save User's Feedback
     //Type: POST
-    // TODO: Level 2 After Iliya check the server, test this part, since for right now it returns 404 error
-    // TODO: Level 2 Think about how it could be implemented in more consistent way
-    func postFeedback(orderId: Int, feedback: String, mark: Int) {
+    func postFeedback(_ feedbackEntity: FeedbackEntity) {
         let requestURL = self.baseURL.appendingPathComponent("order/saveFeedback")
         var request = URLRequest(url: requestURL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let json = [
-            "orderId": String(orderId),
-            "feedback": feedback,
-            "mark": String(mark)
+            "orderId": String(feedbackEntity.orderId),
+            "feedback": feedbackEntity.feedback,
+            "mark": String(feedbackEntity.mark)
         ]
-        // TODO: Level 3 - Handle this serialization error better
         let jsonData = try! JSONSerialization.data(withJSONObject: json, options: [])
         let task = URLSession.shared.uploadTask(with: request, from: jsonData) { _, _, error in
             if let error = error {

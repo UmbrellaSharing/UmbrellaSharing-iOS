@@ -65,7 +65,7 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    // TODO: Level 2 - Understand what does it mean
+    // TODO: Level 3 - Understand what does it mean
     func generateQRCode(from string: String) -> UIImage? {
         let data = string.data(using: String.Encoding.ascii)
 
@@ -132,7 +132,9 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
             // If everything is okay and we are ready to move to the feedback screen,
             // then right before that we need to inform that rental mode is over, and we don't need to open
             // map screen if application is closed later on
-            GlobalDataStorage.shared.cleanInformationAboutLastSession()
+            let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
+            let updatedInformationAboutLastSession = InformationAboutLastSession(hasRentStarted: false, orderId: orderId, rentStartDate: nil)
+            GlobalDataStorage.shared.saveInformationAboutLastSession(updatedInformationAboutLastSession!)
             openFeedbackScreen()
         case .none:
             print("This case should never be launched.")

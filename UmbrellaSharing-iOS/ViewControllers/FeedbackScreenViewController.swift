@@ -15,15 +15,17 @@ class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
     @IBOutlet weak var submitButton: UmbrellaButton!
     @IBOutlet weak var comment: UITextView!
     
+    private let feedbackViewModel = FeedbackViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         comment.delegate = self
     }
     
-    
     @IBAction func submit(_ sender: Any) {
-        // TODO: Level 2 - Insert here the API call for the server side and send rating and comment
+        let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
+        feedbackViewModel.sentFeedback(orderId: orderId, feedback: comment.text, mark: ratingControl.rating)
+        GlobalDataStorage.shared.cleanInformationAboutLastSession()
         openHomeScreen()
     }
     
