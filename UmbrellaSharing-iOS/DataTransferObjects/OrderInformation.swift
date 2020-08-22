@@ -9,7 +9,7 @@
 import Foundation
 
 struct OrderInformation {
-    var userId: Int?
+    var userId: String?
     var orderId: Int?
     var code: Int?
 }

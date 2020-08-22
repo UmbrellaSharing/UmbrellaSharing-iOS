@@ -158,7 +158,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMD-MA-ca3" customClass="InformationButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
-                                <rect key="frame" x="313" y="20" width="50" height="50"/>
+                                <rect key="frame" x="305" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Lav-AN-Qqa"/>
+                                    <constraint firstAttribute="height" constant="50" id="fhG-98-ViJ"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="informationSign">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -170,7 +174,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="m03-uo-GpW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="1vS-mU-wl4"/>
-                            <constraint firstItem="vMD-MA-ca3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="313" id="67K-L5-oAO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vMD-MA-ca3" secondAttribute="trailing" constant="20" id="9HB-A3-h3M"/>
                             <constraint firstItem="jmH-jc-6rE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9zC-Gi-4ni"/>
                             <constraint firstItem="jmH-jc-6rE" firstAttribute="top" secondItem="vAh-8d-4Bt" secondAttribute="bottom" constant="20" id="FV2-GR-Zl7"/>
                             <constraint firstItem="vAh-8d-4Bt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pvs-ZT-RgH"/>

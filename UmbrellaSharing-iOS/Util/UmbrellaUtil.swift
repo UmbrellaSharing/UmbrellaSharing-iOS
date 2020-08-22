@@ -20,4 +20,16 @@ class UmbrellaUtil {
         case locationsMode
         case rentalMode
     }
+    
+    static func transformStringToDate(stringDate: String) -> Date? {
+        let isoDate = stringDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSZ"
+        if let date = dateFormatter.date(from: isoDate) {
+            return date
+        } else {
+            return nil
+        }
+    }
 }

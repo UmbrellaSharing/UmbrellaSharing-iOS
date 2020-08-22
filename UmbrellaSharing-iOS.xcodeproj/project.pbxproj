@@ -14,6 +14,7 @@
 		7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981B824D03FDF007B76CC /* NetworkManager.swift */; };
 		7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */; };
 		7D3981BD24D6B284007B76CC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BC24D6B284007B76CC /* MapViewModel.swift */; };
+		7D3DBA3224F0B5A700A9D7AF /* PriceRateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */; };
 		7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */; };
 		7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */; };
 		7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */; };
@@ -40,6 +41,7 @@
 		7DF354B024E3807000C993A4 /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354AF24E3807000C993A4 /* InformationViewModel.swift */; };
 		7DF354B324E3994700C993A4 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354B224E3994700C993A4 /* UserCredentials.swift */; };
 		7DF354B924E3B96800C993A4 /* GlobalDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354B824E3B96800C993A4 /* GlobalDataStorage.swift */; };
+		7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */; };
 		7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378F824B95438001D1BD8 /* OrderInformation.swift */; };
 		7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */; };
 		EED7666447CD190F18AE8977 /* Pods_UmbrellaSharing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */; };
@@ -65,13 +67,14 @@
 		7D3981B824D03FDF007B76CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		7D3981BC24D6B284007B76CC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRateModalViewController.swift; sourceTree = "<group>"; };
 		7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		7D5CEDEE24C2D0FF003DB6EE /* InformationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDF024C2D409003DB6EE /* InformationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDF224C2D5B6003DB6EE /* InformationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationButton.swift; sourceTree = "<group>"; };
-		7D63462E24779DD100049C30 /* UmbrellaSharing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UmbrellaSharing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D63462E24779DD100049C30 /* Zontik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zontik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63463124779DD100049C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D63463324779DD100049C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7D63463524779DD100049C30 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		7DF354AF24E3807000C993A4 /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		7DF354B224E3994700C993A4 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		7DF354B824E3B96800C993A4 /* GlobalDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDataStorage.swift; sourceTree = "<group>"; };
+		7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutLastSession.swift; sourceTree = "<group>"; };
 		7DF378F824B95438001D1BD8 /* OrderInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformation.swift; sourceTree = "<group>"; };
 		7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +155,7 @@
 		7D63462F24779DD100049C30 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D63462E24779DD100049C30 /* UmbrellaSharing-iOS.app */,
+				7D63462E24779DD100049C30 /* Zontik.app */,
 				7D63464424779DD300049C30 /* UmbrellaSharing-iOSTests.xctest */,
 			);
 			name = Products;
@@ -223,6 +227,7 @@
 				7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */,
 				7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */,
 				7D5CEDF024C2D409003DB6EE /* InformationScreenViewController.swift */,
+				7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				7DF354B224E3994700C993A4 /* UserCredentials.swift */,
+				7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -299,7 +305,7 @@
 			);
 			name = "UmbrellaSharing-iOS";
 			productName = "UmbrellaSharing-iOS";
-			productReference = 7D63462E24779DD100049C30 /* UmbrellaSharing-iOS.app */;
+			productReference = 7D63462E24779DD100049C30 /* Zontik.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7D63464324779DD300049C30 /* UmbrellaSharing-iOSTests */ = {
@@ -395,12 +401,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,8 +469,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
+				7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
 				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
+				7D3DBA3224F0B5A700A9D7AF /* PriceRateModalViewController.swift in Sources */,
 				7DF354B924E3B96800C993A4 /* GlobalDataStorage.swift in Sources */,
 				7DF354B324E3994700C993A4 /* UserCredentials.swift in Sources */,
 				7D3981B924D03FDF007B76CC /* NetworkManager.swift in Sources */,
@@ -653,7 +663,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igor.katselenbogen.UmbrellaSharing-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zontik;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -672,7 +682,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igor.katselenbogen.UmbrellaSharing-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zontik;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

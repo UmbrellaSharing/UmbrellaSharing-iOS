@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import Toast_Swift
 
-class QRCodeScreenViewController: UIViewController {
-    
+class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
+
     @IBOutlet weak var continueButton: UmbrellaButton!
     @IBOutlet weak var backButton: UmbrellaButton!
     @IBOutlet weak var qrCodeImageView: UIImageView!
@@ -18,40 +19,45 @@ class QRCodeScreenViewController: UIViewController {
     let qrViewModel = QRViewModel()
     
     var operationType: UmbrellaUtil.OperationType?
-    var orderInformation: OrderInformation?
+    var orderInformation: OrderInformation = OrderInformation()
     
     override func viewDidLoad() {
-        // TODO: Level 1 - We need to store qr code somewhere
         super.viewDidLoad()
+        qrViewModel.delegate = self
         initView()
     }
     
     private func initView() {
         continueButton.setTitle("Continue", for: .normal)
         backButton.setTitle("Go Back", for: .normal)
-        
-        // Generating QR
-        if let orderInformation = orderInformation, let code = orderInformation.code {
-            qrCodeImageView.image = generateQRCode(from: String(code))
+        presentQR()
+    }
+    
+    private func presentQR() {
+        self.view.makeToastActivity(.center)
+        // Generating QR Code if user's returning an umbrella
+        if operationType == UmbrellaUtil.OperationType.returnUmbrella {
+            if let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId {
+                qrViewModel.getReturnQRCode(orderId: orderId)
+            }
+        } else {
+            let userCredentials = GlobalDataStorage.shared.userCredentials
+            let isBuy = operationType == UmbrellaUtil.OperationType.buyUmbrella
+            if let userId = userCredentials?.userId {
+                qrViewModel.getQRCode(userId: userId, isBuy: isBuy)
+            }
         }
-        
     }
     
     @IBAction func pressContinue(_ sender: Any) {
-        // TODO: Level 1 - We can't just press - we need to check if the operation was sumbitted
-        if let orderInformation = orderInformation, let orderId = orderInformation.orderId, let operationType = operationType {
-            if (qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)) {
-                switch operationType {
-                case .buyUmbrella:
-                    openHomeScreen()
-                case.rentUmbrella:
-                    openMapScreen()
-                case.returnUmbrella:
-                    openFeedbackScreen()
-                }
-            } else {
-                // TODO: Level 1 - Show the notification that QR need to be scanned
+        if let orderId = orderInformation.orderId, let operationType = operationType {
+           
+            if let code = orderInformation.code {
+                // TODO: Level 3 - Remove after complete implementation
+                // Insert this request in postman:
+                print("https://us.2ssupport.ru/order/getOrderInfo?orderId=\(orderId)&code=\(code)&qrType=\(operationType.rawValue)")
             }
+            qrViewModel.canWeProceed(orderId: orderId, qrType: operationType)
         }
     }
     
@@ -95,5 +101,52 @@ class QRCodeScreenViewController: UIViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "FeedbackScreenViewController") as! FeedbackScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    func didLoadQRCode(orderId: Int, code: Int) {
+          self.view.hideToastActivity()
+          orderInformation.orderId = orderId
+          orderInformation.code = code
+          qrCodeImageView.image = generateQRCode(from: String(code))
+      }
+    
+    func didLoadReturnCode(code: Int) {
+        self.view.hideToastActivity()
+        self.orderInformation.code = code
+        qrCodeImageView.image = generateQRCode(from: String(code))
+    }
+    
+    func qrCodeHasBeenScanned(startTime: String) {
+        let rentStartDate = UmbrellaUtil.transformStringToDate(stringDate: startTime)
+        
+        switch operationType {
+        case .buyUmbrella:
+            openHomeScreen()
+        case.rentUmbrella:
+            // Write it in the local storage
+            if let orderId = orderInformation.orderId, let rentStartDate = rentStartDate {
+                rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: rentStartDate)
+            }
+            openMapScreen()
+        case.returnUmbrella:
+            // If everything is okay and we are ready to move to the feedback screen,
+            // then right before that we need to inform that rental mode is over, and we don't need to open
+            // map screen if application is closed later on
+            GlobalDataStorage.shared.cleanInformationAboutLastSession()
+            openFeedbackScreen()
+        case .none:
+            print("This case should never be launched.")
+        }
+    }
+    
+    func qrCodeHasNotBeenScanned() {
+        self.view.makeToast("The operator must scan the code first", duration: 2.0, position: .bottom)
+    }
+    
+    private func rememberThatRentHasBeenStarted(orderId: Int, rentStartDate: Date) {
+        let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: true, orderId: orderId, rentStartDate: rentStartDate)
+        if let informationAboutLastSession = informationAboutLastSession {
+            GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
+        }
     }
 }

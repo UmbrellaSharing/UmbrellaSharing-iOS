@@ -10,9 +10,53 @@ import Foundation
 
 class QRViewModel {
     
-    func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) -> Bool {
-        // TODO: Level 2 - This suppose to call API "/Order/CanGoFurther" - When Iliya fix the API
-        return true
+    weak var delegate: QRDataModelDelegate?
+    
+    func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) {
+        NetworkManager.shared.getCanGoFurther(orderId: orderId, qrType: qrType.rawValue).done { [weak self] response in
+            guard self != nil else { return }
+            if let delegate = self?.delegate {
+                delegate.qrCodeHasBeenScanned(startTime: response.date)
+            }
+        }.catch { error in
+            print("Error: \(error)")
+            if let delegate = self.delegate {
+                delegate.qrCodeHasNotBeenScanned()
+            }
+        }
     }
     
+    func getQRCode(userId: String, isBuy: Bool) {
+        NetworkManager.shared.getQRCodeInformation(userId: userId, isBuy: isBuy)
+            .done { [weak self] orderEntity in
+                guard self != nil else { return }
+                if let delegate = self?.delegate {
+                    delegate.didLoadQRCode(orderId: orderEntity.orderId, code: orderEntity.code)
+                }
+        }.catch { error in
+            print("Error: \(error)")
+        }
+    }
+    
+    func getReturnQRCode(orderId: Int) {
+        NetworkManager.shared.getReturnQRCodeInformation(orderId: orderId).done { [weak self] response in
+            guard self != nil else { return }
+            if let delegate = self?.delegate {
+                delegate.didLoadReturnCode(code: response.code)
+            }
+        }.catch { error in
+            print("Error: \(error)")
+        }
+    }
+}
+
+protocol QRDataModelDelegate: class {
+    
+    func didLoadReturnCode(code: Int)
+    
+    func didLoadQRCode(orderId: Int, code: Int)
+    
+    func qrCodeHasBeenScanned(startTime: String)
+    
+    func qrCodeHasNotBeenScanned()
 }

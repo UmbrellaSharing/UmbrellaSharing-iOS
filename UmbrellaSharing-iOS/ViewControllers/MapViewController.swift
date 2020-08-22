@@ -11,10 +11,13 @@ import Foundation
 import GoogleMaps
 
 class MapViewController: UIViewController, MapDataModelDelegate {
- 
+    
+    // TODO: Level 2 - Refactor - put everything in ViewModal class
+    
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
+    @IBOutlet weak var informationButton: InformationButton!
     
     private let mapViewModel = MapViewModel()
     
@@ -40,14 +43,19 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     
     private func loadLocations() {
         mapViewModel.delegate = self
+        self.view.makeToastActivity(.center)
         mapViewModel.load()
     }
     
     private func initCounter() {
         timeAndPriceLabel.isHidden = true
         if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
+            
             timeAndPriceLabel.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
+            
+            // TODO: Level 2 - Update counter here. Information from storage
+            // To be continued
         }
     }
     
@@ -64,7 +72,6 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         return String(rawTimeValue)
     }
     
-    // TODO: Level 2 - Put it in a model class
     private func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
         let hours = normilizeTimeValue(Int(counter) / 3600)
         let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
@@ -76,9 +83,28 @@ class MapViewController: UIViewController, MapDataModelDelegate {
             timeString = "\(hours):\(minutes):\(seconds)"
         }
         
-        // TODO: Level 1 - Implement Price calculation
-        let priceString = "Price"
+        let priceString = "\(calculatePrice(from: counter))₽"
         return timeString + " " + priceString
+    }
+    
+    private func calculatePrice(from counter: Double) -> Int {
+        
+        // Constants
+        let secondsInHour = 60 * 60
+        let secondsInDay = 24 * secondsInHour
+        
+        var price: Int = 0
+        let roundCounter = Int(counter)
+        
+        if roundCounter <= secondsInHour {
+            price = 50
+        } else if roundCounter > secondsInHour && roundCounter < secondsInDay {
+            price = 100
+        } else {
+            price = 300
+        }
+        
+        return price
     }
     
     private func initMap() {
@@ -93,7 +119,6 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     private func initMarkers(_ mapView: GMSMapView, _ locations: [LocationPointEntity]) {
         // TODO: Level 2 - Ask Ilia about the title for each location. Now it is default.
         for location in locations {
-            print(location)
             let currentMarker = GMSMarker()
             currentMarker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             currentMarker.title = "Marker"
@@ -107,7 +132,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
             switch mapMode {
             case .locationsMode:
                 proceedButton.setTitle("Rent an Umbrella", for: .normal)
-                proceedButton.setTitle("Back to Home", for: .normal)
+                backButton.setTitle("Back to Home", for: .normal)
             case .rentalMode:
                 proceedButton.setTitle("Return an Umbrella", for: .normal)
                 backButton.isHidden = true
@@ -119,17 +144,22 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         if let mapMode = mapMode {
             switch mapMode {
             case .locationsMode:
-                // TODO: Level 1 - Ask Ilya what shold be done in this case if we need actually to send a user for the next screen
-                print("Locations Mode")
+                openPaymentScreenToRentUmbrella()
             case .rentalMode:
                 openQRScreenToReturnUmbrella()
-                print("Rental mode")
             }
         }
     }
     
+    private func openPaymentScreenToRentUmbrella() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.operationType = UmbrellaUtil.OperationType.rentUmbrella
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
     private func openQRScreenToReturnUmbrella() {
-        // TODO: Level 2 - Think better about which kind of orderInformation we should pass here and what kind of QR should be generated there
         let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
         newViewController.modalPresentationStyle = .fullScreen
@@ -147,7 +177,7 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     // MARK: MapViewModel Delegate
     
     func didLoadLocations(locations: [LocationPointEntity]) {
-         initMarkers(mapView!, locations)
-     }
-     
+        self.view.hideToastActivity()
+        initMarkers(mapView!, locations)
+    }
 }
