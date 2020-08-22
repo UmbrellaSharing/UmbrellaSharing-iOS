@@ -12,6 +12,8 @@ import GoogleMaps
 
 class MapViewController: UIViewController, MapDataModelDelegate {
     
+    // TODO: Level 2 - Refactor - put everything in ViewModal class
+    
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
@@ -70,7 +72,6 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         return String(rawTimeValue)
     }
     
-    // TODO: Level 2 - Put it in a ViewModel class
     private func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
         let hours = normilizeTimeValue(Int(counter) / 3600)
         let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
@@ -82,9 +83,28 @@ class MapViewController: UIViewController, MapDataModelDelegate {
             timeString = "\(hours):\(minutes):\(seconds)"
         }
         
-        // TODO: Level 1 - Implement Price calculation
-        let priceString = "Price"
+        let priceString = "\(calculatePrice(from: counter))₽"
         return timeString + " " + priceString
+    }
+    
+    private func calculatePrice(from counter: Double) -> Int {
+        
+        // Constants
+        let secondsInHour = 60 * 60
+        let secondsInDay = 24 * secondsInHour
+        
+        var price: Int = 0
+        let roundCounter = Int(counter)
+        
+        if roundCounter <= secondsInHour {
+            price = 50
+        } else if roundCounter > secondsInHour && roundCounter < secondsInDay {
+            price = 100
+        } else {
+            price = 300
+        }
+        
+        return price
     }
     
     private func initMap() {
