@@ -160,10 +160,4 @@ class MapViewController: UIViewController, MapDataModelDelegate {
         self.view.hideToastActivity()
         initMarkers(mapView!, locations)
     }
-    
-    
-    @IBAction func openInformation(_ sender: Any) {
-        // TODO: Level 1 - Show the modal screen with prices
-        print("Open informaiton")
-    }
 }
