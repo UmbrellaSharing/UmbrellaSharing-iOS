@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: Level 2 - Exctract all logic to view model in all classes
     // TODO: Level 3 - Implement better logging system
     // TODO: Level 2 - Feature - Add FAQ to all screens
+    // TODO: Level 3 - Adopt common convention - adopt protocols on an extension to the view controller. Page 129 in iOS book
+    // TODO: Level 3 - If there is no internet, then show it to user
+    // TODO: Level 3 - If more than 300 rubles, than you don't need to give this umbrella back anymore
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBC1EwMA0Hc4DRq7l_wEE7FxHCG1K8GFLY")

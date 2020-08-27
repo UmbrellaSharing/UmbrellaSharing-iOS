@@ -117,11 +117,10 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     }
     
     private func initMarkers(_ mapView: GMSMapView, _ locations: [LocationPointEntity]) {
-        // TODO: Level 2 - Feature - Small - Ask Ilia about the title for each location. Now it is default.
         for location in locations {
             let currentMarker = GMSMarker()
             currentMarker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            currentMarker.title = "Marker"
+            currentMarker.title = location.name
             currentMarker.snippet = location.description
             currentMarker.map = mapView
         }

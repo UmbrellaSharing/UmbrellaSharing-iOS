@@ -44,6 +44,7 @@ struct FAQEntity: Decodable {
 
 struct LocationPointEntity: Decodable {
     var pointId: Int
+    var name: String
     var longitude: Double
     var latitude: Double
     var description: String
