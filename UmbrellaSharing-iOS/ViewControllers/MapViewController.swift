@@ -10,14 +10,13 @@ import UIKit
 import Foundation
 import GoogleMaps
 
-class MapViewController: UIViewController, MapDataModelDelegate {
+class MapViewController: UIViewController {
     
-    // TODO: Level 2 - Refactor - put everything in ViewModal class
+    // MARK: Outlets
     
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
-    @IBOutlet weak var informationButton: InformationButton!
     
     private let mapViewModel = MapViewModel()
     
@@ -49,62 +48,18 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     
     private func initCounter() {
         timeAndPriceLabel.isHidden = true
-        if let mapMode = mapMode, mapMode == UmbrellaUtil.MapMode.rentalMode {
-            
+        if mapMode == UmbrellaUtil.MapMode.rentalMode {
             timeAndPriceLabel.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
             
             // TODO: Level 2 - Feature - Update counter here. Information from storage
-            // To be continued
+            // Better to deal with this in ViewModel
         }
     }
     
     @objc func updateTimerLabel() {
         counter += 1
-        timeAndPriceLabel.text = prepareTextForTimeAndPriceLabel(counter)
-    }
-    
-    private func normilizeTimeValue(_ rawTimeValue: Int) -> String {
-        if rawTimeValue < 10 {
-            let result = "0" + String(rawTimeValue)
-            return result
-        }
-        return String(rawTimeValue)
-    }
-    
-    private func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
-        let hours = normilizeTimeValue(Int(counter) / 3600)
-        let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
-        let seconds = normilizeTimeValue(Int(counter) % 60)
-        var timeString = "00:00"
-        if (Int(hours) == 0) {
-            timeString = "\(minutes):\(seconds)"
-        } else {
-            timeString = "\(hours):\(minutes):\(seconds)"
-        }
-        
-        let priceString = "\(calculatePrice(from: counter))₽"
-        return timeString + " " + priceString
-    }
-    
-    private func calculatePrice(from counter: Double) -> Int {
-        
-        // Constants
-        let secondsInHour = 60 * 60
-        let secondsInDay = 24 * secondsInHour
-        
-        var price: Int = 0
-        let roundCounter = Int(counter)
-        
-        if roundCounter <= secondsInHour {
-            price = 50
-        } else if roundCounter > secondsInHour && roundCounter < secondsInDay {
-            price = 100
-        } else {
-            price = 300
-        }
-        
-        return price
+        timeAndPriceLabel.text = mapViewModel.prepareTextForTimeAndPriceLabel(counter)
     }
     
     private func initMap() {
@@ -172,9 +127,9 @@ class MapViewController: UIViewController, MapDataModelDelegate {
     @IBAction func backToHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: MapViewModel Delegate
-    
+}
+
+extension MapViewController: MapDataModelDelegate {
     func didLoadLocations(locations: [LocationPointEntity]) {
         self.view.hideToastActivity()
         initMarkers(mapView!, locations)

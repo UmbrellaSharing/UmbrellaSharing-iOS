@@ -82,7 +82,6 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Uvy-Rs-Qgo" id="GAS-Ph-Z2l"/>
-                        <outlet property="informationButton" destination="Cpg-5m-365" id="wiX-s7-bKt"/>
                         <outlet property="proceedButton" destination="ilu-dg-Dce" id="FKq-Bs-sRs"/>
                         <outlet property="timeAndPriceLabel" destination="iAw-Ab-CBy" id="iDg-Iu-3RX"/>
                     </connections>
