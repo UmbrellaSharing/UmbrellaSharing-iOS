@@ -116,16 +116,14 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
         qrCodeImageView.image = generateQRCode(from: String(code))
     }
     
-    func qrCodeHasBeenScanned(startTime: String) {
-        let rentStartDate = UmbrellaUtil.transformStringToDate(stringDate: startTime)
-        
+    func qrCodeHasBeenScanned(startTime: Date) {
         switch operationType {
         case .buyUmbrella:
             openHomeScreen()
         case.rentUmbrella:
             // Write it in the local storage
-            if let orderId = orderInformation.orderId, let rentStartDate = rentStartDate {
-                rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: rentStartDate)
+            if let orderId = orderInformation.orderId {
+                rememberThatRentHasBeenStarted(orderId: orderId, rentStartDate: startTime)
             }
             openMapScreen()
         case.returnUmbrella:

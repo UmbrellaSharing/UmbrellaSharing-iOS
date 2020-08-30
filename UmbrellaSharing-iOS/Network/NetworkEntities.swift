@@ -18,7 +18,6 @@ struct ReturnEntity: Decodable {
 }
 
 struct PassEntity: Decodable {
-    // TODO: Level 2 - Refactor Make this Date format and put calculations in the NetworkManager class
     var date: String
 }
 

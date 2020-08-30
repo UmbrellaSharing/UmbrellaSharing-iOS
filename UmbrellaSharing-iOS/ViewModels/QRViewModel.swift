@@ -16,7 +16,10 @@ class QRViewModel {
         NetworkManager.shared.getCanGoFurther(orderId: orderId, qrType: qrType.rawValue).done { [weak self] response in
             guard self != nil else { return }
             if let delegate = self?.delegate {
-                delegate.qrCodeHasBeenScanned(startTime: response.date)
+                let currentDate = UmbrellaUtil.generateCurrentDateInGMT3Format()
+                if let currentDate = currentDate {
+                    delegate.qrCodeHasBeenScanned(startTime: currentDate)
+                }
             }
         }.catch { error in
             print("Error: \(error)")
@@ -56,7 +59,7 @@ protocol QRDataModelDelegate: class {
     
     func didLoadQRCode(orderId: Int, code: Int)
     
-    func qrCodeHasBeenScanned(startTime: String)
+    func qrCodeHasBeenScanned(startTime: Date)
     
     func qrCodeHasNotBeenScanned()
 }

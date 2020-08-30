@@ -51,9 +51,22 @@ class MapViewController: UIViewController {
         if mapMode == UmbrellaUtil.MapMode.rentalMode {
             timeAndPriceLabel.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
-            
-            // TODO: Level 2 - Feature - Update counter here. Information from storage
-            // Better to deal with this in ViewModel
+            updateCounterIfDateCashed()
+        }
+    }
+    
+    private func updateCounterIfDateCashed() {
+        let cashedDate = mapViewModel.getCashedDate()
+        if let cashedDate = cashedDate {
+            updateCounter(cashedDate)
+        }
+    }
+    
+    private func updateCounter(_ cashedDate: Date) {
+        let currentDate = UmbrellaUtil.generateCurrentDateInGMT3Format()
+        if let currentDate = currentDate {
+            let differenceInSecondsBetweenNowAndCashedDate = currentDate.timeIntervalSince(cashedDate)
+            self.counter = differenceInSecondsBetweenNowAndCashedDate
         }
     }
     
@@ -133,5 +146,12 @@ extension MapViewController: MapDataModelDelegate {
     func didLoadLocations(locations: [LocationPointEntity]) {
         self.view.hideToastActivity()
         initMarkers(mapView!, locations)
+    }
+}
+
+extension Date {
+    func convertToTimeZone(initTimeZone: TimeZone, timeZone: TimeZone) -> Date {
+        let delta = TimeInterval(timeZone.secondsFromGMT(for: self) - initTimeZone.secondsFromGMT(for: self))
+        return addingTimeInterval(delta)
     }
 }

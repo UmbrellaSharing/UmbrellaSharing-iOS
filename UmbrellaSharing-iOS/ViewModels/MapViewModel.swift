@@ -69,6 +69,15 @@ class MapViewModel {
         
         return price
     }
+    
+    func getCashedDate() -> Date? {
+        let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
+        
+        if informationAboutLastSession?.hasRentStarted == true {
+            return GlobalDataStorage.shared.informationAboutLastSession?.rentStartDate
+        }
+        return nil
+    }
 }
 
 protocol MapDataModelDelegate: class {

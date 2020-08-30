@@ -21,6 +21,18 @@ class UmbrellaUtil {
         case rentalMode
     }
     
+    static func generateCurrentDateInGMT3Format() -> Date? {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 3600 * 3)
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        let dateString = formatter.string(from: date)
+        let currentDate = formatter.date(from: dateString)
+        return currentDate
+    }
+    
     static func transformStringToDate(stringDate: String) -> Date? {
         let isoDate = stringDate
         let dateFormatter = DateFormatter()
