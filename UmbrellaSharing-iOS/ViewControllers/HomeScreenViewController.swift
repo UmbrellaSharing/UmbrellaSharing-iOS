@@ -10,11 +10,6 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     
-    // TODO: Level 2 - Refactor - Home Screen View Controller Refactoring
-    // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
-    
-    @IBOutlet weak var informationButton: InformationButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -61,7 +56,6 @@ class HomeScreenViewController: UIViewController {
     @IBAction func buyUmbrella(_ sender: Any) {
         openPaymentScreen(UmbrellaUtil.OperationType.buyUmbrella)
     }
-    
     
     @IBAction func checkLocations(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
