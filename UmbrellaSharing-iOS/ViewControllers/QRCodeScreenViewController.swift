@@ -51,7 +51,6 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     
     @IBAction func pressContinue(_ sender: Any) {
         if let orderId = orderInformation.orderId, let operationType = operationType {
-           
             if let code = orderInformation.code {
                 // TODO: Level 3 - Remove after complete implementation
                 // Insert this request in postman:
@@ -104,11 +103,11 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
     }
     
     func didLoadQRCode(orderId: Int, code: Int) {
-          self.view.hideToastActivity()
-          orderInformation.orderId = orderId
-          orderInformation.code = code
-          qrCodeImageView.image = generateQRCode(from: String(code))
-      }
+        self.view.hideToastActivity()
+        orderInformation.orderId = orderId
+        orderInformation.code = code
+        qrCodeImageView.image = generateQRCode(from: String(code))
+    }
     
     func didLoadReturnCode(code: Int) {
         self.view.hideToastActivity()
@@ -148,5 +147,12 @@ class QRCodeScreenViewController: UIViewController, QRDataModelDelegate {
         if let informationAboutLastSession = informationAboutLastSession {
             GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
         }
+    }
+    
+    @IBAction func openInformation(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "InformationScreenViewController") as! InformationScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
 }

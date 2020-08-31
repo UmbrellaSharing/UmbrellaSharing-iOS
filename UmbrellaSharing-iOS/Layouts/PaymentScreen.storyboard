@@ -10,16 +10,13 @@
         <!--Payment Screen View Controller-->
         <scene sceneID="sFO-ai-7Dv">
             <objects>
-                <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pP-tc-UOQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmaton" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
-                                <rect key="frame" x="25" y="45" width="324" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="6wc-Da-irD" secondAttribute="height" multiplier="162:19" id="S1h-ct-Z5V"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Confirmation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
+                                <rect key="frame" x="90" y="30" width="195" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,8 +28,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
-                                <rect key="frame" x="21" y="114" width="333" height="323"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
+                                <rect key="frame" x="21" y="90" width="333" height="377"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="333" id="sI1-kl-m8V"/>
                                 </constraints>
@@ -42,9 +39,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-aP-V2y">
-                                <rect key="frame" x="83" y="483" width="208" height="100"/>
+                                <rect key="frame" x="83" y="517" width="208" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="208" id="kxU-3n-Cjg"/>
@@ -55,7 +52,7 @@
                                             <action selector="pressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="KuQ-CJ-bec"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="7zb-4e-TmD"/>
@@ -68,18 +65,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-Iy-uD0" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
+                                <rect key="frame" x="305" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="50V-xq-oSE"/>
+                                    <constraint firstAttribute="height" constant="50" id="J25-Hv-TGV"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="informationSign"/>
+                                <connections>
+                                    <action selector="openInformation:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="re4-W6-cOa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="6wc-Da-irD" secondAttribute="trailing" constant="26" id="3wp-VQ-i9O"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="6wc-Da-irD" secondAttribute="trailing" constant="90" id="3wp-VQ-i9O"/>
                             <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="jVb-aP-V2y" secondAttribute="trailing" constant="84" id="49m-F8-epl"/>
-                            <constraint firstItem="6wc-Da-irD" firstAttribute="top" secondItem="2Ed-9L-meC" secondAttribute="top" constant="45" id="EfN-AS-jO1"/>
-                            <constraint firstItem="eZs-4r-9C5" firstAttribute="top" secondItem="6wc-Da-irD" secondAttribute="bottom" constant="31" id="JeL-2t-k7n"/>
-                            <constraint firstItem="2Ed-9L-meC" firstAttribute="bottom" secondItem="jVb-aP-V2y" secondAttribute="bottom" constant="84" id="UX8-by-UJB"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="top" secondItem="2Ed-9L-meC" secondAttribute="top" constant="30" id="EfN-AS-jO1"/>
+                            <constraint firstItem="eZs-4r-9C5" firstAttribute="top" secondItem="6wc-Da-irD" secondAttribute="bottom" constant="30" id="JeL-2t-k7n"/>
+                            <constraint firstItem="jVb-aP-V2y" firstAttribute="top" secondItem="eZs-4r-9C5" secondAttribute="bottom" constant="50" id="NNb-5s-aXq"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="bottom" secondItem="jVb-aP-V2y" secondAttribute="bottom" constant="50" id="UX8-by-UJB"/>
+                            <constraint firstItem="3zv-Iy-uD0" firstAttribute="top" secondItem="2Ed-9L-meC" secondAttribute="top" constant="20" id="Vgj-Q5-ZKL"/>
                             <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="eZs-4r-9C5" secondAttribute="trailing" constant="21" id="Wcs-fK-uaP"/>
                             <constraint firstItem="jVb-aP-V2y" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="83" id="cKZ-cP-zmT"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="centerY" secondItem="3zv-Iy-uD0" secondAttribute="centerY" id="dmv-bd-qrp"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="3zv-Iy-uD0" secondAttribute="trailing" constant="20" id="eJ0-ox-Ikt"/>
                             <constraint firstItem="eZs-4r-9C5" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="21" id="gnk-RQ-RYj"/>
-                            <constraint firstItem="6wc-Da-irD" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="25" id="wcU-Re-S4Z"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="90" id="wcU-Re-S4Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Ed-9L-meC"/>
                     </view>
@@ -93,4 +105,7 @@
             <point key="canvasLocation" x="144.80000000000001" y="85.007496251874073"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="informationSign" width="256" height="256"/>
+    </resources>
 </document>

@@ -44,4 +44,11 @@ class PaymentScreenViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func openInformation(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "InformationScreenViewController") as! InformationScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
+    }
 }

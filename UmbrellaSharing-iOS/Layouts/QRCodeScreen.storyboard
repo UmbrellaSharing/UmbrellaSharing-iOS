@@ -10,27 +10,27 @@
         <!--Code Screen View Controller-->
         <scene sceneID="LGb-xL-VOo">
             <objects>
-                <viewController restorationIdentifier="QRCodeScreenViewController" storyboardIdentifier="QRCodeScreenViewController" id="S52-VI-8q2" customClass="QRCodeScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="QRCodeScreenViewController" storyboardIdentifier="QRCodeScreenViewController" id="S52-VI-8q2" customClass="QRCodeScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gxb-Py-Rar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show the QR Code to the Operator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-2v-qUP">
-                                <rect key="frame" x="62" y="98" width="250" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="gxx-76-MBr"/>
-                                </constraints>
+                                <rect key="frame" x="80" y="18.5" width="215" height="53"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FVS-fh-Px3">
-                                <rect key="frame" x="62" y="211" width="250" height="250"/>
+                                <rect key="frame" x="54" y="151.5" width="267" height="267"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FVS-fh-Px3" secondAttribute="height" multiplier="1:1" id="c3j-FC-PVB"/>
+                                </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-za-IpD">
-                                <rect key="frame" x="83" y="507" width="208" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-za-IpD">
+                                <rect key="frame" x="83.5" y="517" width="208" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-75-CLa" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-75-CLa" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="208" id="Tq3-Sj-J3F"/>
@@ -41,7 +41,7 @@
                                             <action selector="pressContinue:" destination="S52-VI-8q2" eventType="touchUpInside" id="uXZ-0U-QQe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5E-yr-zVo" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5E-yr-zVo" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="208" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Pcr-Py-xUC"/>
@@ -54,19 +54,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB3-w2-FQH" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
+                                <rect key="frame" x="305" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RNf-O2-bPd"/>
+                                    <constraint firstAttribute="width" constant="50" id="sBA-4n-YeI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="informationSign"/>
+                                <connections>
+                                    <action selector="openInformation:" destination="S52-VI-8q2" eventType="touchUpInside" id="evh-f0-SNr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="i1N-2v-qUP" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="62" id="0wA-20-q82"/>
-                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" constant="63" id="2pL-iI-HXK"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="width" secondItem="i1N-2v-qUP" secondAttribute="width" id="6d5-V6-bGs"/>
-                            <constraint firstItem="utn-75-CLa" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="83" id="OQG-dp-hjD"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="25" id="eB5-Kg-SQY"/>
-                            <constraint firstItem="i1N-2v-qUP" firstAttribute="top" secondItem="k3y-4W-2Ao" secondAttribute="top" constant="98" id="izz-gd-4Fr"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="leading" secondItem="i1N-2v-qUP" secondAttribute="leading" id="kuW-Uc-0ks"/>
-                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="bottom" secondItem="J5E-yr-zVo" secondAttribute="bottom" constant="60" id="liV-Bf-d54"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" id="qua-7P-gFA"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="height" secondItem="i1N-2v-qUP" secondAttribute="height" multiplier="2.84091" id="ual-rE-bUO"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="height" secondItem="Gxb-Py-Rar" secondAttribute="height" multiplier="0.4" id="0QV-8T-RVT"/>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="80" id="0wA-20-q82"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="centerX" secondItem="k3y-4W-2Ao" secondAttribute="centerX" id="26O-pj-m8Q"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" constant="80" id="2pL-iI-HXK"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="aB3-w2-FQH" secondAttribute="trailing" constant="20" id="3eD-hL-IvZ"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="bottom" secondItem="8i0-za-IpD" secondAttribute="bottom" constant="50" id="bhX-YO-mBH"/>
+                            <constraint firstItem="aB3-w2-FQH" firstAttribute="top" secondItem="k3y-4W-2Ao" secondAttribute="top" constant="20" id="gXX-K4-2pA"/>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="centerY" secondItem="aB3-w2-FQH" secondAttribute="centerY" id="gpi-l6-nbS"/>
+                            <constraint firstItem="8i0-za-IpD" firstAttribute="centerX" secondItem="Gxb-Py-Rar" secondAttribute="centerX" id="sUL-bt-hjo"/>
+                            <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="80" id="tgQ-wZ-PbH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k3y-4W-2Ao"/>
                     </view>
@@ -81,4 +92,7 @@
             <point key="canvasLocation" x="85.599999999999994" y="81.409295352323838"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="informationSign" width="256" height="256"/>
+    </resources>
 </document>
