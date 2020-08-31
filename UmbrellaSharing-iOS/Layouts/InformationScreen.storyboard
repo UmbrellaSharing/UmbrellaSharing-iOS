@@ -10,7 +10,7 @@
         <!--Information Screen View Controller-->
         <scene sceneID="dYC-y1-8HC">
             <objects>
-                <viewController restorationIdentifier="InformationScreenViewController" storyboardIdentifier="InformationScreenViewController" id="zCY-wd-jeE" customClass="InformationScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="InformationScreenViewController" storyboardIdentifier="InformationScreenViewController" id="zCY-wd-jeE" customClass="InformationScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9v7-fW-BT9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="70" width="414" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="50" id="NuU-6b-5Nb" customClass="QuestionCell" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="50" id="NuU-6b-5Nb" customClass="QuestionCell" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuU-6b-5Nb" id="bbM-sb-qBZ">
@@ -59,15 +59,15 @@
                                             <outlet property="questionLabel" destination="d2E-92-8CG" id="yhd-7v-IgS"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="answerCell" rowHeight="100" id="pLA-D0-Oz8" userLabel="answerCell" customClass="AnswerCell" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="answerCell" rowHeight="100" id="pLA-D0-Oz8" userLabel="answerCell" customClass="AnswerCell" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pLA-D0-Oz8" id="gqh-vo-hgw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7f-1v-dHl">
-                                                    <rect key="frame" x="29.999999999999993" y="20" width="93.333333333333314" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7f-1v-dHl">
+                                                    <rect key="frame" x="30" y="20" width="334" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -75,6 +75,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="I7f-1v-dHl" firstAttribute="top" secondItem="gqh-vo-hgw" secondAttribute="top" constant="20" id="AN5-ll-hyi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="I7f-1v-dHl" secondAttribute="trailing" constant="30" id="Nsn-83-0Ws"/>
                                                 <constraint firstItem="I7f-1v-dHl" firstAttribute="leading" secondItem="gqh-vo-hgw" secondAttribute="leading" constant="30" id="bOQ-Cr-OQf"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -84,7 +85,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-kI-K7U" customClass="CloseButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-kI-K7U" customClass="CloseButton" customModule="Zontik" customModuleProvider="target">
                                 <rect key="frame" x="354" y="10" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4dT-Pz-2je"/>
