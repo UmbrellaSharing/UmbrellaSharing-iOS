@@ -12,13 +12,16 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
+    // TODO: Level 2 - Change the information logic on this screen. On tap open the info screen.
+    // But on tap of price something, open the modal dialogue with prices
+    
     // MARK: Outlets
     
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
     
-    private let mapViewModel = MapViewModel()
+    // MARK: Public
     
     var timer: Timer?
     var counter = 0.0
@@ -28,10 +31,18 @@ class MapViewController: UIViewController {
     
     var orderInformation: OrderInformation?
     
+    // MARK: Private
+    
+    private let mapViewModel = MapViewModel()
+    
+    // MARK: Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
     }
+    
+    // MARK: Private Methods
     
     private func initView() {
         loadLocations()
@@ -70,7 +81,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    @objc func updateTimerLabel() {
+    @objc private func updateTimerLabel() {
         counter += 1
         timeAndPriceLabel.text = mapViewModel.prepareTextForTimeAndPriceLabel(counter)
     }
@@ -107,17 +118,6 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func `continue`(_ sender: Any) {
-        if let mapMode = mapMode {
-            switch mapMode {
-            case .locationsMode:
-                openPaymentScreenToRentUmbrella()
-            case .rentalMode:
-                openQRScreenToReturnUmbrella()
-            }
-        }
-    }
-    
     private func openPaymentScreenToRentUmbrella() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "PaymentScreen", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "PaymentScreenViewController") as! PaymentScreenViewController
@@ -137,6 +137,19 @@ class MapViewController: UIViewController {
         self.present(newViewController, animated: true, completion: nil)
     }
     
+    // MARK: IB Actions
+    
+    @IBAction func `continue`(_ sender: Any) {
+        if let mapMode = mapMode {
+            switch mapMode {
+            case .locationsMode:
+                openPaymentScreenToRentUmbrella()
+            case .rentalMode:
+                openQRScreenToReturnUmbrella()
+            }
+        }
+    }
+    
     @IBAction func backToHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -146,12 +159,5 @@ extension MapViewController: MapDataModelDelegate {
     func didLoadLocations(locations: [LocationPointEntity]) {
         self.view.hideToastActivity()
         initMarkers(mapView!, locations)
-    }
-}
-
-extension Date {
-    func convertToTimeZone(initTimeZone: TimeZone, timeZone: TimeZone) -> Date {
-        let delta = TimeInterval(timeZone.secondsFromGMT(for: self) - initTimeZone.secondsFromGMT(for: self))
-        return addingTimeInterval(delta)
     }
 }

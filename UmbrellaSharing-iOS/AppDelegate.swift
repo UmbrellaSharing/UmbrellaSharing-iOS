@@ -12,6 +12,7 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // TODO: Level 2 - Return to QR screen code in case of any crash
     // TODO: Level 3 -Implement better file structure
     // TODO: Level 3 -Implement some icon for the app
     // TODO: Level 3 -Adapt screens for all models
@@ -53,7 +54,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

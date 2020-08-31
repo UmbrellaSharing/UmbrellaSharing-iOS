@@ -11,25 +11,17 @@ import UIKit
 
 class PaymentScreenViewController: UIViewController {
     
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
+    // MARK: Public
     
     var operationType: UmbrellaUtil.OperationType?
     
+    // MARK: Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initView()
     }
     
-    private func initView() {
-        continueButton.setTitle("Proceed to Payment", for: .normal)
-        backButton.setTitle("Go Back", for: .normal)
-    }
-    
-    @IBAction func pressContinue(_ sender: Any) {
-        // TODO: Level 2 - Feature - Big - The Most Important. We need to do all payment checks. But We are waiting before Iliya make the Yandex Payments.
-        openQRCodeScreen()
-    }
+    // MARK: Private methods
     
     private func openQRCodeScreen() {
         if let operationType = operationType {
@@ -39,6 +31,13 @@ class PaymentScreenViewController: UIViewController {
             newViewController.operationType = operationType
             self.present(newViewController, animated: true, completion: nil)
         }
+    }
+    
+    // MARK: IB Actions
+    
+    @IBAction func pressContinue(_ sender: Any) {
+        // TODO: Level 2 - Feature - Big - The Most Important. We need to do all payment checks. But We are waiting before Iliya make the Yandex Payments.
+        openQRCodeScreen()
     }
     
     @IBAction func back(_ sender: Any) {

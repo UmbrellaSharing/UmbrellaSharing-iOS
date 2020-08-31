@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class QRViewModel {
     
@@ -50,6 +51,21 @@ class QRViewModel {
         }.catch { error in
             print("Error: \(error)")
         }
+    }
+    
+    // TODO: Level 3 - Understand what does it mean
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+        return nil
     }
 }
 

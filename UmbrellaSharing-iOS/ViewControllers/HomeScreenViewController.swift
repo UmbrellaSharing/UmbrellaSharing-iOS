@@ -10,6 +10,8 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     
+    // MARK: Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,6 +20,8 @@ class HomeScreenViewController: UIViewController {
         super.viewDidAppear(animated)
         checkIfAppWasClosedDuringRentalMode()
     }
+    
+    // MARK: Private methods
     
     private func checkIfAppWasClosedDuringRentalMode() {
         let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
@@ -48,6 +52,8 @@ class HomeScreenViewController: UIViewController {
         newViewController.operationType = operationType
         self.present(newViewController, animated: true, completion: nil)
     }
+    
+    // MARK: IB Actions
     
     @IBAction func rentUmbrella(_ sender: Any) {
         openPaymentScreen(UmbrellaUtil.OperationType.rentUmbrella)

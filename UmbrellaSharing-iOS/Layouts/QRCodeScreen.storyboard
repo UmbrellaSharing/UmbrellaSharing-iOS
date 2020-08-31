@@ -36,7 +36,7 @@
                                             <constraint firstAttribute="width" constant="208" id="Tq3-Sj-J3F"/>
                                             <constraint firstAttribute="height" constant="40" id="Tyf-4y-7zU"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Continue"/>
                                         <connections>
                                             <action selector="pressContinue:" destination="S52-VI-8q2" eventType="touchUpInside" id="uXZ-0U-QQe"/>
                                         </connections>
@@ -47,7 +47,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Pcr-Py-xUC"/>
                                             <constraint firstAttribute="width" constant="208" id="mUO-CF-Owe"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Go Back"/>
                                         <connections>
                                             <action selector="back:" destination="S52-VI-8q2" eventType="touchUpInside" id="ZTz-Cg-fZ3"/>
                                         </connections>
@@ -82,8 +82,6 @@
                         <viewLayoutGuide key="safeArea" id="k3y-4W-2Ao"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="J5E-yr-zVo" id="cdY-Je-LKO"/>
-                        <outlet property="continueButton" destination="utn-75-CLa" id="VkC-Cm-z03"/>
                         <outlet property="qrCodeImageView" destination="FVS-fh-Px3" id="cgj-3T-VQl"/>
                     </connections>
                 </viewController>

@@ -9,25 +9,25 @@
 import Foundation
 import UIKit
 
-class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
+class FeedbackScreenViewController: UIViewController {
+    
+    // MARK: Outlets
     
     @IBOutlet weak var ratingControl: RatingControl!
-    @IBOutlet weak var submitButton: UmbrellaButton!
     @IBOutlet weak var comment: UITextView!
     
+    // MARK: Private
+    
     private let feedbackViewModel = FeedbackViewModel()
+    
+    // MARK: Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         comment.delegate = self
     }
     
-    @IBAction func submit(_ sender: Any) {
-        let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
-        feedbackViewModel.sentFeedback(orderId: orderId, feedback: comment.text, mark: ratingControl.rating)
-        GlobalDataStorage.shared.cleanInformationAboutLastSession()
-        openHomeScreen()
-    }
+    // MARK: Private Methods
     
     private func openHomeScreen() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -36,8 +36,17 @@ class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
         self.present(newViewController, animated: true, completion: nil)
     }
     
-    // MARK: TextViewDelegates
+    // MARK: IB Actions
     
+    @IBAction func submit(_ sender: Any) {
+        let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
+        feedbackViewModel.sentFeedback(orderId: orderId, feedback: comment.text, mark: ratingControl.rating)
+        GlobalDataStorage.shared.cleanInformationAboutLastSession()
+        openHomeScreen()
+    }
+}
+
+extension FeedbackScreenViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         comment.text = ""
         comment.textColor = UIColor.black
@@ -54,8 +63,7 @@ class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
         if text == "\n" {
             comment.resignFirstResponder()
             return false
-        } // Recognizes enter ket in keyboard
-        
+        } // Recognizes enter key in keyboard
         return true
     }
 }

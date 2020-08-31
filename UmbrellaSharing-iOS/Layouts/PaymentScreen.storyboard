@@ -47,7 +47,7 @@
                                             <constraint firstAttribute="width" constant="208" id="kxU-3n-Cjg"/>
                                             <constraint firstAttribute="height" constant="40" id="pjw-EU-cm0"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Proceed to Payment"/>
                                         <connections>
                                             <action selector="pressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="KuQ-CJ-bec"/>
                                         </connections>
@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="40" id="7zb-4e-TmD"/>
                                             <constraint firstAttribute="width" constant="208" id="iv5-ZM-b9e"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Go Back"/>
                                         <connections>
                                             <action selector="back:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="u3F-6a-PYB"/>
                                         </connections>
@@ -95,10 +95,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Ed-9L-meC"/>
                     </view>
-                    <connections>
-                        <outlet property="backButton" destination="XLK-f2-zQW" id="nv2-Xm-0fr"/>
-                        <outlet property="continueButton" destination="jQs-nk-hq7" id="riH-wx-nAJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9b-LG-FiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

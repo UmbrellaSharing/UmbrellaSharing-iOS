@@ -10,7 +10,7 @@
         <!--Feedback Screen View Controller-->
         <scene sceneID="MDE-Kz-1VW">
             <objects>
-                <viewController restorationIdentifier="FeedbackScreenViewController" storyboardIdentifier="FeedbackScreenViewController" id="48S-J0-y3M" customClass="FeedbackScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FeedbackScreenViewController" storyboardIdentifier="FeedbackScreenViewController" id="48S-J0-y3M" customClass="FeedbackScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NeQ-nI-G1E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-T1-iKt" customClass="RatingControl" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-T1-iKt" customClass="RatingControl" customModule="Zontik" customModuleProvider="target">
                                 <rect key="frame" x="61.5" y="191" width="252" height="44"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Was the Service?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epR-eE-y33">
@@ -38,7 +38,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-09-LUk" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-09-LUk" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                 <rect key="frame" x="83.5" y="451" width="208" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="EOx-GC-9UC"/>
@@ -66,7 +66,6 @@
                     <connections>
                         <outlet property="comment" destination="y9g-87-oRC" id="IC7-ar-tpW"/>
                         <outlet property="ratingControl" destination="iEl-T1-iKt" id="YyA-sc-bp0"/>
-                        <outlet property="submitButton" destination="Smf-09-LUk" id="i4X-vD-nfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUz-C7-LXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

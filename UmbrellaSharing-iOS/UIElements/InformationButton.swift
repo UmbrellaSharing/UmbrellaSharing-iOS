@@ -9,8 +9,6 @@
 import UIKit
 
 @IBDesignable class InformationButton: UIButton {
-
-    // TODO: Level 4 - Change the image for the button - too gray.
     
     // MARK: Initialization
     
