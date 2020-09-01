@@ -30,12 +30,12 @@ class CloseButton: UIButton {
         let bundle = Bundle(for: type(of: self))
         let informationSign = UIImage(named: "closeSign", in: bundle, compatibleWith: self.traitCollection)
         
-        // TODO: Level 4 - As an addition - we can put the same sign with different color to make small animation here
+        // TODO: Idea for the future - we can put the same sign with different color to make small animation here
         self.setImage(informationSign, for: .normal)
         
         // Add constraints
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 45.0).isActive = true
     }
 }

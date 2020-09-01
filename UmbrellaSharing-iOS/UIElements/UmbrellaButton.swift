@@ -21,6 +21,7 @@ class UmbrellaButton: UIButton {
     }
     
     private func setupButton() {
+        UIView.self.setAnimationsEnabled(false)
         layer.cornerRadius = 20
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor

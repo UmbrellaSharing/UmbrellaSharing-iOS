@@ -27,7 +27,7 @@ class MapViewModel {
         }
     }
     
-    func prepareTextForTimeAndPriceLabel(_ counter: Double) -> String {
+    func prepareTextForTimeAndPriceButton(_ counter: Double) -> String {
         let hours = normilizeTimeValue(Int(counter) / 3600)
         let minutes = normilizeTimeValue(Int(counter) / 60 % 60)
         let seconds = normilizeTimeValue(Int(counter) % 60)

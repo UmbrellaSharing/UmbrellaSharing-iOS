@@ -12,14 +12,11 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
-    // TODO: Level 2 - Change the information logic on this screen. On tap open the info screen.
-    // But on tap of price something, open the modal dialogue with prices
-    
     // MARK: Outlets
     
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var timeAndPriceLabel: MapCounterLabel!
+    @IBOutlet weak var timeAndPriceButton: UmbrellaButton!
     
     // MARK: Public
     
@@ -58,9 +55,9 @@ class MapViewController: UIViewController {
     }
     
     private func initCounter() {
-        timeAndPriceLabel.isHidden = true
+        timeAndPriceButton.isHidden = true
         if mapMode == UmbrellaUtil.MapMode.rentalMode {
-            timeAndPriceLabel.isHidden = false
+            timeAndPriceButton.isHidden = false
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
             updateCounterIfDateCashed()
         }
@@ -83,7 +80,8 @@ class MapViewController: UIViewController {
     
     @objc private func updateTimerLabel() {
         counter += 1
-        timeAndPriceLabel.text = mapViewModel.prepareTextForTimeAndPriceLabel(counter)
+        let textForTimeAndPriceButton = mapViewModel.prepareTextForTimeAndPriceButton(counter)
+        timeAndPriceButton.setTitle(textForTimeAndPriceButton, for: .normal)
     }
     
     private func initMap() {
@@ -148,6 +146,13 @@ class MapViewController: UIViewController {
                 openQRScreenToReturnUmbrella()
             }
         }
+    }
+    
+    @IBAction func openInformation(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "InformationScreenViewController") as! InformationScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     @IBAction func backToHome(_ sender: Any) {

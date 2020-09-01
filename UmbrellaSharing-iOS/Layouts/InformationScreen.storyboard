@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fS-X0-vyd">
-                                <rect key="frame" x="185.33333333333334" y="32" width="43.333333333333343" height="26.333333333333329"/>
+                                <rect key="frame" x="185.33333333333334" y="29.333333333333336" width="43.333333333333343" height="26.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s8Z-VE-2ah">
-                                <rect key="frame" x="0.0" y="83.333333333333314" width="414" height="652.66666666666674"/>
+                                <rect key="frame" x="0.0" y="80.666666666666686" width="414" height="655.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="50" id="NuU-6b-5Nb" customClass="QuestionCell" customModule="Zontik" customModuleProvider="target">
@@ -89,10 +89,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-kI-K7U" customClass="CloseButton" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="344" y="20" width="50" height="50"/>
+                                <rect key="frame" x="349" y="20" width="45" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4dT-Pz-2je"/>
-                                    <constraint firstAttribute="width" constant="50" id="X6L-Qq-sKn"/>
+                                    <constraint firstAttribute="height" constant="45" id="4dT-Pz-2je"/>
+                                    <constraint firstAttribute="width" constant="45" id="X6L-Qq-sKn"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="closeSign"/>
                                 <connections>

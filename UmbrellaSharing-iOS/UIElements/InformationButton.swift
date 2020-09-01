@@ -29,7 +29,7 @@ import UIKit
         let bundle = Bundle(for: type(of: self))
         let informationSign = UIImage(named: "informationSign", in: bundle, compatibleWith: self.traitCollection)
         
-        // TODO: Level 4 - As an addition - we can put the same sign with different color to make small animation here
+        // TODO: Idea for the future - we can put the same sign with different color to make small animation here
         self.setImage(informationSign, for: .normal)
         
         // Add constraints
