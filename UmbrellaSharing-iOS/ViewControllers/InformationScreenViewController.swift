@@ -15,23 +15,26 @@ struct cellData {
     var sectionData = [String]()
 }
 
-class InformationScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InformationDataModelDelegate {
+class InformationScreenViewController: UIViewController {
     
-    // TODO: Level 3 Think how to make the height of this talbe dinamic.
-    // TODO: Level 3 Extend the width of the label
-    // TODO: Level 3 Think how to not show separation lines even before information is loaded
+    // MARK: Outlets
     
     @IBOutlet weak var questionsTable: UITableView!
     @IBOutlet weak var closeButton: CloseButton!
     
-    private let informationViewModel = InformationViewModel()
+    // MARK: Private
     
-    var tableViewData = [cellData]()
+    private let informationViewModel = InformationViewModel()
+    private var tableViewData = [cellData]()
+    
+    // MARK: Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadQuestionsAndAnswers()
     }
+    
+    // MARK: Private Methods
     
     private func loadQuestionsAndAnswers() {
         informationViewModel.delegate = self
@@ -47,6 +50,14 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
         questionsTable.reloadData()
     }
     
+    // MARK: IB Actions
+    
+    @IBAction func closeInformationScreen(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension InformationScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened {
             return tableViewData[section].sectionData.count + 1
@@ -74,15 +85,6 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
         return tableViewData.count
     }
     
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 50
-        } else {
-            return 100
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let cell = questionsTable.cellForRow(at: indexPath) as! QuestionCell
@@ -99,13 +101,9 @@ class InformationScreenViewController: UIViewController, UITableViewDelegate, UI
             }
         }
     }
-    
-    @IBAction func closeInformationScreen(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: InformationViewModel Delegate
-    
+}
+
+extension InformationScreenViewController: InformationDataModelDelegate {
     func didLoadQuestionsAndAnswers(questionsAndAnswers: [FAQEntity]) {
         self.view.hideToastActivity()
         setupTableView(questionsAndAnswers)
