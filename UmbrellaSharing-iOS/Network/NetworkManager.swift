@@ -11,7 +11,7 @@ import PromiseKit
 
 class NetworkManager {
     
-    // TODO: Level 3 - Make all validatoin and error check inhere
+    // TODO: Level 5 - Make all validatoin and error check inhere
     
     // Usefull links for making URL sessions. Please use them while working on this class
     // https://learnappmaking.com/urlsession-swift-networking-how-to/

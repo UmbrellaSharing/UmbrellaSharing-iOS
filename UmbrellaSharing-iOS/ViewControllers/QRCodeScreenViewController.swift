@@ -85,7 +85,7 @@ class QRCodeScreenViewController: UIViewController {
     @IBAction func pressContinue(_ sender: Any) {
         if let orderId = orderInformation.orderId, let operationType = operationType {
             if let code = orderInformation.code {
-                // TODO: Level 4 - Remove after complete implementation
+                // TODO: Level 5 - Remove after complete implementation
                 // Insert this request in postman:
                 print("https://us.2ssupport.ru/order/getOrderInfo?orderId=\(orderId)&code=\(code)&qrType=\(operationType.rawValue)")
             }

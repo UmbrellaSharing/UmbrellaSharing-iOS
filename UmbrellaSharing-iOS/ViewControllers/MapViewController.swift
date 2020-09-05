@@ -84,6 +84,20 @@ class MapViewController: UIViewController {
         timeAndPriceButton.setTitle(textForTimeAndPriceButton, for: .normal)
     }
     
+    private func presentMessageNotToReturnUmbrella() {
+        let messageOfNotReturningItem = UIAlertController(title: "Thank you!",
+                                                          message: "You don't need to return an umbrella anymore since you already pay maximum rate which is equal to buy an umbrella.",
+                                                          preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
+            // We should make payment transaction here
+            GlobalDataStorage.shared.cleanInformationAboutLastSession()
+            self.openHomeScreen()
+        }
+        
+        messageOfNotReturningItem.addAction(okAction)
+        self.present(messageOfNotReturningItem, animated: true, completion: nil)
+    }
+    
     private func initMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 55.76, longitude: 37.62, zoom: 12.0)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
@@ -114,6 +128,13 @@ class MapViewController: UIViewController {
                 backButton.isHidden = true
             }
         }
+    }
+    
+    private func openHomeScreen() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     private func openPaymentScreenToRentUmbrella() {
@@ -164,5 +185,9 @@ extension MapViewController: MapDataModelDelegate {
     func didLoadLocations(locations: [LocationPointEntity]) {
         self.view.hideToastActivity()
         initMarkers(mapView!, locations)
+    }
+    
+    func didReachTheMaximumPrice() {
+        presentMessageNotToReturnUmbrella()
     }
 }

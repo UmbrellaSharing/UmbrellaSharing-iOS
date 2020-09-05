@@ -33,7 +33,9 @@ class HomeScreenViewController: UIViewController {
     }
     
     private func presentErrorMessage() {
-        let noInternetConnectionError = UIAlertController(title: "Oops, there is a problem!", message: "Sorry, there is no internet connection right now. You cannot use our application without stable internet connection. Please, try later.", preferredStyle: UIAlertController.Style.alert)
+        let noInternetConnectionError = UIAlertController(title: "Oops, there is a problem!",
+                                                          message: "Sorry, there is no internet connection right now. You cannot use our application without stable internet connection. Please, try later.",
+                                                          preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         noInternetConnectionError.addAction(okAction)
         self.present(noInternetConnectionError, animated: true, completion: nil)

@@ -50,7 +50,7 @@ class MapViewModel {
         return String(rawTimeValue)
     }
     
-    private func calculatePrice(from counter: Double) -> Int {
+    func calculatePrice(from counter: Double) -> Int {
         
         // Constants
         let secondsInHour = 60 * 60
@@ -65,6 +65,7 @@ class MapViewModel {
             price = 100
         } else {
             price = 300
+            delegate?.didReachTheMaximumPrice()
         }
         
         return price
@@ -82,4 +83,6 @@ class MapViewModel {
 
 protocol MapDataModelDelegate: class {
     func didLoadLocations(locations: [LocationPointEntity])
+    
+    func didReachTheMaximumPrice()
 }

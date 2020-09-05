@@ -32,7 +32,6 @@ class InformationAboutLastSession: NSObject, NSCoding {
         self.rentStartDate = rentStartDate
     }
     
-    // TODO: Level 3 - Should we make this global? with all others data models?
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("informationAboutLastSession")
     
