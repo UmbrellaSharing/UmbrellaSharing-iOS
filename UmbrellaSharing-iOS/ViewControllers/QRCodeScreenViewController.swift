@@ -51,10 +51,7 @@ class QRCodeScreenViewController: UIViewController {
     }
     
     private func openHomeScreen() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
-        newViewController.modalPresentationStyle = .fullScreen
-        self.present(newViewController, animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     private func openMapScreen() {
@@ -74,7 +71,9 @@ class QRCodeScreenViewController: UIViewController {
     }
     
     private func rememberThatRentHasBeenStarted(orderId: Int, rentStartDate: Date) {
-        let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: true, orderId: orderId, rentStartDate: rentStartDate)
+        
+        
+        let informationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: ApplicationImportantCheckpoint.rentalModeStarted, orderId: orderId, rentStartDate: rentStartDate)
         if let informationAboutLastSession = informationAboutLastSession {
             GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
         }
@@ -134,7 +133,7 @@ extension QRCodeScreenViewController: QRDataModelDelegate {
             // then right before that we need to inform that rental mode is over, and we don't need to open
             // map screen if application is closed later on
             let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
-            let updatedInformationAboutLastSession = InformationAboutLastSession(hasRentStarted: false, orderId: orderId, rentStartDate: nil)
+            let updatedInformationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: nil, orderId: orderId, rentStartDate: nil)
             GlobalDataStorage.shared.saveInformationAboutLastSession(updatedInformationAboutLastSession!)
             openFeedbackScreen()
         case .none:

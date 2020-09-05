@@ -10,42 +10,42 @@ import Foundation
 
 class InformationAboutLastSession: NSObject, NSCoding {
     
-    // MARK: Properties
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+       static let ArchiveURL = DocumentsDirectory.appendingPathComponent("informationAboutLastSession")
     
-    var hasRentStarted: Bool?
+    // MARK: - Properties
+    
+    var applicationCheckpoint: ApplicationImportantCheckpoint?
     var orderId: Int?
     var rentStartDate: Date?
     
-    // MARK: Types
+    // MARK: - Types
     
     struct PropertyKey {
-        static let hasRentStarted = "hasRentStarted"
+        static let applicationCheckpoint = "applicationCheckpoint"
         static let orderId = "orderId"
         static let rentStartDate = "rentStartDate"
     }
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
-    init?(hasRentStarted: Bool?, orderId: Int?, rentStartDate: Date?) {
-        self.hasRentStarted = hasRentStarted
+    init?(applicationCheckpoint: ApplicationImportantCheckpoint?, orderId: Int?, rentStartDate: Date?) {
+        self.applicationCheckpoint = applicationCheckpoint
         self.orderId = orderId
         self.rentStartDate = rentStartDate
     }
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("informationAboutLastSession")
-    
-    // MARK: NSCoding
+    // MARK: - NSCoding
     
     func encode(with coder: NSCoder) {
-        coder.encode(hasRentStarted, forKey: PropertyKey.hasRentStarted)
+        coder.encode(applicationCheckpoint?.rawValue, forKey: PropertyKey.applicationCheckpoint)
         coder.encode(orderId, forKey: PropertyKey.orderId)
         coder.encode(rentStartDate, forKey: PropertyKey.rentStartDate)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        guard let hasRentStarted = aDecoder.decodeObject(forKey: PropertyKey.hasRentStarted) as? Bool else {
-            print("Unable to decode the hasRentStarted.")
+        guard let applicationCheckpointRawValue = aDecoder.decodeObject(forKey: PropertyKey.applicationCheckpoint) as? Int else {
+            print("Unable to decode the applicationImportantCheckpoint.")
             return nil
         }
         
@@ -59,6 +59,12 @@ class InformationAboutLastSession: NSObject, NSCoding {
             return nil
         }
         
-        self.init(hasRentStarted: hasRentStarted, orderId: orderId, rentStartDate: rentStartDate)
+        let applicationCheckpoint = ApplicationImportantCheckpoint(rawValue: applicationCheckpointRawValue)
+        self.init(applicationCheckpoint: applicationCheckpoint, orderId: orderId, rentStartDate: rentStartDate)
     }
+}
+
+enum ApplicationImportantCheckpoint: Int, Codable {
+    case afterSuccessfulPayment
+    case rentalModeStarted
 }

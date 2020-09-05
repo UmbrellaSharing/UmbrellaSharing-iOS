@@ -73,8 +73,7 @@ class MapViewModel {
     
     func getCashedDate() -> Date? {
         let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
-        
-        if informationAboutLastSession?.hasRentStarted == true {
+        if informationAboutLastSession?.applicationCheckpoint == ApplicationImportantCheckpoint.rentalModeStarted {
             return GlobalDataStorage.shared.informationAboutLastSession?.rentStartDate
         }
         return nil

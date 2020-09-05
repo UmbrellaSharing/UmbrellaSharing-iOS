@@ -43,7 +43,7 @@ class HomeScreenViewController: UIViewController {
     
     private func checkIfAppWasClosedDuringRentalMode() {
         let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
-        if informationAboutLastSession?.hasRentStarted == true {
+        if informationAboutLastSession?.applicationCheckpoint == ApplicationImportantCheckpoint.rentalModeStarted {
             openMapScreen()
         }
     }
@@ -56,7 +56,6 @@ class HomeScreenViewController: UIViewController {
         
         let userCredentials = GlobalDataStorage.shared.userCredentials
         let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
-        // TODO: Level 3 - Think should we pass orderId and code or not? I think we don't need, but need to be checked
         let orderInformation = OrderInformation(userId: userCredentials?.userId, orderId: orderId, code: nil)
         newViewController.orderInformation = orderInformation
         self.present(newViewController, animated: true, completion: nil)

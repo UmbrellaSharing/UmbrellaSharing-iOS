@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
     
     var mapView: GMSMapView?
     var mapMode: UmbrellaUtil.MapMode?
+    var presentedMaximumPriceReachedFlag: Bool = false
     
     var orderInformation: OrderInformation?
     
@@ -93,7 +94,6 @@ class MapViewController: UIViewController {
             GlobalDataStorage.shared.cleanInformationAboutLastSession()
             self.openHomeScreen()
         }
-        
         messageOfNotReturningItem.addAction(okAction)
         self.present(messageOfNotReturningItem, animated: true, completion: nil)
     }
@@ -131,10 +131,7 @@ class MapViewController: UIViewController {
     }
     
     private func openHomeScreen() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
-        newViewController.modalPresentationStyle = .fullScreen
-        self.present(newViewController, animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     private func openPaymentScreenToRentUmbrella() {
@@ -188,6 +185,9 @@ extension MapViewController: MapDataModelDelegate {
     }
     
     func didReachTheMaximumPrice() {
-        presentMessageNotToReturnUmbrella()
+        if (!presentedMaximumPriceReachedFlag) {
+            presentedMaximumPriceReachedFlag = true
+            presentMessageNotToReturnUmbrella()
+        }
     }
 }

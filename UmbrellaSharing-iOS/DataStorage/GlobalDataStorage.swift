@@ -50,7 +50,7 @@ class GlobalDataStorage {
     }
     
     public func cleanInformationAboutLastSession() {
-        let informationAboutLastSession = InformationAboutLastSession(hasRentStarted: nil, orderId: nil, rentStartDate: nil)
+        let informationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: nil, orderId: nil, rentStartDate: nil)
         saveInformationAboutLastSession(informationAboutLastSession!)
     }
     
