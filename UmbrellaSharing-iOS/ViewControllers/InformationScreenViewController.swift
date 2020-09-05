@@ -17,24 +17,24 @@ struct cellData {
 
 class InformationScreenViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var questionsTable: UITableView!
     @IBOutlet weak var closeButton: CloseButton!
     
-    // MARK: Private
+    // MARK: - Private
     
     private let informationViewModel = InformationViewModel()
     private var tableViewData = [cellData]()
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadQuestionsAndAnswers()
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func loadQuestionsAndAnswers() {
         informationViewModel.delegate = self
@@ -50,7 +50,7 @@ class InformationScreenViewController: UIViewController {
         questionsTable.reloadData()
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
     
     @IBAction func closeInformationScreen(_ sender: Any) {
         dismiss(animated: true, completion: nil)

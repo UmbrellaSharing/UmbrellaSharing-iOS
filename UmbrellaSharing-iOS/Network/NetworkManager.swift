@@ -11,7 +11,6 @@ import PromiseKit
 
 class NetworkManager {
     
-    // TODO: Level 3 - Exctract all path in a config file or so
     // TODO: Level 3 - Make all validatoin and error check inhere
     
     // Usefull links for making URL sessions. Please use them while working on this class
@@ -134,6 +133,26 @@ class NetworkManager {
         }.compactMap {
             return try JSONDecoder().decode([LocationPointEntity].self, from: $0.data)
         }
+    }
+}
+
+extension NetworkManager {
+    
+    func checkInternet(flag: Bool, completionHandler: @escaping (_ internet: Bool) -> Void) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        let url = NSURL(string: "http://www.google.com/")
+        let request = NSMutableURLRequest(url: url! as URL)
+        
+        request.httpMethod = "HEAD"
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData
+        request.timeoutInterval = 10.0
+        
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue:OperationQueue.main, completionHandler: { (response: URLResponse?, data: Data?, error: Error?) -> Void in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            let rsp = response as! HTTPURLResponse?
+            completionHandler(rsp?.statusCode == 200)
+        })
     }
 }
 

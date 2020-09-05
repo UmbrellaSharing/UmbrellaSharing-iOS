@@ -18,10 +18,26 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkIfAppWasClosedDuringRentalMode()
+        checkInternetConnectionAndProceedIfPossible()
     }
     
     // MARK: Private methods
+    
+    private func checkInternetConnectionAndProceedIfPossible() {
+        NetworkManager.shared.checkInternet(flag: false, completionHandler: { (isConnectionStable: Bool) -> Void in
+            if (!isConnectionStable) {
+                self.presentErrorMessage()
+            }
+            self.checkIfAppWasClosedDuringRentalMode()
+        })
+    }
+    
+    private func presentErrorMessage() {
+        let noInternetConnectionError = UIAlertController(title: "Oops, there is a problem!", message: "Sorry, there is no internet connection right now. You cannot use our application without stable internet connection. Please, try later.", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        noInternetConnectionError.addAction(okAction)
+        self.present(noInternetConnectionError, animated: true, completion: nil)
+    }
     
     private func checkIfAppWasClosedDuringRentalMode() {
         let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
