@@ -18,6 +18,7 @@ class InformationAboutLastSession: NSObject, NSCoding {
     var applicationCheckpoint: ApplicationImportantCheckpoint?
     var orderId: Int?
     var rentStartDate: Date?
+    var operationType: UmbrellaUtil.OperationType?
     
     // MARK: - Types
     
@@ -25,14 +26,27 @@ class InformationAboutLastSession: NSObject, NSCoding {
         static let applicationCheckpoint = "applicationCheckpoint"
         static let orderId = "orderId"
         static let rentStartDate = "rentStartDate"
+        static let operationType = "operationType"
     }
     
     // MARK: - Initialization
     
-    init?(applicationCheckpoint: ApplicationImportantCheckpoint?, orderId: Int?, rentStartDate: Date?) {
+    init?(applicationCheckpoint: ApplicationImportantCheckpoint?, orderId: Int?, rentStartDate: Date?, operationType: UmbrellaUtil.OperationType?) {
         self.applicationCheckpoint = applicationCheckpoint
         self.orderId = orderId
         self.rentStartDate = rentStartDate
+        self.operationType = operationType
+    }
+    
+    init(applicationCheckpoint: ApplicationImportantCheckpoint?, orderId: Int?, rentStartDate: Date?) {
+           self.applicationCheckpoint = applicationCheckpoint
+           self.orderId = orderId
+           self.rentStartDate = rentStartDate
+       }
+    
+    init(applicationCheckpoint: ApplicationImportantCheckpoint?, operationType: UmbrellaUtil.OperationType?) {
+        self.applicationCheckpoint = applicationCheckpoint
+        self.operationType = operationType
     }
     
     // MARK: - NSCoding
@@ -41,6 +55,7 @@ class InformationAboutLastSession: NSObject, NSCoding {
         coder.encode(applicationCheckpoint?.rawValue, forKey: PropertyKey.applicationCheckpoint)
         coder.encode(orderId, forKey: PropertyKey.orderId)
         coder.encode(rentStartDate, forKey: PropertyKey.rentStartDate)
+        coder.encode(operationType?.rawValue, forKey: PropertyKey.operationType)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -49,18 +64,18 @@ class InformationAboutLastSession: NSObject, NSCoding {
             return nil
         }
         
-        guard let orderId = aDecoder.decodeObject(forKey: PropertyKey.orderId) as? Int else {
-            print("Unable to decode the orderId.")
-            return nil
-        }
-        
-        guard let rentStartDate = aDecoder.decodeObject(forKey: PropertyKey.rentStartDate) as? Date else {
-            print("Unable to decode rentStartDate")
-            return nil
-        }
+        let orderId = aDecoder.decodeObject(forKey: PropertyKey.orderId) as? Int
+        let rentStartDate = aDecoder.decodeObject(forKey: PropertyKey.rentStartDate) as? Date
+        let operationTypeRawValue = aDecoder.decodeObject(forKey: PropertyKey.operationType) as? Int
         
         let applicationCheckpoint = ApplicationImportantCheckpoint(rawValue: applicationCheckpointRawValue)
-        self.init(applicationCheckpoint: applicationCheckpoint, orderId: orderId, rentStartDate: rentStartDate)
+        
+        var operationType: UmbrellaUtil.OperationType? = nil
+        if let operationTypeRawValue = operationTypeRawValue {
+            operationType = UmbrellaUtil.OperationType(rawValue: operationTypeRawValue)
+        }
+        
+        self.init(applicationCheckpoint: applicationCheckpoint, orderId: orderId, rentStartDate: rentStartDate, operationType: operationType)
     }
 }
 

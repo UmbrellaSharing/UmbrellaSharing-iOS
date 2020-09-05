@@ -12,7 +12,6 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // TODO: Level 2 - Return to QR screen code in case of any crash
     // TODO: Level 3 - Make all needed func private
     // TODO: Level 3 - Rates should not be hardcoded
     // TODO: Level 3 - Comments // 5 comments per long session and 2 per short

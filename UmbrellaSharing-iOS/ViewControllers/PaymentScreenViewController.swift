@@ -11,17 +11,17 @@ import UIKit
 
 class PaymentScreenViewController: UIViewController {
     
-    // MARK: Public
+    // MARK: - Public
     
     var operationType: UmbrellaUtil.OperationType?
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: Private methods
+    // MARK: - Private Methods
     
     private func openQRCodeScreen() {
         if let operationType = operationType {
@@ -33,10 +33,16 @@ class PaymentScreenViewController: UIViewController {
         }
     }
     
-    // MARK: IB Actions
+    private func rememberThatPaymentWasSuccessful() {
+        let informationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: ApplicationImportantCheckpoint.afterSuccessfulPayment, operationType: operationType)
+        GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
+    }
+    
+    // MARK: - IB Actions
     
     @IBAction func pressContinue(_ sender: Any) {
         // TODO: Level 2 - Feature - Big - The Most Important. We need to do all payment checks. But We are waiting before Iliya make the Yandex Payments.
+        rememberThatPaymentWasSuccessful()
         openQRCodeScreen()
     }
     

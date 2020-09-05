@@ -10,7 +10,7 @@ import Foundation
 
 class UmbrellaUtil {
     
-    enum OperationType: Int {
+    enum OperationType: Int, Codable {
         case buyUmbrella = 1
         case rentUmbrella
         case returnUmbrella

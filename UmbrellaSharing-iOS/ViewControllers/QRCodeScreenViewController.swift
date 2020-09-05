@@ -71,12 +71,8 @@ class QRCodeScreenViewController: UIViewController {
     }
     
     private func rememberThatRentHasBeenStarted(orderId: Int, rentStartDate: Date) {
-        
-        
         let informationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: ApplicationImportantCheckpoint.rentalModeStarted, orderId: orderId, rentStartDate: rentStartDate)
-        if let informationAboutLastSession = informationAboutLastSession {
-            GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
-        }
+        GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
     }
     
     // MARK: IB Actions
@@ -134,7 +130,7 @@ extension QRCodeScreenViewController: QRDataModelDelegate {
             // map screen if application is closed later on
             let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
             let updatedInformationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: nil, orderId: orderId, rentStartDate: nil)
-            GlobalDataStorage.shared.saveInformationAboutLastSession(updatedInformationAboutLastSession!)
+            GlobalDataStorage.shared.saveInformationAboutLastSession(updatedInformationAboutLastSession)
             openFeedbackScreen()
         case .none:
             print("This case should never be launched.")

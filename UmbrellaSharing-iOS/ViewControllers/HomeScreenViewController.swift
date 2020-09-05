@@ -28,7 +28,7 @@ class HomeScreenViewController: UIViewController {
             if (!isConnectionStable) {
                 self.presentErrorMessage()
             }
-            self.checkIfAppWasClosedDuringRentalMode()
+            self.moveUserToAppropriateStageIfNeeded()
         })
     }
     
@@ -41,10 +41,15 @@ class HomeScreenViewController: UIViewController {
         self.present(noInternetConnectionError, animated: true, completion: nil)
     }
     
-    private func checkIfAppWasClosedDuringRentalMode() {
-        let informationAboutLastSession = GlobalDataStorage.shared.informationAboutLastSession
-        if informationAboutLastSession?.applicationCheckpoint == ApplicationImportantCheckpoint.rentalModeStarted {
+    private func moveUserToAppropriateStageIfNeeded() {
+        let applicationCheckpoint = GlobalDataStorage.shared.informationAboutLastSession?.applicationCheckpoint
+        switch applicationCheckpoint {
+        case .afterSuccessfulPayment:
+            openQRScreen()
+        case .rentalModeStarted:
             openMapScreen()
+        default:
+            break // Do nothing
         }
     }
     
@@ -59,6 +64,17 @@ class HomeScreenViewController: UIViewController {
         let orderInformation = OrderInformation(userId: userCredentials?.userId, orderId: orderId, code: nil)
         newViewController.orderInformation = orderInformation
         self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    private func openQRScreen() {
+        let operationType = GlobalDataStorage.shared.informationAboutLastSession?.operationType
+        if let operationType = operationType {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "QRCodeScreen", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "QRCodeScreenViewController") as! QRCodeScreenViewController
+            newViewController.modalPresentationStyle = .fullScreen
+            newViewController.operationType = operationType
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     
