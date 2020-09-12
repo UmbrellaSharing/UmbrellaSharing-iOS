@@ -17,6 +17,18 @@ class UmbrellaButton: UIButton {
             layer.masksToBounds = cornerRadius > 0
         }
     }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            layer.borderColor = borderColor.cgColor
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
