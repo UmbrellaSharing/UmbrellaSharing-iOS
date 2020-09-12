@@ -35,7 +35,7 @@ class CloseButton: UIButton {
         
         // Add constraints
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 45.0).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
     }
 }

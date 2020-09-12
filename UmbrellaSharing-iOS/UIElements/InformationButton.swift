@@ -34,7 +34,7 @@ import UIKit
         
         // Add constraints
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
     }
 }
