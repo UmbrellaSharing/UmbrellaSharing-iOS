@@ -12,6 +12,9 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
+    // TODO: Design:
+    // 1. Change the question icon! (Also fix the size of the new icon)
+    
     // MARK: Outlets
     
     @IBOutlet weak var proceedButton: UmbrellaButton!

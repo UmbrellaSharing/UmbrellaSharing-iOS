@@ -8,7 +8,15 @@
 
 import UIKit
 
+@IBDesignable
 class UmbrellaButton: UIButton {
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,10 +30,5 @@ class UmbrellaButton: UIButton {
     
     private func setupButton() {
         UIView.self.setAnimationsEnabled(false)
-        layer.cornerRadius = 20
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
-        layer.backgroundColor = UIColor.white.cgColor
-        self.setTitleColor(.black, for: .normal)
     }
 }
