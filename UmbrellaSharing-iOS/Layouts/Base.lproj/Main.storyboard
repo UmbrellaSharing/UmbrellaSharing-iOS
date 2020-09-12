@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,35 +12,35 @@
             <objects>
                 <viewController restorationIdentifier="HomeScreenViewController" storyboardIdentifier="HomeScreenViewController" id="BYZ-38-t0r" customClass="HomeScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="rentalRateHeaderLabel" text="Rental Rate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m03-uo-GpW">
-                                <rect key="frame" x="137.66666666666666" y="99.333333333333329" width="138.99999999999997" height="31.333333333333329"/>
+                                <rect key="frame" x="118" y="21" width="139" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFJ-m3-LDl" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="304.66666666666669" width="414" height="591.33333333333326"/>
+                                <rect key="frame" x="0.0" y="227" width="375" height="440"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="253" restorationIdentifier="buyRateHeaderLabel" text="Buy Rate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-jc-6rE">
-                                        <rect key="frame" x="153" y="30" width="108.33333333333331" height="31.333333333333329"/>
+                                        <rect key="frame" x="133.5" y="30" width="108.5" height="31.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="256" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="2wt-36-BbZ">
-                                        <rect key="frame" x="36" y="99.333333333333314" width="342" height="116"/>
+                                        <rect key="frame" x="36" y="99.5" width="303" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" restorationIdentifier="firstOptionBuyLabel" text="Buy an umbrella" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfE-oG-TeJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="217" height="116"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="178" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="firstOptionBuyPriceLabel" text="300₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpD-UK-7RZ">
-                                                <rect key="frame" x="297" y="0.0" width="45" height="116"/>
+                                                <rect key="frame" x="258" y="0.0" width="45" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -48,13 +48,13 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="247" translatesAutoresizingMaskIntoConstraints="NO" id="qxL-kF-xCD" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="259.33333333333331" width="414" height="331.99999999999994"/>
+                                        <rect key="frame" x="0.0" y="164" width="375" height="276"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-qu-I2S">
-                                                <rect key="frame" x="105" y="46" width="204" height="230"/>
+                                                <rect key="frame" x="85.5" y="46" width="204" height="174"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="rentButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax3-I6-Sfd" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="66"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="47"/>
                                                         <color key="backgroundColor" red="0.19215686274509802" green="0.52156862745098043" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <state key="normal" title="Rent an Umbrella">
@@ -70,7 +70,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buyButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-iS-Nt5" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="82" width="204" height="66"/>
+                                                        <rect key="frame" x="0.0" y="63" width="204" height="47.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.37647058823529411" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <state key="normal" title="Buy an Umbrella">
@@ -86,7 +86,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="checkLocationsButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-Zo-O5c" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="164" width="204" height="66"/>
+                                                        <rect key="frame" x="0.0" y="126.5" width="204" height="47.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <state key="normal" title="Check Map">
@@ -139,19 +139,19 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vAh-8d-4Bt">
-                                <rect key="frame" x="36" y="163.66666666666666" width="342" height="107.99999999999997"/>
+                                <rect key="frame" x="36" y="85.5" width="303" height="108.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-hQ-qzM">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="19.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="19.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" restorationIdentifier="firstOptionRentLabel" text="For 1 hour" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="45W-d2-ElV">
-                                                <rect key="frame" x="0.0" y="0.0" width="230" height="19.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="firstOptionRentPriceLabel" text="50₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPw-3t-hQ2">
-                                                <rect key="frame" x="310" y="0.0" width="32" height="19.333333333333332"/>
+                                                <rect key="frame" x="271" y="0.0" width="32" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -159,16 +159,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-Fu-090">
-                                        <rect key="frame" x="0.0" y="44.333333333333343" width="342" height="19.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="303" height="19.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" restorationIdentifier="secondOptionRentLabel" text="For 1 day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIw-yT-V7d">
-                                                <rect key="frame" x="0.0" y="0.0" width="222" height="19.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="secondOptionRentPriceLabel" text="100₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-F4-Gf7">
-                                                <rect key="frame" x="302" y="0.0" width="40" height="19.333333333333332"/>
+                                                <rect key="frame" x="263" y="0.0" width="40" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -176,16 +176,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="X3J-Gn-11F">
-                                        <rect key="frame" x="0.0" y="88.666666666666686" width="342" height="19.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="89" width="303" height="19.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" restorationIdentifier="thirdOptionRentLabel" text="More than 1 day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V30-j3-lwP">
-                                                <rect key="frame" x="0.0" y="0.0" width="219.33333333333334" height="19.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="180.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="thirdOptionRentPriceLabel" text="300₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-Zr-3Lv">
-                                                <rect key="frame" x="299.33333333333331" y="0.0" width="42.666666666666686" height="19.333333333333332"/>
+                                                <rect key="frame" x="260.5" y="0.0" width="42.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMD-MA-ca3" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="340" y="90" width="50" height="50"/>
+                                <rect key="frame" x="301" y="11.5" width="50" height="50"/>
                                 <state key="normal" title="Button" image="informationSign">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -234,6 +234,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="informationSign" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="informationSign" width="256" height="256"/>
     </resources>
 </document>

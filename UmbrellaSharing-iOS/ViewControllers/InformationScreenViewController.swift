@@ -15,8 +15,10 @@ struct cellData {
     var sectionData = [String]()
 }
 
+let QuestionCellSeparateLineTag: Int = 1
+
 class InformationScreenViewController: UIViewController {
-    
+
     // MARK: - Outlets
     
     @IBOutlet weak var questionsTable: UITableView!
@@ -88,13 +90,22 @@ extension InformationScreenViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let cell = questionsTable.cellForRow(at: indexPath) as! QuestionCell
+            
+            let separateLine = cell.viewWithTag(QuestionCellSeparateLineTag)
+            
             if tableViewData[indexPath.section].opened {
                 tableViewData[indexPath.section].opened = false
+                if let separateLine = separateLine {
+                    separateLine.isHidden = false
+                }
                 tableView.reloadData() {
                     cell.changeTheState()
                 }
             } else {
                 tableViewData[indexPath.section].opened = true
+                if let separateLine = separateLine {
+                    separateLine.isHidden = true
+                }
                 tableView.reloadData() {
                     cell.changeTheState()
                 }
