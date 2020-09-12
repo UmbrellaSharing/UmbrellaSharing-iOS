@@ -32,9 +32,9 @@ class QuestionCell: UITableViewCell {
     func changeTheState() {
         self.isOpen = !self.isOpen
         if (self.isOpen) {
-            arrowSign.image = UIImage(named: "arrowTop")
+            arrowSign.image = UIImage(named: "minusSign")
         } else {
-            arrowSign.image = UIImage(named: "arrowDown")
+            arrowSign.image = UIImage(named: "plusSign")
         }
     }
 }
