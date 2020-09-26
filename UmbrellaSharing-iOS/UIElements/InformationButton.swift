@@ -8,18 +8,30 @@
 
 import UIKit
 
-@IBDesignable class InformationButton: UIButton {
+@IBDesignable
+class InformationButton: UIButton {
+    
+    // MARK: Private Variables
+    
+    private var iconName: String = "informationSign"
     
     // MARK: Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupButton()
+    }
+    
+    // MARK: Inspectable Variables
+    
+    @IBInspectable var useDarkSign: Bool = false {
+        didSet {
+           iconName =  useDarkSign ? "informationSignMap" : "informationSign"
+            setupButton()
+        }
     }
     
     // MARK: Private Methods
@@ -27,9 +39,7 @@ import UIKit
     private func setupButton() {
         // Load Button Images
         let bundle = Bundle(for: type(of: self))
-        let informationSign = UIImage(named: "informationSign", in: bundle, compatibleWith: self.traitCollection)
-        
-        // TODO: Idea for the future - we can put the same sign with different color to make small animation here
+        let informationSign = UIImage(named: iconName, in: bundle, compatibleWith: self.traitCollection)
         self.setImage(informationSign, for: .normal)
         
         // Add constraints
