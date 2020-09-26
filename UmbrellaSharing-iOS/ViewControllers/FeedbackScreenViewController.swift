@@ -47,11 +47,13 @@ extension FeedbackScreenViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         comment.text = ""
         comment.textColor = UIColor.black
+        comment.layer.borderColor = UmbrellaUtil.getUIColor(hex: "#2C5F90")?.cgColor
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        comment.layer.borderColor = UmbrellaUtil.getUIColor(hex: "#AAAAAA")?.cgColor
         if comment.text.isEmpty {
-            comment.text = "Please, write the comment here..."
+            comment.text = "I liked the most..."
             comment.textColor = UIColor.gray
         }
     }
@@ -64,3 +66,4 @@ extension FeedbackScreenViewController: UITextViewDelegate {
         return true
     }
 }
+

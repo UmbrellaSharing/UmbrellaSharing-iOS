@@ -11,8 +11,6 @@ import UIKit
 @IBDesignable
 class UmbrellaLayoutView: UIView {
     
-    
-    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             let rectShape = CAShapeLayer()

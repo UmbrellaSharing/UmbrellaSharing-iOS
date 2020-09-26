@@ -37,6 +37,8 @@
 		7D99E2162490EA4C00334232 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2152490EA4C00334232 /* Map.storyboard */; };
 		7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */; };
 		7DC9E3AC251EE4AC00FA7607 /* qrCodeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9E3AB251EE4AC00FA7607 /* qrCodeBackground.png */; };
+		7DC9E3AE251EF6D000FA7607 /* feedbackZontik.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9E3AD251EF6D000FA7607 /* feedbackZontik.png */; };
+		7DC9E3B0251EFB8D00FA7607 /* FeedbackTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC9E3AF251EFB8D00FA7607 /* FeedbackTextView.swift */; };
 		7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */; };
 		7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */; };
 		7DDCDA17250C74C000769F4A /* UmbrellaLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDCDA16250C74C000769F4A /* UmbrellaLayoutView.swift */; };
@@ -98,6 +100,8 @@
 		7D99E2152490EA4C00334232 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaButton.swift; sourceTree = "<group>"; };
 		7DC9E3AB251EE4AC00FA7607 /* qrCodeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrCodeBackground.png; sourceTree = "<group>"; };
+		7DC9E3AD251EF6D000FA7607 /* feedbackZontik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedbackZontik.png; sourceTree = "<group>"; };
+		7DC9E3AF251EFB8D00FA7607 /* FeedbackTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTextView.swift; sourceTree = "<group>"; };
 		7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeScreen.storyboard; sourceTree = "<group>"; };
 		7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScreenViewController.swift; sourceTree = "<group>"; };
 		7DDCDA16250C74C000769F4A /* UmbrellaLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaLayoutView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				7D3981B324CA9759007B76CC /* AnswerCell.swift */,
 				7D3981B524CABB44007B76CC /* CloseButton.swift */,
 				7DDCDA16250C74C000769F4A /* UmbrellaLayoutView.swift */,
+				7DC9E3AF251EFB8D00FA7607 /* FeedbackTextView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				7DDCDA19250CBC1300769F4A /* Intro.png */,
+				7DC9E3AD251EF6D000FA7607 /* feedbackZontik.png */,
 				7DC9E3AB251EE4AC00FA7607 /* qrCodeBackground.png */,
 			);
 			path = Images;
@@ -398,6 +404,7 @@
 				7D99E2162490EA4C00334232 /* Map.storyboard in Resources */,
 				7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */,
 				7D99E2122490DF9A00334232 /* Podfile in Resources */,
+				7DC9E3AE251EF6D000FA7607 /* feedbackZontik.png in Resources */,
 				7D63463924779DD100049C30 /* Main.storyboard in Resources */,
 				7D5CEDEF24C2D0FF003DB6EE /* InformationScreen.storyboard in Resources */,
 			);
@@ -490,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC9E3B0251EFB8D00FA7607 /* FeedbackTextView.swift in Sources */,
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
