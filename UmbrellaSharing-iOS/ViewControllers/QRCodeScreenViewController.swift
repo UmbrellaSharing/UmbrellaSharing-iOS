@@ -12,6 +12,9 @@ import Toast_Swift
 
 class QRCodeScreenViewController: UIViewController {
     
+    // TODO: Level 3 - Put toast in the center.
+    // TODO: Level 5 - Make QR be blue according to the design
+    
     // MARK: Outlets
     
     @IBOutlet weak var qrCodeImageView: UIImageView!

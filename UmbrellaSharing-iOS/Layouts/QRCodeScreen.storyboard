@@ -15,69 +15,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show the QR Code to the Operator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-2v-qUP">
-                                <rect key="frame" x="80" y="18.5" width="215" height="53"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show QR Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-2v-qUP">
+                                <rect key="frame" x="97" y="64" width="181.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FVS-fh-Px3">
-                                <rect key="frame" x="54" y="151.5" width="267" height="267"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FVS-fh-Px3" secondAttribute="height" multiplier="1:1" id="c3j-FC-PVB"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-za-IpD">
-                                <rect key="frame" x="83.5" y="517" width="208" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-75-CLa" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="208" id="Tq3-Sj-J3F"/>
-                                            <constraint firstAttribute="height" constant="40" id="Tyf-4y-7zU"/>
-                                        </constraints>
-                                        <state key="normal" title="Continue"/>
-                                        <connections>
-                                            <action selector="pressContinue:" destination="S52-VI-8q2" eventType="touchUpInside" id="uXZ-0U-QQe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5E-yr-zVo" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="208" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Pcr-Py-xUC"/>
-                                            <constraint firstAttribute="width" constant="208" id="mUO-CF-Owe"/>
-                                        </constraints>
-                                        <state key="normal" title="Go Back"/>
-                                        <connections>
-                                            <action selector="back:" destination="S52-VI-8q2" eventType="touchUpInside" id="ZTz-Cg-fZ3"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB3-w2-FQH" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="305" y="20" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="RNf-O2-bPd"/>
-                                    <constraint firstAttribute="width" constant="50" id="sBA-4n-YeI"/>
-                                </constraints>
+                                <rect key="frame" x="321" y="65" width="30" height="30"/>
                                 <state key="normal" title="Button" image="informationSign"/>
                                 <connections>
                                     <action selector="openInformation:" destination="S52-VI-8q2" eventType="touchUpInside" id="evh-f0-SNr"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARb-yJ-EmA" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115.5" width="375" height="551.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-za-IpD">
+                                        <rect key="frame" x="85.5" y="391.5" width="204" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-75-CLa" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
+                                                <color key="backgroundColor" red="0.17346876859999999" green="0.37267863750000002" blue="0.56473028660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <state key="normal" title="Continue">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressContinue:" destination="S52-VI-8q2" eventType="touchUpInside" id="uXZ-0U-QQe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5E-yr-zVo" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="204" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <state key="normal" title="Go Back">
+                                                    <color key="titleColor" red="0.17699468139999999" green="0.364203155" blue="0.58946293589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.17699468139999999" green="0.364203155" blue="0.58946293589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="back:" destination="S52-VI-8q2" eventType="touchUpInside" id="ZTz-Cg-fZ3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="Xap-Np-20H"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="104" id="t4X-Bm-YtW"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FVS-fh-Px3">
+                                        <rect key="frame" x="52.5" y="76" width="270" height="270"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="270" id="IF0-WL-vez"/>
+                                            <constraint firstAttribute="width" constant="270" id="kiU-Rg-2xw"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="FVS-fh-Px3" firstAttribute="centerX" secondItem="ARb-yJ-EmA" secondAttribute="centerX" id="CH2-iS-HuC"/>
+                                    <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="ARb-yJ-EmA" secondAttribute="top" constant="76" id="Sbb-7G-vKL"/>
+                                    <constraint firstAttribute="bottom" secondItem="8i0-za-IpD" secondAttribute="bottom" constant="56" id="UYP-E8-FbE"/>
+                                    <constraint firstItem="8i0-za-IpD" firstAttribute="centerX" secondItem="ARb-yJ-EmA" secondAttribute="centerX" id="mou-kz-yK9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.37254901960784315" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="height" secondItem="Gxb-Py-Rar" secondAttribute="height" multiplier="0.4" id="0QV-8T-RVT"/>
-                            <constraint firstItem="i1N-2v-qUP" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" constant="80" id="0wA-20-q82"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="centerX" secondItem="k3y-4W-2Ao" secondAttribute="centerX" id="26O-pj-m8Q"/>
-                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="i1N-2v-qUP" secondAttribute="trailing" constant="80" id="2pL-iI-HXK"/>
-                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="aB3-w2-FQH" secondAttribute="trailing" constant="20" id="3eD-hL-IvZ"/>
-                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="bottom" secondItem="8i0-za-IpD" secondAttribute="bottom" constant="50" id="bhX-YO-mBH"/>
-                            <constraint firstItem="aB3-w2-FQH" firstAttribute="top" secondItem="k3y-4W-2Ao" secondAttribute="top" constant="20" id="gXX-K4-2pA"/>
-                            <constraint firstItem="i1N-2v-qUP" firstAttribute="centerY" secondItem="aB3-w2-FQH" secondAttribute="centerY" id="gpi-l6-nbS"/>
-                            <constraint firstItem="8i0-za-IpD" firstAttribute="centerX" secondItem="Gxb-Py-Rar" secondAttribute="centerX" id="sUL-bt-hjo"/>
-                            <constraint firstItem="FVS-fh-Px3" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="80" id="tgQ-wZ-PbH"/>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="top" secondItem="k3y-4W-2Ao" secondAttribute="top" constant="64" id="5Nr-4d-TFS"/>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="centerX" secondItem="Gxb-Py-Rar" secondAttribute="centerX" id="FUt-lM-6mW"/>
+                            <constraint firstItem="ARb-yJ-EmA" firstAttribute="leading" secondItem="k3y-4W-2Ao" secondAttribute="leading" id="JVC-IX-OHP"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="ARb-yJ-EmA" secondAttribute="trailing" id="KLv-JQ-slC"/>
+                            <constraint firstItem="k3y-4W-2Ao" firstAttribute="trailing" secondItem="aB3-w2-FQH" secondAttribute="trailing" constant="24" id="Nde-4C-yQ7"/>
+                            <constraint firstItem="i1N-2v-qUP" firstAttribute="centerY" secondItem="aB3-w2-FQH" secondAttribute="centerY" id="g8p-VD-jj7"/>
+                            <constraint firstAttribute="bottom" secondItem="ARb-yJ-EmA" secondAttribute="bottom" id="gne-Ic-mFJ"/>
+                            <constraint firstItem="ARb-yJ-EmA" firstAttribute="top" secondItem="i1N-2v-qUP" secondAttribute="bottom" constant="20" id="gxi-Ju-lwq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k3y-4W-2Ao"/>
                     </view>
@@ -87,10 +118,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G29-7b-axO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.599999999999994" y="81.409295352323838"/>
+            <point key="canvasLocation" x="85.507246376811594" y="81.026785714285708"/>
         </scene>
     </scenes>
     <resources>
-        <image name="informationSign" width="256" height="256"/>
+        <image name="informationSign" width="30" height="30"/>
     </resources>
 </document>
