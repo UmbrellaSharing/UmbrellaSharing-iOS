@@ -12,14 +12,13 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
-    // TODO: Design:
-    // 1. Change the question icon! (Also fix the size of the new icon)
-    
     // MARK: Outlets
     
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var timeAndPriceButton: UmbrellaButton!
+    @IBOutlet weak var mapInformationSectionLabel: UILabel!
+    @IBOutlet weak var buttonStackView: UIStackView!
+    @IBOutlet weak var clockIcon: UIImageView!
     
     // MARK: Public
     
@@ -46,10 +45,10 @@ class MapViewController: UIViewController {
     // MARK: Private Methods
     
     private func initView() {
+        initCounter()
         loadLocations()
         initButtons()
         initMap()
-        initCounter()
     }
     
     private func loadLocations() {
@@ -59,11 +58,12 @@ class MapViewController: UIViewController {
     }
     
     private func initCounter() {
-        timeAndPriceButton.isHidden = true
         if mapMode == UmbrellaUtil.MapMode.rentalMode {
-            timeAndPriceButton.isHidden = false
+            mapInformationSectionLabel.text = "00:00 0₽ "
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
             updateCounterIfDateCashed()
+        } else {
+            mapInformationSectionLabel.text = "Pick Up Points"
         }
     }
     
@@ -85,7 +85,20 @@ class MapViewController: UIViewController {
     @objc private func updateTimerLabel() {
         counter += 1
         let textForTimeAndPriceButton = mapViewModel.prepareTextForTimeAndPriceButton(counter)
-        timeAndPriceButton.setTitle(textForTimeAndPriceButton, for: .normal)
+        mapInformationSectionLabel.text = textForTimeAndPriceButton
+    }
+    
+    private func presentMessageOnBuyingUmbrella() {
+        let messageOnBuyingUmbrella = UIAlertController(title: "You bought the umbrella!",
+                                                          message: "Thank you for your purchase. You will be taken to a feedback screen.",
+                                                          preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
+            // We should make payment transaction here
+            GlobalDataStorage.shared.cleanInformationAboutLastSession()
+            self.openFeedbackScreen()
+        }
+        messageOnBuyingUmbrella.addAction(okAction)
+        self.present(messageOnBuyingUmbrella, animated: true, completion: nil)
     }
     
     private func presentMessageNotToReturnUmbrella() {
@@ -125,16 +138,39 @@ class MapViewController: UIViewController {
             switch mapMode {
             case .locationsMode:
                 proceedButton.setTitle("Rent an Umbrella", for: .normal)
-                backButton.setTitle("Back to Home", for: .normal)
+                backButton.setTitle("Go Back", for: .normal)
             case .rentalMode:
+                addBuyButton()
                 proceedButton.setTitle("Return an Umbrella", for: .normal)
                 backButton.isHidden = true
             }
         }
     }
     
+    private func addBuyButton() {
+        let buyButton = UmbrellaButton()
+        
+        buyButton.setTitle("Buy Umbrella", for: .normal)
+        buyButton.backgroundColor = UmbrellaUtil.getUIColor(hex: "#3185BC")
+        buyButton.setTitleColor(UIColor.white, for: .normal)
+        buyButton.setTitleColor(UmbrellaUtil.getUIColor(hex: "#0092D1"), for: .highlighted)
+        buyButton.cornerRadius = 22
+        buyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+        
+        buyButton.addTarget(self, action: #selector(buyUmbrella), for: .touchUpInside)
+        buyButton.translatesAutoresizingMaskIntoConstraints = false
+        buttonStackView.addArrangedSubview(buyButton)
+    }
+    
     private func openHomeScreen() {
         self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    private func openFeedbackScreen() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "FeedbackScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "FeedbackScreenViewController") as! FeedbackScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     private func openPaymentScreenToRentUmbrella() {
@@ -168,6 +204,10 @@ class MapViewController: UIViewController {
             }
         }
     }
+    
+    @objc func buyUmbrella(sender: UIButton!) {
+           presentMessageOnBuyingUmbrella()
+       }
     
     @IBAction func openInformation(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)

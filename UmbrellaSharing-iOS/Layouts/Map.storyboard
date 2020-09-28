@@ -38,11 +38,11 @@
                                             <action selector="openInformation:" destination="rVy-LD-VSZ" eventType="touchUpInside" id="Vcy-8T-gFz"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-2I-yUJ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-2I-yUJ">
                                         <rect key="frame" x="85.5" y="90" width="204" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="proceedButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="204" height="41.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
                                                 <color key="backgroundColor" red="0.17254901959999999" green="0.37254901959999998" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="Proceed Button">
@@ -52,13 +52,16 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.19215686274509802" green="0.52156862745098043" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="continue:" destination="rVy-LD-VSZ" eventType="touchUpInside" id="4pU-dp-PTG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvy-Rs-Qgo" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="57.5" width="204" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="60" width="204" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="Back to Home">
                                                     <color key="titleColor" red="0.17254901959999999" green="0.37254901959999998" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -84,13 +87,22 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="n40-mH-0Lo"/>
                                         </constraints>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w5g-hR-0Pi">
+                                        <rect key="frame" x="42" y="23.5" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="1sW-y3-5Pi"/>
+                                            <constraint firstAttribute="height" constant="33" id="F2k-Nw-ZyA"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Gik-2I-yUJ" secondAttribute="bottom" constant="56" id="2JE-Qy-SAn"/>
                                     <constraint firstItem="Gik-2I-yUJ" firstAttribute="centerX" secondItem="IGL-ln-kkq" secondAttribute="centerX" id="G6p-9G-4vt"/>
                                     <constraint firstItem="BUi-fX-teX" firstAttribute="top" secondItem="IGL-ln-kkq" secondAttribute="top" constant="24" id="H9O-uP-InZ"/>
+                                    <constraint firstItem="w5g-hR-0Pi" firstAttribute="centerY" secondItem="BUi-fX-teX" secondAttribute="centerY" id="HGe-R8-FzG"/>
                                     <constraint firstAttribute="trailing" secondItem="Cpg-5m-365" secondAttribute="trailing" constant="42" id="OyF-YB-ndk"/>
+                                    <constraint firstItem="w5g-hR-0Pi" firstAttribute="leading" secondItem="IGL-ln-kkq" secondAttribute="leading" constant="42" id="eN6-F3-YFi"/>
                                     <constraint firstAttribute="height" constant="250" id="em5-au-92A"/>
                                     <constraint firstItem="BUi-fX-teX" firstAttribute="centerX" secondItem="IGL-ln-kkq" secondAttribute="centerX" id="f4p-Yr-Ikk"/>
                                     <constraint firstItem="Cpg-5m-365" firstAttribute="centerY" secondItem="BUi-fX-teX" secondAttribute="centerY" id="rhA-Hu-Juo"/>
@@ -101,32 +113,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yG-IZ-NVb" userLabel="Time And Price Button" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="83" y="43" width="208" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="wZQ-Fv-Kgx"/>
-                                    <constraint firstAttribute="width" constant="208" id="zie-jS-WJa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="00:00 0 ₽">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9g5-bc-9T0" firstAttribute="bottom" secondItem="IGL-ln-kkq" secondAttribute="bottom" id="62K-OJ-e6w"/>
-                            <constraint firstItem="6yG-IZ-NVb" firstAttribute="top" secondItem="9g5-bc-9T0" secondAttribute="top" constant="43" id="DVp-Oo-ARS"/>
                             <constraint firstItem="9g5-bc-9T0" firstAttribute="trailing" secondItem="IGL-ln-kkq" secondAttribute="trailing" id="Lhy-tI-Chs"/>
-                            <constraint firstItem="6yG-IZ-NVb" firstAttribute="centerX" secondItem="zBe-St-yXe" secondAttribute="centerX" constant="-0.5" id="O9f-f3-e5U"/>
                             <constraint firstItem="IGL-ln-kkq" firstAttribute="leading" secondItem="9g5-bc-9T0" secondAttribute="leading" id="ckk-D0-rIO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9g5-bc-9T0"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Uvy-Rs-Qgo" id="GAS-Ph-Z2l"/>
+                        <outlet property="buttonStackView" destination="Gik-2I-yUJ" id="MbH-JN-ZBM"/>
+                        <outlet property="clockIcon" destination="w5g-hR-0Pi" id="q8P-7u-rmZ"/>
+                        <outlet property="mapInformationSectionLabel" destination="BUi-fX-teX" id="0Iz-Ar-zR6"/>
                         <outlet property="proceedButton" destination="ilu-dg-Dce" id="FKq-Bs-sRs"/>
-                        <outlet property="timeAndPriceButton" destination="6yG-IZ-NVb" id="okN-cS-3Pu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSH-cS-R6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,6 +136,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clockIcon" width="78" height="78"/>
         <image name="informationSignMap" width="68" height="68"/>
     </resources>
 </document>
