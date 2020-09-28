@@ -46,6 +46,7 @@ class MapViewController: UIViewController {
     
     private func initView() {
         initCounter()
+        initPanel()
         loadLocations()
         initButtons()
         initMap()
@@ -64,6 +65,14 @@ class MapViewController: UIViewController {
             updateCounterIfDateCashed()
         } else {
             mapInformationSectionLabel.text = "Pick Up Points"
+        }
+    }
+    
+    private func initPanel() {
+        if mapMode == UmbrellaUtil.MapMode.rentalMode {
+            clockIcon.isHidden = false
+        } else {
+            clockIcon.isHidden = true
         }
     }
     
