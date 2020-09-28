@@ -32,8 +32,14 @@
                                 <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
-                                        <rect key="frame" x="51" y="48" width="273" height="200.5"/>
-                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                        <rect key="frame" x="51" y="48" width="273" height="267.5"/>
+                                        <string key="text">Dear user! 
+This application is only an imitation of real sharing service. This is my pet project. This means that there will be no real payments, but only an imitation.
+However, at the time of development, I tried to imagine that I was developing a real application in which people can rent umbrellas. Why not?
+For example, on this screen, the user would enter the details of his bank card, and later in the process of use, the money would be debited from the card.
+
+Best regards,
+Igor</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
