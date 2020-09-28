@@ -49,7 +49,6 @@
 		7DF354B924E3B96800C993A4 /* GlobalDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354B824E3B96800C993A4 /* GlobalDataStorage.swift */; };
 		7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */; };
 		7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378F824B95438001D1BD8 /* OrderInformation.swift */; };
-		7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */; };
 		EED7666447CD190F18AE8977 /* Pods_UmbrellaSharing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,7 +111,6 @@
 		7DF354B824E3B96800C993A4 /* GlobalDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDataStorage.swift; sourceTree = "<group>"; };
 		7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutLastSession.swift; sourceTree = "<group>"; };
 		7DF378F824B95438001D1BD8 /* OrderInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformation.swift; sourceTree = "<group>"; };
-		7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,7 +283,6 @@
 		7DF378FA24B956C9001D1BD8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */,
 				7D05A95724BC860E006B759D /* QRViewModel.swift */,
 				7D3981BC24D6B284007B76CC /* MapViewModel.swift */,
 				7DF354AF24E3807000C993A4 /* InformationViewModel.swift */,
@@ -510,7 +507,6 @@
 				7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */,
 				7D5CEDF124C2D409003DB6EE /* InformationScreenViewController.swift in Sources */,
 				7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */,
-				7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */,
 				7DF354B024E3807000C993A4 /* InformationViewModel.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
 				7DDCDA17250C74C000769F4A /* UmbrellaLayoutView.swift in Sources */,

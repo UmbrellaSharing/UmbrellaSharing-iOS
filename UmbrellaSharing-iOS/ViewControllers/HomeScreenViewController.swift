@@ -10,7 +10,7 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class HomeScreenViewController: UIViewController {
         checkInternetConnectionAndProceedIfPossible()
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     
     private func checkInternetConnectionAndProceedIfPossible() {
         NetworkManager.shared.checkInternet(flag: false, completionHandler: { (isConnectionStable: Bool) -> Void in
@@ -86,7 +86,7 @@ class HomeScreenViewController: UIViewController {
         self.present(newViewController, animated: true, completion: nil)
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
     
     @IBAction func rentUmbrella(_ sender: Any) {
         openPaymentScreen(UmbrellaUtil.OperationType.rentUmbrella)

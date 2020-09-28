@@ -9,6 +9,8 @@
 import Foundation
 
 class MapViewModel {
+    
+    // MARK: - Public Variables
 
     weak var delegate: MapDataModelDelegate?
     
@@ -16,16 +18,7 @@ class MapViewModel {
         loadLocations()
     }
     
-    private func loadLocations() {
-        NetworkManager.shared.getLocationPoints().done { [weak self] response in
-            guard self != nil else { return }
-            if let delegate = self?.delegate {
-                delegate.didLoadLocations(locations: response)
-            }
-        }.catch { error in
-            print("Error: \(error)")
-        }
-    }
+    // MARK: - Public Methods
     
     func prepareTextForTimeAndPriceButton(_ counter: Double) -> String {
         let hours = normilizeTimeValue(Int(counter) / 3600)
@@ -40,14 +33,6 @@ class MapViewModel {
         
         let priceString = "\(calculatePrice(from: counter))₽"
         return timeString + " " + priceString
-    }
-    
-    private func normilizeTimeValue(_ rawTimeValue: Int) -> String {
-        if rawTimeValue < 10 {
-            let result = "0" + String(rawTimeValue)
-            return result
-        }
-        return String(rawTimeValue)
     }
     
     func calculatePrice(from counter: Double) -> Int {
@@ -77,6 +62,27 @@ class MapViewModel {
             return GlobalDataStorage.shared.informationAboutLastSession?.rentStartDate
         }
         return nil
+    }
+    
+    // MARK: - Private Methods
+    
+    private func loadLocations() {
+        NetworkManager.shared.getLocationPoints().done { [weak self] response in
+            guard self != nil else { return }
+            if let delegate = self?.delegate {
+                delegate.didLoadLocations(locations: response)
+            }
+        }.catch { error in
+            print("Error: \(error)")
+        }
+    }
+    
+    private func normilizeTimeValue(_ rawTimeValue: Int) -> String {
+        if rawTimeValue < 10 {
+            let result = "0" + String(rawTimeValue)
+            return result
+        }
+        return String(rawTimeValue)
     }
 }
 

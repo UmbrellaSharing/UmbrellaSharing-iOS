@@ -12,7 +12,7 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var proceedButton: UmbrellaButton!
     @IBOutlet weak var backButton: UIButton!
@@ -20,7 +20,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var clockIcon: UIImageView!
     
-    // MARK: Public
+    // MARK: - Public
     
     var timer: Timer?
     var counter = 0.0
@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
     
     var orderInformation: OrderInformation?
     
-    // MARK: Private
+    // MARK: - Private
     
     private let mapViewModel = MapViewModel()
     
@@ -42,7 +42,7 @@ class MapViewController: UIViewController {
         initView()
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func initView() {
         initCounter()
@@ -192,7 +192,7 @@ class MapViewController: UIViewController {
         self.present(newViewController, animated: true, completion: nil)
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
     
     @IBAction func `continue`(_ sender: Any) {
         if let mapMode = mapMode {

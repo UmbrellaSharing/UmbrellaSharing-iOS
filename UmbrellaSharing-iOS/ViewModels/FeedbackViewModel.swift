@@ -9,7 +9,6 @@
 import Foundation
 
 class FeedbackViewModel {
-    
     func sentFeedback(orderId: Int?, feedback: String, mark: Int) {
         if let orderId = orderId {
             let feedbackEnity = FeedbackEntity(orderId: orderId, feedback: feedback, mark: mark)

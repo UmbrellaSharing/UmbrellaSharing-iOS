@@ -11,11 +11,11 @@ import UIKit
 @IBDesignable
 class InformationButton: UIButton {
     
-    // MARK: Private Variables
+    // MARK: - Private Variables
     
     private var iconName: String = "informationSign"
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ class InformationButton: UIButton {
         super.init(coder: coder)
     }
     
-    // MARK: Inspectable Variables
+    // MARK: - Inspectable Variables
     
     @IBInspectable var useDarkSign: Bool = false {
         didSet {
@@ -34,7 +34,7 @@ class InformationButton: UIButton {
         }
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func setupButton() {
         // Load Button Images

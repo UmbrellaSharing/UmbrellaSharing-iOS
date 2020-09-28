@@ -11,29 +11,29 @@ import UIKit
 
 class FeedbackScreenViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var comment: UITextView!
     
-    // MARK: Private
+    // MARK: - Private
     
     private let feedbackViewModel = FeedbackViewModel()
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         comment.delegate = self
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func openHomeScreen() {
         self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
     
     @IBAction func submit(_ sender: Any) {
         let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId

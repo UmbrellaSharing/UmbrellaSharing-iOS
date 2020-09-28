@@ -12,11 +12,10 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // TODO: Level 3 - Make all needed func private
-    // TODO: Level 3 - Rates should not be hardcoded
-    // TODO: Level 3 - Comments // 5 comments per long session and 2 per short
-    // TODO: Level 4 - On all screens rename newViewController for the going to another screen methods
-    // TODO: Level 5 - Implement better logging system
+    // Ideas for the future improvements:
+    // TODO: Rates should not be hardcoded
+    // TODO: On all screens rename newViewController for the going to another screen methods
+    // TODO: Implement better logging system
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBC1EwMA0Hc4DRq7l_wEE7FxHCG1K8GFLY")

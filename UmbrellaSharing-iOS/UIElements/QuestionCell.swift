@@ -11,11 +11,15 @@ import UIKit
 
 class QuestionCell: UITableViewCell {
     
+    // MARK: - IB Outlets
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var arrowSign: UIImageView!
     
+    // MARK: - Private Variables
     private var isOpen: Bool = false
+    
+    // MARK: - Initialization
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,6 +28,8 @@ class QuestionCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    // MARK: - Public Methods
     
     func setQuestionCell(_ questionText: String) {
         questionLabel.text = questionText

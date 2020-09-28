@@ -12,14 +12,13 @@ import Toast_Swift
 
 class QRCodeScreenViewController: UIViewController {
     
-    // TODO: Level 3 - Put toast in the center.
     // TODO: Level 5 - Make QR be blue according to the design
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var qrCodeImageView: UIImageView!
     
-    // MARK: Public
+    // MARK: - Public
     
     var operationType: UmbrellaUtil.OperationType?
     var orderInformation: OrderInformation = OrderInformation()
@@ -27,7 +26,7 @@ class QRCodeScreenViewController: UIViewController {
     // MARK: Private
     private let qrViewModel = QRViewModel()
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class QRCodeScreenViewController: UIViewController {
         presentQR()
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     
     private func presentQR() {
         self.view.makeToastActivity(.center)
@@ -78,7 +77,7 @@ class QRCodeScreenViewController: UIViewController {
         GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
     
     @IBAction func pressContinue(_ sender: Any) {
         if let orderId = orderInformation.orderId, let operationType = operationType {

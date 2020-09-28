@@ -29,7 +29,7 @@ class UmbrellaButton: UIButton {
             layer.borderColor = borderColor.cgColor
         }
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

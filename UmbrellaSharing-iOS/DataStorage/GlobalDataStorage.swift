@@ -15,14 +15,14 @@ class GlobalDataStorage {
     
     private init() { }
     
-    // MARK: Global Objects
+    // MARK: - Global Objects
     
     private(set) var userCredentials: UserCredentials?
     private(set) var informationAboutLastSession: InformationAboutLastSession?
     
-    // MARK: Public Methods
+    // MARK: - Public Methods
     
-    func loadUserCredentials() {
+    public func loadUserCredentials() {
         let userCredentialsFromStorage = loadUserCredentialsFromStorage()
         if let userCredentialsFromStorage = userCredentialsFromStorage {
             self.userCredentials = userCredentialsFromStorage
@@ -31,7 +31,7 @@ class GlobalDataStorage {
         }
     }
     
-    func loadInformationAboutLastSession() {
+    public func loadInformationAboutLastSession() {
         let informationAboutLastSession = loadInformationAboutLastSessionFromStorage()
         if let informationAboutLastSession = informationAboutLastSession {
             self.informationAboutLastSession = informationAboutLastSession
@@ -69,7 +69,7 @@ class GlobalDataStorage {
         return nil
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func loadUserCredentialsFromServerAndSaveToStorage() {
         NetworkManager.shared.getUserId().done { [weak self] response in

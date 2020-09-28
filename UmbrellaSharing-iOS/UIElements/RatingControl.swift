@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     private var ratingButtons = [UIButton]()
     
@@ -32,8 +32,7 @@ import UIKit
         }
     }
     
-
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +44,7 @@ import UIKit
         setupButtons()
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func setupButtons() {
         
@@ -86,7 +85,7 @@ import UIKit
         updateButtonSelectionStates()
     }
     
-    // MARK: Button Action
+    // MARK: - Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
         guard let index = ratingButtons.firstIndex(of: button) else {

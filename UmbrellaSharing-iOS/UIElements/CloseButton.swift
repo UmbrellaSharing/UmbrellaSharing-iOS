@@ -11,7 +11,7 @@ import UIKit
 
 class CloseButton: UIButton {
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +23,7 @@ class CloseButton: UIButton {
         setupButton()
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func setupButton() {
         // Load Button Images

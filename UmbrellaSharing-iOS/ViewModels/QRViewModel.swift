@@ -11,9 +11,13 @@ import UIKit
 
 class QRViewModel {
     
+    // MARK: - Public Variables
+    
     weak var delegate: QRDataModelDelegate?
     
-    func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) {
+    // MARK: - Public Methods
+    
+    public func canWeProceed(orderId: Int, qrType: UmbrellaUtil.OperationType) {
         NetworkManager.shared.getCanGoFurther(orderId: orderId, qrType: qrType.rawValue).done { [weak self] response in
             guard self != nil else { return }
             if let delegate = self?.delegate {
@@ -30,7 +34,7 @@ class QRViewModel {
         }
     }
     
-    func getQRCode(userId: String, isBuy: Bool) {
+    public func getQRCode(userId: String, isBuy: Bool) {
         NetworkManager.shared.getQRCodeInformation(userId: userId, isBuy: isBuy)
             .done { [weak self] orderEntity in
                 guard self != nil else { return }
@@ -42,7 +46,7 @@ class QRViewModel {
         }
     }
     
-    func getReturnQRCode(orderId: Int) {
+    public func getReturnQRCode(orderId: Int) {
         NetworkManager.shared.getReturnQRCodeInformation(orderId: orderId).done { [weak self] response in
             guard self != nil else { return }
             if let delegate = self?.delegate {
@@ -53,7 +57,7 @@ class QRViewModel {
         }
     }
     
-    func generateQRCode(from string: String) -> UIImage? {
+    public func generateQRCode(from string: String) -> UIImage? {
         let data = string.data(using: String.Encoding.ascii)
         
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
