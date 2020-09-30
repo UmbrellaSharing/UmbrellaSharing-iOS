@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pP-tc-UOQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Confirmation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
-                                <rect key="frame" x="107.5" y="64" width="160" height="31.5"/>
+                                <rect key="frame" x="127.33333333333333" y="108" width="159.66666666666669" height="31.333333333333343"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -29,10 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-Oz-xhL" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="158.66666666666669" width="414" height="737.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
-                                        <rect key="frame" x="51" y="48" width="273" height="267.5"/>
+                                        <rect key="frame" x="51" y="47.999999999999986" width="312" height="250.66666666666663"/>
                                         <string key="text">Dear user! 
 This application is only an imitation of real sharing service. This is my pet project. This means that there will be no real payments, but only an imitation.
 However, at the time of development, I tried to imagine that I was developing a real application in which people can rent umbrellas. Why not?
@@ -45,7 +45,7 @@ Igor</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-aP-V2y">
-                                        <rect key="frame" x="85.5" y="392" width="204" height="104"/>
+                                        <rect key="frame" x="105" y="577.33333333333337" width="204" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
@@ -106,7 +106,7 @@ Igor</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-Iy-uD0" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="321" y="65" width="30" height="30"/>
+                                <rect key="frame" x="360" y="108.66666666666667" width="30" height="30.000000000000014"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YGn-jQ-GaW"/>
                                     <constraint firstAttribute="width" constant="30" id="moH-EY-Hf3"/>

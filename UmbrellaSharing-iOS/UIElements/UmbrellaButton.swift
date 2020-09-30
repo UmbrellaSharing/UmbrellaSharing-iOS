@@ -11,12 +11,8 @@ import UIKit
 @IBDesignable
 class UmbrellaButton: UIButton {
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
+    // TODO: In layoutSubview - check the font size accordingly.
+    
     
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
@@ -28,6 +24,13 @@ class UmbrellaButton: UIButton {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = self.bounds.height / 2
+        layer.masksToBounds = true
     }
     
     override init(frame: CGRect) {

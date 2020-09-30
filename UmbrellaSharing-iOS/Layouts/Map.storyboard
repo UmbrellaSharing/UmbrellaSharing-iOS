@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,20 +12,20 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="rVy-LD-VSZ" customClass="MapViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zBe-St-yXe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGL-ln-kkq" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="646" width="414" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-fX-teX">
-                                        <rect key="frame" x="100.5" y="24" width="174" height="31.5"/>
+                                        <rect key="frame" x="120" y="24" width="174" height="31.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.37254901959999998" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpg-5m-365" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
-                                        <rect key="frame" x="303" y="25" width="30" height="30"/>
+                                        <rect key="frame" x="342" y="25" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="1cU-3g-ohm"/>
                                             <constraint firstAttribute="height" constant="30" id="Ypd-Hv-FTg"/>
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-2I-yUJ">
-                                        <rect key="frame" x="85.5" y="90" width="204" height="104"/>
+                                        <rect key="frame" x="105" y="90" width="204" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="proceedButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-dg-Dce" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
@@ -116,8 +116,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9g5-bc-9T0" firstAttribute="bottom" secondItem="IGL-ln-kkq" secondAttribute="bottom" id="62K-OJ-e6w"/>
                             <constraint firstItem="9g5-bc-9T0" firstAttribute="trailing" secondItem="IGL-ln-kkq" secondAttribute="trailing" id="Lhy-tI-Chs"/>
+                            <constraint firstAttribute="bottom" secondItem="IGL-ln-kkq" secondAttribute="bottom" id="Uw3-TV-4D6"/>
                             <constraint firstItem="IGL-ln-kkq" firstAttribute="leading" secondItem="9g5-bc-9T0" secondAttribute="leading" id="ckk-D0-rIO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9g5-bc-9T0"/>

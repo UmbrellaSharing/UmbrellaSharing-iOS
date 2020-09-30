@@ -163,7 +163,6 @@ class MapViewController: UIViewController {
         buyButton.backgroundColor = UmbrellaUtil.getUIColor(hex: "#3185BC")
         buyButton.setTitleColor(UIColor.white, for: .normal)
         buyButton.setTitleColor(UmbrellaUtil.getUIColor(hex: "#0092D1"), for: .highlighted)
-        buyButton.cornerRadius = 22
         buyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
         
         buyButton.addTarget(self, action: #selector(buyUmbrella), for: .touchUpInside)

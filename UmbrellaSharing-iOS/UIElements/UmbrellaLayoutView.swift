@@ -11,13 +11,16 @@ import UIKit
 @IBDesignable
 class UmbrellaLayoutView: UIView {
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            let rectShape = CAShapeLayer()
-            rectShape.bounds = self.frame
-            rectShape.position = self.center
-            rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
-            self.layer.mask = rectShape
-        }
+    @IBInspectable var cornerRadius: CGFloat = 0
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let rectShape = CAShapeLayer()
+        rectShape.bounds = self.frame
+        rectShape.position = self.center
+        rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
+
+        self.layer.mask = rectShape
     }
 }
