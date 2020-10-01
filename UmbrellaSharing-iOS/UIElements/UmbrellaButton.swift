@@ -12,7 +12,7 @@ import UIKit
 class UmbrellaButton: UIButton {
     
     // TODO: In layoutSubview - check the font size accordingly.
-    
+    let defaultButtonHeight: Int = 44
     
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
@@ -31,6 +31,10 @@ class UmbrellaButton: UIButton {
         
         layer.cornerRadius = self.bounds.height / 2
         layer.masksToBounds = true
+        
+        if (Int(self.bounds.height) > defaultButtonHeight) {
+            self.titleLabel?.font = self.titleLabel?.font.withSize(CGFloat(22))
+        }
     }
     
     override init(frame: CGRect) {

@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: On all screens rename newViewController for the going to another screen methods
     // TODO: Implement better logging system
     
+    // TODO: Adjust button design for big screen in the following storyboards:
+    // 1. Payment Screen
+    // 2. QRCode
+    // 3. Feedback
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBC1EwMA0Hc4DRq7l_wEE7FxHCG1K8GFLY")
         loadUserCredentials()
