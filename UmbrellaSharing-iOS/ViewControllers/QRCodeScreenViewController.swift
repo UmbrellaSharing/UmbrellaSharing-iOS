@@ -140,6 +140,6 @@ extension QRCodeScreenViewController: QRDataModelDelegate {
     }
     
     func qrCodeHasNotBeenScanned() {
-        self.view.makeToast("The operator must scan the code first", duration: 2.0, position: .center)
+        self.view.makeToast("Оператор должен просканировать код", duration: 2.0, position: .center)
     }
 }
