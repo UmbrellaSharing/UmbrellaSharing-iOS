@@ -4,7 +4,7 @@ __Zontik__ is an application that has been developed solely for the purpose of p
 __Zontik__ is an application that allows users to rent or buy umbrellas from nearby pick-up points.
 A person with umbrellas is supposedly standing at these points and with the help of another (non-existent) application performs the procedure for providing or receiving umbrellas.
 
-As an API, I used the ready-made API of my friend from the university, who did such a assignment there.
+As an API, I used the ready-made API of my friend from the university, who did such a assignment.
 
 ## Installation
 
