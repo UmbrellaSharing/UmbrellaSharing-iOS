@@ -8,23 +8,40 @@
 
 import UIKit
 
+@IBDesignable
 class UmbrellaButton: UIButton {
-
+    
+    // TODO: In layoutSubview - check the font size accordingly.
+    let defaultButtonHeight: Int = 44
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = self.bounds.height / 2
+        layer.masksToBounds = true
+        
+        if (Int(self.bounds.height) > defaultButtonHeight) {
+            self.titleLabel?.font = self.titleLabel?.font.withSize(CGFloat(22))
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
-    }
-    
-    private func setupButton() {
-        layer.cornerRadius = 20
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
-        layer.backgroundColor = UIColor.white.cgColor
-        self.setTitleColor(.black, for: .normal)
     }
 }

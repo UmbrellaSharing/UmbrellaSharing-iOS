@@ -11,11 +11,15 @@ import UIKit
 
 class QuestionCell: UITableViewCell {
     
+    // MARK: - IB Outlets
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var arrowSign: UIImageView!
     
+    // MARK: - Private Variables
     private var isOpen: Bool = false
+    
+    // MARK: - Initialization
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,6 +29,8 @@ class QuestionCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Public Methods
+    
     func setQuestionCell(_ questionText: String) {
         questionLabel.text = questionText
     }
@@ -32,9 +38,9 @@ class QuestionCell: UITableViewCell {
     func changeTheState() {
         self.isOpen = !self.isOpen
         if (self.isOpen) {
-            arrowSign.image = UIImage(named: "arrowTop")
+            arrowSign.image = UIImage(named: "minusSign")
         } else {
-            arrowSign.image = UIImage(named: "arrowDown")
+            arrowSign.image = UIImage(named: "plusSign")
         }
     }
 }

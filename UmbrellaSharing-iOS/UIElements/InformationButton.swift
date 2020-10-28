@@ -8,35 +8,43 @@
 
 import UIKit
 
-@IBDesignable class InformationButton: UIButton {
-
-    // TODO: Level 4 - Change the image for the button - too gray.
+@IBDesignable
+class InformationButton: UIButton {
     
-    // MARK: Initialization
+    // MARK: - Private Variables
+    
+    private var iconName: String = "informationSign"
+    
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupButton()
     }
     
-    // MARK: Private Methods
+    // MARK: - Inspectable Variables
+    
+    @IBInspectable var useDarkSign: Bool = false {
+        didSet {
+           iconName =  useDarkSign ? "informationSignMap" : "informationSign"
+            setupButton()
+        }
+    }
+    
+    // MARK: - Private Methods
     
     private func setupButton() {
         // Load Button Images
         let bundle = Bundle(for: type(of: self))
-        let informationSign = UIImage(named: "informationSign", in: bundle, compatibleWith: self.traitCollection)
-        
-        // TODO: Level 4 - As an addition - we can put the same sign with different color to make small animation here
+        let informationSign = UIImage(named: iconName, in: bundle, compatibleWith: self.traitCollection)
         self.setImage(informationSign, for: .normal)
         
         // Add constraints
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
     }
 }

@@ -10,56 +10,76 @@ import Foundation
 
 class InformationAboutLastSession: NSObject, NSCoding {
     
-    // MARK: Properties
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+       static let ArchiveURL = DocumentsDirectory.appendingPathComponent("informationAboutLastSession")
     
-    var hasRentStarted: Bool?
+    // MARK: - Properties
+    
+    var applicationCheckpoint: ApplicationImportantCheckpoint?
     var orderId: Int?
     var rentStartDate: Date?
+    var operationType: UmbrellaUtil.OperationType?
     
-    // MARK: Types
+    // MARK: - Types
     
     struct PropertyKey {
-        static let hasRentStarted = "hasRentStarted"
+        static let applicationCheckpoint = "applicationCheckpoint"
         static let orderId = "orderId"
         static let rentStartDate = "rentStartDate"
+        static let operationType = "operationType"
     }
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
-    init?(hasRentStarted: Bool?, orderId: Int?, rentStartDate: Date?) {
-        self.hasRentStarted = hasRentStarted
+    init?(applicationCheckpoint: ApplicationImportantCheckpoint?, orderId: Int?, rentStartDate: Date?, operationType: UmbrellaUtil.OperationType?) {
+        self.applicationCheckpoint = applicationCheckpoint
         self.orderId = orderId
         self.rentStartDate = rentStartDate
+        self.operationType = operationType
     }
     
-    // TODO: Level 3 - Should we make this global? with all others data models?
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("informationAboutLastSession")
+    init(applicationCheckpoint: ApplicationImportantCheckpoint?, orderId: Int?, rentStartDate: Date?) {
+           self.applicationCheckpoint = applicationCheckpoint
+           self.orderId = orderId
+           self.rentStartDate = rentStartDate
+       }
     
-    // MARK: NSCoding
+    init(applicationCheckpoint: ApplicationImportantCheckpoint?, operationType: UmbrellaUtil.OperationType?) {
+        self.applicationCheckpoint = applicationCheckpoint
+        self.operationType = operationType
+    }
+    
+    // MARK: - NSCoding
     
     func encode(with coder: NSCoder) {
-        coder.encode(hasRentStarted, forKey: PropertyKey.hasRentStarted)
+        coder.encode(applicationCheckpoint?.rawValue, forKey: PropertyKey.applicationCheckpoint)
         coder.encode(orderId, forKey: PropertyKey.orderId)
         coder.encode(rentStartDate, forKey: PropertyKey.rentStartDate)
+        coder.encode(operationType?.rawValue, forKey: PropertyKey.operationType)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        guard let hasRentStarted = aDecoder.decodeObject(forKey: PropertyKey.hasRentStarted) as? Bool else {
-            print("Unable to decode the hasRentStarted.")
+        guard let applicationCheckpointRawValue = aDecoder.decodeObject(forKey: PropertyKey.applicationCheckpoint) as? Int else {
+            print("Unable to decode the applicationImportantCheckpoint.")
             return nil
         }
         
-        guard let orderId = aDecoder.decodeObject(forKey: PropertyKey.orderId) as? Int else {
-            print("Unable to decode the orderId.")
-            return nil
+        let orderId = aDecoder.decodeObject(forKey: PropertyKey.orderId) as? Int
+        let rentStartDate = aDecoder.decodeObject(forKey: PropertyKey.rentStartDate) as? Date
+        let operationTypeRawValue = aDecoder.decodeObject(forKey: PropertyKey.operationType) as? Int
+        
+        let applicationCheckpoint = ApplicationImportantCheckpoint(rawValue: applicationCheckpointRawValue)
+        
+        var operationType: UmbrellaUtil.OperationType? = nil
+        if let operationTypeRawValue = operationTypeRawValue {
+            operationType = UmbrellaUtil.OperationType(rawValue: operationTypeRawValue)
         }
         
-        guard let rentStartDate = aDecoder.decodeObject(forKey: PropertyKey.rentStartDate) as? Date else {
-            print("Unable to decode rentStartDate")
-            return nil
-        }
-        
-        self.init(hasRentStarted: hasRentStarted, orderId: orderId, rentStartDate: rentStartDate)
+        self.init(applicationCheckpoint: applicationCheckpoint, orderId: orderId, rentStartDate: rentStartDate, operationType: operationType)
     }
+}
+
+enum ApplicationImportantCheckpoint: Int, Codable {
+    case afterSuccessfulPayment
+    case rentalModeStarted
 }

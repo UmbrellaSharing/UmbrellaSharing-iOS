@@ -11,8 +11,7 @@ import PromiseKit
 
 class NetworkManager {
     
-    // TODO: Level 3 - Exctract all path in a config file or so
-    // TODO: Level 3 - Make all validatoin and error check inhere
+    // TODO: Level 5 - Make all validatoin and error check inhere
     
     // Usefull links for making URL sessions. Please use them while working on this class
     // https://learnappmaking.com/urlsession-swift-networking-how-to/
@@ -59,19 +58,16 @@ class NetworkManager {
     
     // MARK: Save User's Feedback
     //Type: POST
-    // TODO: Level 2 After Iliya check the server, test this part, since for right now it returns 404 error
-    // TODO: Level 2 Think about how it could be implemented in more consistent way
-    func postFeedback(orderId: Int, feedback: String, mark: Int) {
+    func postFeedback(_ feedbackEntity: FeedbackEntity) {
         let requestURL = self.baseURL.appendingPathComponent("order/saveFeedback")
         var request = URLRequest(url: requestURL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let json = [
-            "orderId": String(orderId),
-            "feedback": feedback,
-            "mark": String(mark)
+            "orderId": String(feedbackEntity.orderId),
+            "feedback": feedbackEntity.feedback,
+            "mark": String(feedbackEntity.mark)
         ]
-        // TODO: Level 3 - Handle this serialization error better
         let jsonData = try! JSONSerialization.data(withJSONObject: json, options: [])
         let task = URLSession.shared.uploadTask(with: request, from: jsonData) { _, _, error in
             if let error = error {
@@ -137,6 +133,26 @@ class NetworkManager {
         }.compactMap {
             return try JSONDecoder().decode([LocationPointEntity].self, from: $0.data)
         }
+    }
+}
+
+extension NetworkManager {
+    
+    func checkInternet(flag: Bool, completionHandler: @escaping (_ internet: Bool) -> Void) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        let url = NSURL(string: "http://www.google.com/")
+        let request = NSMutableURLRequest(url: url! as URL)
+        
+        request.httpMethod = "HEAD"
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData
+        request.timeoutInterval = 10.0
+        
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue:OperationQueue.main, completionHandler: { (response: URLResponse?, data: Data?, error: Error?) -> Void in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            let rsp = response as! HTTPURLResponse?
+            completionHandler(rsp?.statusCode == 200)
+        })
     }
 }
 

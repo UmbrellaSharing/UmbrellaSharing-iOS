@@ -10,18 +10,15 @@
         <!--Payment Screen View Controller-->
         <scene sceneID="sFO-ai-7Dv">
             <objects>
-                <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pP-tc-UOQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmaton" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
-                                <rect key="frame" x="25" y="45" width="324" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="6wc-Da-irD" secondAttribute="height" multiplier="162:19" id="S1h-ct-Z5V"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Условия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
+                                <rect key="frame" x="134.5" y="64" width="106.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTe-j6-Efa">
@@ -31,66 +28,113 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
-                                <rect key="frame" x="21" y="114" width="333" height="323"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="333" id="sI1-kl-m8V"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-aP-V2y">
-                                <rect key="frame" x="83" y="483" width="208" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-Oz-xhL" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
+                                        <rect key="frame" x="51" y="48" width="273" height="215"/>
+                                        <mutableString key="text">Дорогой друг!
+
+Сейчас тебе будет предложено привязать банковскую карту. После того, как ты вернешь зонт с карты автоматически выполнится списание средств в зависимости от времени аренды. Пожалуйста, смотри наши тарифы на главном экране. Хорошего тебя дня! 
+
+Смотри, не промокни!</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-aP-V2y">
+                                        <rect key="frame" x="85.5" y="392" width="204" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
+                                                <color key="backgroundColor" red="0.17254901960784313" green="0.37254901960784315" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <state key="normal" title="Перейти к Оплате">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="KuQ-CJ-bec"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="204" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <state key="normal" title="Вернуться">
+                                                    <color key="titleColor" red="0.17346876859999999" green="0.37267863750000002" blue="0.56473028660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.17346876859999999" green="0.37267863750000002" blue="0.56473028660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="back:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="u3F-6a-PYB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="208" id="kxU-3n-Cjg"/>
-                                            <constraint firstAttribute="height" constant="40" id="pjw-EU-cm0"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="104" id="E3N-do-1hi"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="bRw-Ft-QDP"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="pressContinue:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="KuQ-CJ-bec"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="208" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="7zb-4e-TmD"/>
-                                            <constraint firstAttribute="width" constant="208" id="iv5-ZM-b9e"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="back:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="u3F-6a-PYB"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="jVb-aP-V2y" firstAttribute="centerX" secondItem="V2c-Oz-xhL" secondAttribute="centerX" id="A0z-6e-RIz"/>
+                                    <constraint firstAttribute="trailing" secondItem="eZs-4r-9C5" secondAttribute="trailing" constant="51" id="DXc-KO-ccg"/>
+                                    <constraint firstItem="eZs-4r-9C5" firstAttribute="top" secondItem="V2c-Oz-xhL" secondAttribute="top" constant="48" id="fNH-ke-5rV"/>
+                                    <constraint firstItem="eZs-4r-9C5" firstAttribute="leading" secondItem="V2c-Oz-xhL" secondAttribute="leading" constant="51" id="m9Z-VG-mss"/>
+                                    <constraint firstAttribute="bottom" secondItem="jVb-aP-V2y" secondAttribute="bottom" constant="56" id="qwi-rS-iKK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-Iy-uD0" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
+                                <rect key="frame" x="321" y="65" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YGn-jQ-GaW"/>
+                                    <constraint firstAttribute="width" constant="30" id="moH-EY-Hf3"/>
+                                </constraints>
+                                <state key="normal" image="informationSign"/>
+                                <connections>
+                                    <action selector="openInformation:" destination="7Aa-5i-mkY" eventType="touchUpInside" id="re4-W6-cOa"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.17346876859999999" green="0.37267863750000002" blue="0.56473028660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="6wc-Da-irD" secondAttribute="trailing" constant="26" id="3wp-VQ-i9O"/>
-                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="jVb-aP-V2y" secondAttribute="trailing" constant="84" id="49m-F8-epl"/>
-                            <constraint firstItem="6wc-Da-irD" firstAttribute="top" secondItem="2Ed-9L-meC" secondAttribute="top" constant="45" id="EfN-AS-jO1"/>
-                            <constraint firstItem="eZs-4r-9C5" firstAttribute="top" secondItem="6wc-Da-irD" secondAttribute="bottom" constant="31" id="JeL-2t-k7n"/>
-                            <constraint firstItem="2Ed-9L-meC" firstAttribute="bottom" secondItem="jVb-aP-V2y" secondAttribute="bottom" constant="84" id="UX8-by-UJB"/>
-                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="eZs-4r-9C5" secondAttribute="trailing" constant="21" id="Wcs-fK-uaP"/>
-                            <constraint firstItem="jVb-aP-V2y" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="83" id="cKZ-cP-zmT"/>
-                            <constraint firstItem="eZs-4r-9C5" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="21" id="gnk-RQ-RYj"/>
-                            <constraint firstItem="6wc-Da-irD" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" constant="25" id="wcU-Re-S4Z"/>
+                            <constraint firstItem="V2c-Oz-xhL" firstAttribute="leading" secondItem="2Ed-9L-meC" secondAttribute="leading" id="1is-uM-fur"/>
+                            <constraint firstAttribute="bottom" secondItem="V2c-Oz-xhL" secondAttribute="bottom" id="GUv-o7-te1"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="V2c-Oz-xhL" secondAttribute="trailing" id="Uo0-6T-AC9"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="centerY" secondItem="3zv-Iy-uD0" secondAttribute="centerY" id="iRe-d4-IIb"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="centerX" secondItem="4pP-tc-UOQ" secondAttribute="centerX" id="jth-GB-Gl6"/>
+                            <constraint firstItem="V2c-Oz-xhL" firstAttribute="top" secondItem="3zv-Iy-uD0" secondAttribute="bottom" constant="20" id="rQ7-yW-und"/>
+                            <constraint firstItem="6wc-Da-irD" firstAttribute="top" secondItem="2Ed-9L-meC" secondAttribute="top" constant="64" id="rzQ-Te-oAI"/>
+                            <constraint firstItem="2Ed-9L-meC" firstAttribute="trailing" secondItem="3zv-Iy-uD0" secondAttribute="trailing" constant="24" id="tjN-eo-Kqu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Ed-9L-meC"/>
                     </view>
-                    <connections>
-                        <outlet property="backButton" destination="XLK-f2-zQW" id="nv2-Xm-0fr"/>
-                        <outlet property="continueButton" destination="jQs-nk-hq7" id="riH-wx-nAJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9b-LG-FiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144.80000000000001" y="85.007496251874073"/>
+            <point key="canvasLocation" x="143.47826086956522" y="84.375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="informationSign" width="30" height="30"/>
+    </resources>
 </document>

@@ -15,6 +15,7 @@
 		7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */; };
 		7D3981BD24D6B284007B76CC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3981BC24D6B284007B76CC /* MapViewModel.swift */; };
 		7D3DBA3224F0B5A700A9D7AF /* PriceRateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */; };
+		7D3DBA3424F0E1FE00A9D7AF /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DBA3324F0E1FD00A9D7AF /* FeedbackViewModel.swift */; };
 		7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */; };
 		7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */; };
 		7D5CEDED24C08DB3003DB6EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */; };
@@ -35,15 +36,19 @@
 		7D99E2142490EA0000334232 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D99E2132490EA0000334232 /* MapViewController.swift */; };
 		7D99E2162490EA4C00334232 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D99E2152490EA4C00334232 /* Map.storyboard */; };
 		7D9A3BE824B053A600D0F851 /* UmbrellaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */; };
+		7DC9E3AC251EE4AC00FA7607 /* qrCodeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9E3AB251EE4AC00FA7607 /* qrCodeBackground.png */; };
+		7DC9E3AE251EF6D000FA7607 /* feedbackZontik.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9E3AD251EF6D000FA7607 /* feedbackZontik.png */; };
+		7DC9E3B0251EFB8D00FA7607 /* FeedbackTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC9E3AF251EFB8D00FA7607 /* FeedbackTextView.swift */; };
 		7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */; };
 		7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */; };
+		7DDCDA17250C74C000769F4A /* UmbrellaLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDCDA16250C74C000769F4A /* UmbrellaLayoutView.swift */; };
+		7DDCDA1A250CBC1400769F4A /* Intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DDCDA19250CBC1300769F4A /* Intro.png */; };
 		7DE18A0C24B361A5003649EE /* PaymentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */; };
 		7DF354B024E3807000C993A4 /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354AF24E3807000C993A4 /* InformationViewModel.swift */; };
 		7DF354B324E3994700C993A4 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354B224E3994700C993A4 /* UserCredentials.swift */; };
 		7DF354B924E3B96800C993A4 /* GlobalDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354B824E3B96800C993A4 /* GlobalDataStorage.swift */; };
 		7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */; };
 		7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378F824B95438001D1BD8 /* OrderInformation.swift */; };
-		7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */; };
 		EED7666447CD190F18AE8977 /* Pods_UmbrellaSharing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE46CDC79AD60E8E2937121 /* Pods_UmbrellaSharing_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +73,7 @@
 		7D3981BA24D1BDBE007B76CC /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		7D3981BC24D6B284007B76CC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7D3DBA3124F0B5A700A9D7AF /* PriceRateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRateModalViewController.swift; sourceTree = "<group>"; };
+		7D3DBA3324F0E1FD00A9D7AF /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		7D5CEDE824C08B83003DB6EE /* FeedbackScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackScreen.storyboard; sourceTree = "<group>"; };
 		7D5CEDEA24C08B98003DB6EE /* FeedbackScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreenViewController.swift; sourceTree = "<group>"; };
 		7D5CEDEC24C08DB3003DB6EE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -92,15 +98,19 @@
 		7D99E2132490EA0000334232 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D99E2152490EA4C00334232 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		7D9A3BE724B053A600D0F851 /* UmbrellaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaButton.swift; sourceTree = "<group>"; };
+		7DC9E3AB251EE4AC00FA7607 /* qrCodeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrCodeBackground.png; sourceTree = "<group>"; };
+		7DC9E3AD251EF6D000FA7607 /* feedbackZontik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedbackZontik.png; sourceTree = "<group>"; };
+		7DC9E3AF251EFB8D00FA7607 /* FeedbackTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTextView.swift; sourceTree = "<group>"; };
 		7DD83E9724B750E4008BB79F /* QRCodeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeScreen.storyboard; sourceTree = "<group>"; };
 		7DD83E9924B75479008BB79F /* QRCodeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScreenViewController.swift; sourceTree = "<group>"; };
+		7DDCDA16250C74C000769F4A /* UmbrellaLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaLayoutView.swift; sourceTree = "<group>"; };
+		7DDCDA19250CBC1300769F4A /* Intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Intro.png; sourceTree = "<group>"; };
 		7DE18A0B24B361A5003649EE /* PaymentScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentScreen.storyboard; sourceTree = "<group>"; };
 		7DF354AF24E3807000C993A4 /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		7DF354B224E3994700C993A4 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		7DF354B824E3B96800C993A4 /* GlobalDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDataStorage.swift; sourceTree = "<group>"; };
 		7DF354BA24E3D99300C993A4 /* InformationAboutLastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutLastSession.swift; sourceTree = "<group>"; };
 		7DF378F824B95438001D1BD8 /* OrderInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformation.swift; sourceTree = "<group>"; };
-		7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		FEE107A3B87C21B838006D28 /* Pods-UmbrellaSharing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaSharing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaSharing-iOS/Pods-UmbrellaSharing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +174,7 @@
 		7D63463024779DD100049C30 /* UmbrellaSharing-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7DDCDA18250CBBA100769F4A /* Images */,
 				7DF354B724E3B95600C993A4 /* DataStorage */,
 				7DF354B124E3992000C993A4 /* DataModels */,
 				7D3981B724D03FC2007B76CC /* Network */,
@@ -200,6 +211,8 @@
 				7D8962E924C5A8E100724AFF /* QuestionCell.swift */,
 				7D3981B324CA9759007B76CC /* AnswerCell.swift */,
 				7D3981B524CABB44007B76CC /* CloseButton.swift */,
+				7DDCDA16250C74C000769F4A /* UmbrellaLayoutView.swift */,
+				7DC9E3AF251EFB8D00FA7607 /* FeedbackTextView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -232,6 +245,16 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		7DDCDA18250CBBA100769F4A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7DDCDA19250CBC1300769F4A /* Intro.png */,
+				7DC9E3AD251EF6D000FA7607 /* feedbackZontik.png */,
+				7DC9E3AB251EE4AC00FA7607 /* qrCodeBackground.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		7DF354B124E3992000C993A4 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,10 +283,10 @@
 		7DF378FA24B956C9001D1BD8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7DF378FB24B956E8001D1BD8 /* PaymentViewModel.swift */,
 				7D05A95724BC860E006B759D /* QRViewModel.swift */,
 				7D3981BC24D6B284007B76CC /* MapViewModel.swift */,
 				7DF354AF24E3807000C993A4 /* InformationViewModel.swift */,
+				7D3DBA3324F0E1FD00A9D7AF /* FeedbackViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -371,11 +394,14 @@
 			files = (
 				7D63463E24779DD300049C30 /* LaunchScreen.storyboard in Resources */,
 				7DE18A0C24B361A5003649EE /* PaymentScreen.storyboard in Resources */,
+				7DDCDA1A250CBC1400769F4A /* Intro.png in Resources */,
 				7D63463B24779DD300049C30 /* Assets.xcassets in Resources */,
+				7DC9E3AC251EE4AC00FA7607 /* qrCodeBackground.png in Resources */,
 				7DD83E9824B750E4008BB79F /* QRCodeScreen.storyboard in Resources */,
 				7D99E2162490EA4C00334232 /* Map.storyboard in Resources */,
 				7D5CEDE924C08B83003DB6EE /* FeedbackScreen.storyboard in Resources */,
 				7D99E2122490DF9A00334232 /* Podfile in Resources */,
+				7DC9E3AE251EF6D000FA7607 /* feedbackZontik.png in Resources */,
 				7D63463924779DD100049C30 /* Main.storyboard in Resources */,
 				7D5CEDEF24C2D0FF003DB6EE /* InformationScreen.storyboard in Resources */,
 			);
@@ -468,9 +494,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC9E3B0251EFB8D00FA7607 /* FeedbackTextView.swift in Sources */,
 				7D63463624779DD100049C30 /* HomeScreenViewController.swift in Sources */,
 				7DF354BB24E3D99400C993A4 /* InformationAboutLastSession.swift in Sources */,
 				7D63463224779DD100049C30 /* AppDelegate.swift in Sources */,
+				7D3DBA3424F0E1FE00A9D7AF /* FeedbackViewModel.swift in Sources */,
 				7DD83E9A24B75479008BB79F /* QRCodeScreenViewController.swift in Sources */,
 				7D3DBA3224F0B5A700A9D7AF /* PriceRateModalViewController.swift in Sources */,
 				7DF354B924E3B96800C993A4 /* GlobalDataStorage.swift in Sources */,
@@ -479,9 +507,9 @@
 				7DF378F924B95438001D1BD8 /* OrderInformation.swift in Sources */,
 				7D5CEDF124C2D409003DB6EE /* InformationScreenViewController.swift in Sources */,
 				7D3981BB24D1BDBE007B76CC /* NetworkEntities.swift in Sources */,
-				7DF378FC24B956E8001D1BD8 /* PaymentViewModel.swift in Sources */,
 				7DF354B024E3807000C993A4 /* InformationViewModel.swift in Sources */,
 				7D63463424779DD100049C30 /* SceneDelegate.swift in Sources */,
+				7DDCDA17250C74C000769F4A /* UmbrellaLayoutView.swift in Sources */,
 				7D5CEDEB24C08B98003DB6EE /* FeedbackScreenViewController.swift in Sources */,
 				7D05A95B24BC8AFA006B759D /* UmbrellaUtil.swift in Sources */,
 				7D3981B624CABB44007B76CC /* CloseButton.swift in Sources */,

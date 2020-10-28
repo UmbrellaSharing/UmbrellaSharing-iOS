@@ -11,25 +11,17 @@ import UIKit
 
 class PaymentScreenViewController: UIViewController {
     
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
+    // MARK: - Public
     
     var operationType: UmbrellaUtil.OperationType?
     
+    // MARK: - Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initView()
     }
     
-    private func initView() {
-        continueButton.setTitle("Proceed to Payment", for: .normal)
-        backButton.setTitle("Go Back", for: .normal)
-    }
-    
-    @IBAction func pressContinue(_ sender: Any) {
-        // TODO: Level 2 ! The Most Important. We need to do all payment checks. But We are waiting before Iliya make the Yandex Payments.
-        openQRCodeScreen()
-    }
+    // MARK: - Private Methods
     
     private func openQRCodeScreen() {
         if let operationType = operationType {
@@ -41,7 +33,27 @@ class PaymentScreenViewController: UIViewController {
         }
     }
     
+    private func rememberThatPaymentWasSuccessful() {
+        let informationAboutLastSession = InformationAboutLastSession(applicationCheckpoint: ApplicationImportantCheckpoint.afterSuccessfulPayment, operationType: operationType)
+        GlobalDataStorage.shared.saveInformationAboutLastSession(informationAboutLastSession)
+    }
+    
+    // MARK: - IB Actions
+    
+    @IBAction func pressContinue(_ sender: Any) {
+        // TODO: Level 2 - Feature - Big - The Most Important. We need to do all payment checks. But We are waiting before Iliya make the Yandex Payments.
+        rememberThatPaymentWasSuccessful()
+        openQRCodeScreen()
+    }
+    
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func openInformation(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "InformationScreen", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "InformationScreenViewController") as! InformationScreenViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     private var ratingButtons = [UIButton]()
     
@@ -32,8 +32,7 @@ import UIKit
         }
     }
     
-
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +44,7 @@ import UIKit
         setupButtons()
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func setupButtons() {
         
@@ -61,15 +60,12 @@ import UIKit
         let bundle = Bundle(for: type(of: self))
         let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
-        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
         
         for _ in 0..<starCount {
             // Create the button
             let button = UIButton()
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: .selected)
-            button.setImage(highlightedStar, for: .highlighted)
-            button.setImage(highlightedStar, for: [.highlighted, .selected])
             
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +85,7 @@ import UIKit
         updateButtonSelectionStates()
     }
     
-    // MARK: Button Action
+    // MARK: - Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
         guard let index = ratingButtons.firstIndex(of: button) else {

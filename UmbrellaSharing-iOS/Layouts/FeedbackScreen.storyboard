@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,68 +10,112 @@
         <!--Feedback Screen View Controller-->
         <scene sceneID="MDE-Kz-1VW">
             <objects>
-                <viewController restorationIdentifier="FeedbackScreenViewController" storyboardIdentifier="FeedbackScreenViewController" id="48S-J0-y3M" customClass="FeedbackScreenViewController" customModule="UmbrellaSharing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FeedbackScreenViewController" storyboardIdentifier="FeedbackScreenViewController" id="48S-J0-y3M" customClass="FeedbackScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NeQ-nI-G1E">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please, write the comment here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9g-87-oRC">
-                                <rect key="frame" x="61.5" y="281" width="252" height="104"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="252" id="0QG-u8-B20"/>
-                                    <constraint firstAttribute="height" constant="104" id="a4L-14-2Be"/>
-                                </constraints>
-                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-T1-iKt" customClass="RatingControl" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="191" width="252" height="44"/>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Was the Service?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epR-eE-y33">
-                                <rect key="frame" x="61.5" y="108" width="252" height="26.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="252" id="8ex-nb-isr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставь Свой Отзыв" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epR-eE-y33">
+                                <rect key="frame" x="83" y="108" width="248.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-09-LUk" customClass="UmbrellaButton" customModule="UmbrellaSharing_iOS" customModuleProvider="target">
-                                <rect key="frame" x="83.5" y="451" width="208" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tn6-Rb-a4B" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="159.5" width="414" height="736.5"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Больше всего мне понравилось ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9g-87-oRC" customClass="FeedbackTextView" customModule="Zontik" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="92" width="252" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="RW4-Ec-k1w"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-T1-iKt" customClass="RatingControl" customModule="Zontik" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="28" width="252" height="44"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-09-LUk" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="636.5" width="204" height="44"/>
+                                        <color key="backgroundColor" red="0.17346876859999999" green="0.37267863750000002" blue="0.56473028660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Sem-sn-QFG"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="jzJ-aF-ufD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Отправить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="submit:" destination="48S-J0-y3M" eventType="touchUpInside" id="Ymz-Wd-khA"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedbackZontik.png" translatesAutoresizingMaskIntoConstraints="NO" id="XZt-ch-fVa">
+                                        <rect key="frame" x="107" y="212" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Lfe-Wv-jN1"/>
+                                            <constraint firstAttribute="height" constant="200" id="SBH-nM-2Mg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="208" id="EOx-GC-9UC"/>
-                                    <constraint firstAttribute="height" constant="40" id="haf-G6-g3i"/>
+                                    <constraint firstItem="y9g-87-oRC" firstAttribute="top" secondItem="iEl-T1-iKt" secondAttribute="bottom" constant="20" id="2Qf-yr-ukE"/>
+                                    <constraint firstItem="XZt-ch-fVa" firstAttribute="centerX" secondItem="tn6-Rb-a4B" secondAttribute="centerX" id="Bar-qZ-56M"/>
+                                    <constraint firstItem="iEl-T1-iKt" firstAttribute="centerX" secondItem="tn6-Rb-a4B" secondAttribute="centerX" id="a3v-Hh-QCo"/>
+                                    <constraint firstItem="y9g-87-oRC" firstAttribute="width" secondItem="iEl-T1-iKt" secondAttribute="width" id="bBa-YT-DW0"/>
+                                    <constraint firstItem="Smf-09-LUk" firstAttribute="centerX" secondItem="tn6-Rb-a4B" secondAttribute="centerX" id="dNp-Mc-LMj"/>
+                                    <constraint firstItem="XZt-ch-fVa" firstAttribute="top" secondItem="y9g-87-oRC" secondAttribute="bottom" constant="40" id="elB-p2-nJa"/>
+                                    <constraint firstItem="iEl-T1-iKt" firstAttribute="top" secondItem="tn6-Rb-a4B" secondAttribute="top" constant="28" id="kpn-5M-NOq"/>
+                                    <constraint firstItem="y9g-87-oRC" firstAttribute="centerX" secondItem="tn6-Rb-a4B" secondAttribute="centerX" id="ulW-Rb-h2h"/>
+                                    <constraint firstAttribute="bottom" secondItem="Smf-09-LUk" secondAttribute="bottom" constant="56" id="vgE-33-qXh"/>
                                 </constraints>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submit:" destination="48S-J0-y3M" eventType="touchUpInside" id="Ymz-Wd-khA"/>
-                                </connections>
-                            </button>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.37254901960784315" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="epR-eE-y33" firstAttribute="centerX" secondItem="RBZ-Kr-gix" secondAttribute="centerX" id="7fa-YO-pPg"/>
-                            <constraint firstItem="iEl-T1-iKt" firstAttribute="centerX" secondItem="epR-eE-y33" secondAttribute="centerX" id="9Ez-6A-0gA"/>
-                            <constraint firstItem="Smf-09-LUk" firstAttribute="centerX" secondItem="RBZ-Kr-gix" secondAttribute="centerX" id="BFy-f2-gQr"/>
-                            <constraint firstItem="epR-eE-y33" firstAttribute="top" secondItem="RBZ-Kr-gix" secondAttribute="top" constant="108" id="qCx-v3-FHb"/>
-                            <constraint firstItem="iEl-T1-iKt" firstAttribute="top" secondItem="epR-eE-y33" secondAttribute="bottom" constant="56.5" id="tvy-yd-sD2"/>
-                            <constraint firstItem="RBZ-Kr-gix" firstAttribute="bottom" secondItem="Smf-09-LUk" secondAttribute="bottom" constant="176" id="xQh-rK-nRI"/>
-                            <constraint firstItem="y9g-87-oRC" firstAttribute="top" secondItem="iEl-T1-iKt" secondAttribute="bottom" constant="46" id="xyp-w6-JMV"/>
-                            <constraint firstItem="y9g-87-oRC" firstAttribute="centerX" secondItem="iEl-T1-iKt" secondAttribute="centerX" id="yha-ye-uYY"/>
+                            <constraint firstItem="RBZ-Kr-gix" firstAttribute="trailing" secondItem="tn6-Rb-a4B" secondAttribute="trailing" id="1FD-hW-lMy"/>
+                            <constraint firstItem="tn6-Rb-a4B" firstAttribute="top" secondItem="epR-eE-y33" secondAttribute="bottom" constant="20" id="8IN-FA-zBr"/>
+                            <constraint firstItem="epR-eE-y33" firstAttribute="top" secondItem="RBZ-Kr-gix" secondAttribute="top" constant="64" id="9Yr-fO-fzw"/>
+                            <constraint firstItem="tn6-Rb-a4B" firstAttribute="leading" secondItem="RBZ-Kr-gix" secondAttribute="leading" id="PVx-FN-XeE"/>
+                            <constraint firstAttribute="bottom" secondItem="tn6-Rb-a4B" secondAttribute="bottom" id="WB8-Wo-qjB"/>
+                            <constraint firstItem="epR-eE-y33" firstAttribute="centerX" secondItem="NeQ-nI-G1E" secondAttribute="centerX" id="xk7-Ia-Rus"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RBZ-Kr-gix"/>
                     </view>
                     <connections>
                         <outlet property="comment" destination="y9g-87-oRC" id="IC7-ar-tpW"/>
                         <outlet property="ratingControl" destination="iEl-T1-iKt" id="YyA-sc-bp0"/>
-                        <outlet property="submitButton" destination="Smf-09-LUk" id="i4X-vD-nfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUz-C7-LXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.40000000000001" y="173.16341829085459"/>
+            <point key="canvasLocation" x="-179.71014492753625" y="172.76785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feedbackZontik.png" width="191.5" height="200"/>
+    </resources>
 </document>

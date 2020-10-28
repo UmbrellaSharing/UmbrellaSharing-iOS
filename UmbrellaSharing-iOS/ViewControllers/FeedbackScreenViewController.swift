@@ -9,41 +9,51 @@
 import Foundation
 import UIKit
 
-class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
+class FeedbackScreenViewController: UIViewController {
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var ratingControl: RatingControl!
-    @IBOutlet weak var submitButton: UmbrellaButton!
     @IBOutlet weak var comment: UITextView!
     
+    // MARK: - Private
+    
+    private let feedbackViewModel = FeedbackViewModel()
+    
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         comment.delegate = self
     }
     
-    
-    @IBAction func submit(_ sender: Any) {
-        // TODO: Level 2 - Insert here the API call for the server side and send rating and comment
-        openHomeScreen()
-    }
+    // MARK: - Private Methods
     
     private func openHomeScreen() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
-        newViewController.modalPresentationStyle = .fullScreen
-        self.present(newViewController, animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: TextViewDelegates
+    // MARK: - IB Actions
     
+    @IBAction func submit(_ sender: Any) {
+        let orderId = GlobalDataStorage.shared.informationAboutLastSession?.orderId
+        feedbackViewModel.sentFeedback(orderId: orderId, feedback: comment.text, mark: ratingControl.rating)
+        GlobalDataStorage.shared.cleanInformationAboutLastSession()
+        openHomeScreen()
+    }
+}
+
+extension FeedbackScreenViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         comment.text = ""
         comment.textColor = UIColor.black
+        comment.layer.borderColor = UmbrellaUtil.getUIColor(hex: "#2C5F90")?.cgColor
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        comment.layer.borderColor = UmbrellaUtil.getUIColor(hex: "#AAAAAA")?.cgColor
         if comment.text.isEmpty {
-            comment.text = "Please, write the comment here..."
+            comment.text = "Больше всего мне понравилось ..."
             comment.textColor = UIColor.gray
         }
     }
@@ -52,8 +62,8 @@ class FeedbackScreenViewController: UIViewController , UITextViewDelegate {
         if text == "\n" {
             comment.resignFirstResponder()
             return false
-        } // Recognizes enter ket in keyboard
-        
+        } // Recognizes enter key in keyboard
         return true
     }
 }
+

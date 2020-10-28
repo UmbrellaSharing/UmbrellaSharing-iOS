@@ -10,11 +10,17 @@ import Foundation
 
 class InformationViewModel {
     
+    // MARK: - Public Variables
+    
     weak var delegate: InformationDataModelDelegate?
+    
+    // MARK: - Public Methods
     
     func load() {
         loadQuestionsAndAnswers()
     }
+    
+    // MARK: Private Methods
     
     private func loadQuestionsAndAnswers() {
         NetworkManager.shared.getFAQ().done { [weak self] response in

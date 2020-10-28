@@ -11,7 +11,7 @@ import UIKit
 
 class CloseButton: UIButton {
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,19 +23,19 @@ class CloseButton: UIButton {
         setupButton()
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func setupButton() {
         // Load Button Images
         let bundle = Bundle(for: type(of: self))
         let informationSign = UIImage(named: "closeSign", in: bundle, compatibleWith: self.traitCollection)
         
-        // TODO: Level 4 - As an addition - we can put the same sign with different color to make small animation here
+        // TODO: Idea for the future - we can put the same sign with different color to make small animation here
         self.setImage(informationSign, for: .normal)
         
         // Add constraints
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
     }
 }
