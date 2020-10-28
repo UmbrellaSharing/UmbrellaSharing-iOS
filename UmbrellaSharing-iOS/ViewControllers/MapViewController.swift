@@ -64,7 +64,7 @@ class MapViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
             updateCounterIfDateCashed()
         } else {
-            mapInformationSectionLabel.text = "Pick Up Points"
+            mapInformationSectionLabel.text = "Точки Выдачи"
         }
     }
     
@@ -98,8 +98,8 @@ class MapViewController: UIViewController {
     }
     
     private func presentMessageOnBuyingUmbrella() {
-        let messageOnBuyingUmbrella = UIAlertController(title: "You bought the umbrella!",
-                                                          message: "Thank you for your purchase. You will be taken to a feedback screen.",
+        let messageOnBuyingUmbrella = UIAlertController(title: "Вы купили зонт!",
+                                                          message: "Спасибо за покупку. Пожалуйста, оставьте отзыв.",
                                                           preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
             // We should make payment transaction here
@@ -111,8 +111,8 @@ class MapViewController: UIViewController {
     }
     
     private func presentMessageNotToReturnUmbrella() {
-        let messageOfNotReturningItem = UIAlertController(title: "Thank you!",
-                                                          message: "You don't need to return an umbrella anymore since you already pay maximum rate which is equal to buy an umbrella.",
+        let messageOfNotReturningItem = UIAlertController(title: "Спасибо!",
+                                                          message: "Вы больше не должны возвращать зонт, так как вы уже заплатите за аренду сумму равную покупке зонта.",
                                                           preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
             // We should make payment transaction here
@@ -146,11 +146,11 @@ class MapViewController: UIViewController {
         if let mapMode = mapMode {
             switch mapMode {
             case .locationsMode:
-                proceedButton.setTitle("Rent an Umbrella", for: .normal)
-                backButton.setTitle("Go Back", for: .normal)
+                proceedButton.setTitle("Арендовать Зонт", for: .normal)
+                backButton.setTitle("Вернуться", for: .normal)
             case .rentalMode:
                 addBuyButton()
-                proceedButton.setTitle("Return an Umbrella", for: .normal)
+                proceedButton.setTitle("Вернуть Зонт", for: .normal)
                 backButton.isHidden = true
             }
         }
@@ -159,7 +159,7 @@ class MapViewController: UIViewController {
     private func addBuyButton() {
         let buyButton = UmbrellaButton()
         
-        buyButton.setTitle("Buy Umbrella", for: .normal)
+        buyButton.setTitle("Купить Зонт", for: .normal)
         buyButton.backgroundColor = UmbrellaUtil.getUIColor(hex: "#3185BC")
         buyButton.setTitleColor(UIColor.white, for: .normal)
         buyButton.setTitleColor(UmbrellaUtil.getUIColor(hex: "#0092D1"), for: .highlighted)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController restorationIdentifier="PaymentScreenViewController" storyboardIdentifier="PaymentScreenViewController" id="7Aa-5i-mkY" customClass="PaymentScreenViewController" customModule="Zontik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pP-tc-UOQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Confirmation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
-                                <rect key="frame" x="127.33333333333333" y="108" width="159.66666666666669" height="31.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Условия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Da-irD">
+                                <rect key="frame" x="134.5" y="64" width="106.5" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -29,29 +29,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-Oz-xhL" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="158.66666666666669" width="414" height="737.33333333333326"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-4r-9C5">
-                                        <rect key="frame" x="51" y="47.999999999999986" width="312" height="250.66666666666663"/>
-                                        <string key="text">Dear user! 
-This application is only an imitation of real sharing service. This is my pet project. This means that there will be no real payments, but only an imitation.
-However, at the time of development, I tried to imagine that I was developing a real application in which people can rent umbrellas. Why not?
-For example, on this screen, the user would enter the details of his bank card, and later in the process of use, the money would be debited from the card.
+                                        <rect key="frame" x="51" y="48" width="273" height="215"/>
+                                        <mutableString key="text">Дорогой друг!
 
-Best regards,
-Igor</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+Сейчас тебе будет предложено привязать банковскую карту. После того, как ты вернешь зонт с карты автоматически выполнится списание средств в зависимости от времени аренды. Пожалуйста, смотри наши тарифы на главном экране. Хорошего тебя дня! 
+
+Смотри, не промокни!</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-aP-V2y">
-                                        <rect key="frame" x="105" y="577.33333333333337" width="204" height="104"/>
+                                        <rect key="frame" x="85.5" y="392" width="204" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-nk-hq7" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
                                                 <color key="backgroundColor" red="0.17254901960784313" green="0.37254901960784315" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <state key="normal" title="Proceed to Payment">
+                                                <state key="normal" title="Перейти к Оплате">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -66,7 +64,7 @@ Igor</string>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-f2-zQW" customClass="UmbrellaButton" customModule="Zontik" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="60" width="204" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <state key="normal" title="Go Back">
+                                                <state key="normal" title="Вернуться">
                                                     <color key="titleColor" red="0.17346876859999999" green="0.37267863750000002" blue="0.56473028660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -106,7 +104,7 @@ Igor</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-Iy-uD0" customClass="InformationButton" customModule="Zontik" customModuleProvider="target">
-                                <rect key="frame" x="360" y="108.66666666666667" width="30" height="30.000000000000014"/>
+                                <rect key="frame" x="321" y="65" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YGn-jQ-GaW"/>
                                     <constraint firstAttribute="width" constant="30" id="moH-EY-Hf3"/>

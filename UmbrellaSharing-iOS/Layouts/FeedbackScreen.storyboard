@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Was the Service?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epR-eE-y33">
-                                <rect key="frame" x="72.5" y="108" width="269.5" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставь Свой Отзыв" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epR-eE-y33">
+                                <rect key="frame" x="83" y="108" width="248.5" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tn6-Rb-a4B" customClass="UmbrellaLayoutView" customModule="Zontik" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="159.5" width="414" height="736.5"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I liked the most..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9g-87-oRC" customClass="FeedbackTextView" customModule="Zontik" customModuleProvider="target">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Больше всего мне понравилось ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9g-87-oRC" customClass="FeedbackTextView" customModule="Zontik" customModuleProvider="target">
                                         <rect key="frame" x="81" y="92" width="252" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="RW4-Ec-k1w"/>
@@ -55,7 +55,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="jzJ-aF-ufD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <state key="normal" title="Submit">
+                                        <state key="normal" title="Отправить">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

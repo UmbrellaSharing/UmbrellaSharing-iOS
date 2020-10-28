@@ -53,7 +53,7 @@ extension FeedbackScreenViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         comment.layer.borderColor = UmbrellaUtil.getUIColor(hex: "#AAAAAA")?.cgColor
         if comment.text.isEmpty {
-            comment.text = "I liked the most..."
+            comment.text = "Больше всего мне понравилось ..."
             comment.textColor = UIColor.gray
         }
     }
